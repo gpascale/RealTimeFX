@@ -1,0 +1,100 @@
+
+Name Ideas:
+
+    Real-Time FX
+    
+Shaders to do:
+    - Old movie like the Silverlight demo. Call the current one "static" or some shit
+    - Threshold for edge detection?
+    - Sketch shader. Can get away with inverted edge detection on a paper texture?
+    - Blur? Why not?
+    - Pop art. Make it work.
+
+Shader variables
+
+Uniforms:
+u_mvpMatrix - hardcode ?
+u_sampler0
+u_sampler1
+u_sampler2
+u_sampler3
+
+Attributes:
+a_position
+a_texCoords
+
+Work items
+Polish:
+    DONE - Gradient buttons for action menu
+    DONE - Better view to view transitions.
+        DONE - Fade into image preview view - slide out
+        DONE - Effect Selector transition is ok
+    DONE - Better buttons for toolbar in main view
+    DONE - Need a custom slider with no color differentiation between regions
+Functionality:
+    DONE - Save photos to camera roll
+    DONE - For photos, render to texture instead of doing glReadPixels
+    DONE - TableView doesn't work if multiple of # of effects is not 3. One solution - have a multiple of 3
+    PUNT - Save photos in landscape if camera is held sideways?
+    Front-facing camera support for iPhone 4.
+    PUNT - Don't compile same shader multiple times. Use a cache.
+    DONE - Keep rendering/capturing at times when shouldn't. Check - showing camera preview, selector view, teaser view
+    DONE - Don't start rendering after coming back from an ad unless we we were rendering when the add started
+        DONE - Same deal with this applicationDidBecomeActive guy
+    Actual thumbnails once decided on final free/paid shader lists.
+        What image to use?
+    Finalize free/paid shader list
+    Change selector outline to be white - more consistent
+    Thank CGTextures
+        
+StoreKit:
+    
+    DONE? - Handle Free vs. Paid
+       
+    
+Effects:
+    Done:
+        Invert
+        Grayscale
+        Sepia
+        Thermal
+        Old Film - investigate more film grain styles
+    In Progress:
+        Edge Detection - improve quality, speed up.
+        Posterize - find a good color palette
+        Bloom - need to make it faster (perhaps some way to do this using LUTs        
+    Wish List:
+        Various distortion filters
+        Pointillize/Mosaic/Glass effects
+        Colored pencil
+        Difference of Gaussians? Can this look like the example in Real Time Rendering?
+        
+Misc. Features
+    - DONE - Need graphics for forward/next, capture buttons.
+    - DONE - Rearrange top bar per Sarah's suggestion. (i), back, title, forward, select
+    - DONE - Implement a more attractive effect selection view. Current thoughts: 2 columns wide showing thumbnails.
+    - DONE - Ability to take a picture
+    - DONE - UI for picture taking. Thoughts: Take to a modal view with save/discard/email options
+    - DONE - Revenue model. If free/paid, figure out advertising for free. What to differentiate versions? In app purchase also promising.
+        
+Camera UI
+    - DONE - Pop out to a modal view controller. Back and save buttons. Email, camera roll, wallpaper.
+    
+
+Video Options:
+    - Record sans effects. Playback with ability to change effect dynamically. Export to camera roll with particular effect.        
+    - Record sans effects. Save as part of app. Can open old recorded videos and play them back with effects.
+    
+Capture Options:
+    - Capture at screen size. Can be used for wallpaper.
+        Pros: Very fast. Very easy to implement - just requires a glReadPixels call.
+        Cons: Max resolution is device screen size (480x320 for 3GS, 960x640 for iP4)
+    - Capture at full photo resolution.
+        Pros: Photos are full resolution.
+        Cons: Difficult to implement. Might require a CPU version of effects. Some are impossible (motion blur) and
+              others are difficult (anything with a displacement texture)
+    
+    
+Video Spec:
+    - Introduce a tab bar at bottom of screen
+ 

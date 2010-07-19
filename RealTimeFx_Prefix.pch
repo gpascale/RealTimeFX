@@ -1,0 +1,12 @@
+//
+// Prefix header for all source files of the 'RealTimeFx' target in the 'RealTimeFx' project
+//
+
+// System includes
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+	#import <TargetConditionals.h>
+#endif
+
+#define SHOWFPS 0

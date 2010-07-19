@@ -1,0 +1,104 @@
+TTextureMaker
+v7
+r0
+t299909805.983936
+cCheck dependencies
+cProcessPCH /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TextureMaker_Prefix-ewxgqctyyvhvfgcgqihdfmayqwal/TextureMaker_Prefix.pch.gch TextureMaker_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TextureMaker.build/Debug/TextureMaker.build/Objects-normal/x86_64/TextureMaker.o /Users/greg/code/RealTimeFx/TextureMaker/TextureMaker.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/greg/code/RealTimeFx/TextureMaker/build/Debug/TextureMaker normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004BF4701900000000000000EE
+t1274310681
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+c000000004BF4700E0000000000252630
+t1274310670
+s2434608
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSImage.h
+c000000004BE2C6D100000000000061BF
+t1273153233
+s25023
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B90FBB700000000000013E6
+t1267792823
+s5094
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004B73AA190000000000B37440
+t1265871385
+s11760704
+
+N/Users/greg/code/RealTimeFx/TextureMaker/TextureMaker.m
+c000000004C300AB200000000000002EF
+t1278216882
+s751
+i<Foundation/Foundation.h>
+i<AppKit/NSImage.h>
+
+N/Users/greg/code/RealTimeFx/TextureMaker/TextureMaker_Prefix.pch
+c000000004C30055B00000000000000A6
+t1278215515
+s166
+i<Foundation/Foundation.h>
+
+N/Users/greg/code/RealTimeFx/TextureMaker/build/Debug/TextureMaker
+t1278217005
+s9472
+
+N/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/Objects-normal/x86_64/TextureMaker.LinkFileList
+c000000004C300B2B0000000000000080
+t1278217003
+s128
+
+N/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/Objects-normal/x86_64/TextureMaker.o
+t1278217005
+s10884
+
+N/var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TextureMaker_Prefix-ewxgqctyyvhvfgcgqihdfmayqwal/TextureMaker_Prefix.pch.gch
+t1278217005
+s41401104
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies299909803#299909803#0(0"0(0#1#0"8617861536#0"0#
+
+CCompileC build/TextureMaker.build/Debug/TextureMaker.build/Objects-normal/x86_64/TextureMaker.o /Users/greg/code/RealTimeFx/TextureMaker/TextureMaker.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s299909805.798123
+e299909805.944575
+r1
+xCompileC
+xbuild/TextureMaker.build/Debug/TextureMaker.build/Objects-normal/x86_64/TextureMaker.o
+x/Users/greg/code/RealTimeFx/TextureMaker/TextureMaker.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@63"Compile /Users/greg/code/RealTimeFx/TextureMaker/TextureMaker.m299909805#299909805#0(0"0(0#0#55"/Users/greg/code/RealTimeFx/TextureMaker/TextureMaker.m8616130752#1588"    cd /Users/greg/code/RealTimeFx/TextureMaker    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-generated-files.hmap -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-own-target-headers.hmap -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-all-target-headers.hmap -iquote /Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-project-headers.hmap -F/Users/greg/code/RealTimeFx/TextureMaker/build/Debug -I/Users/greg/code/RealTimeFx/TextureMaker/build/Debug/include -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/DerivedSources/x86_64 -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TextureMaker_Prefix-ewxgqctyyvhvfgcgqihdfmayqwal/TextureMaker_Prefix.pch -c /Users/greg/code/RealTimeFx/TextureMaker/TextureMaker.m -o /Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/Objects-normal/x86_64/TextureMaker.o0#
+
+CLd /Users/greg/code/RealTimeFx/TextureMaker/build/Debug/TextureMaker normal x86_64
+s299909805.944857
+e299909805.983878
+r1
+xLd
+x/Users/greg/code/RealTimeFx/TextureMaker/build/Debug/TextureMaker
+xnormal
+xx86_64
+lSLF07#2@70"Link /Users/greg/code/RealTimeFx/TextureMaker/build/Debug/TextureMaker299909805#299909805#0(0"0(0#0#0"8611316640#568"    cd /Users/greg/code/RealTimeFx/TextureMaker    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/greg/code/RealTimeFx/TextureMaker/build/Debug -F/Users/greg/code/RealTimeFx/TextureMaker/build/Debug -filelist /Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/Objects-normal/x86_64/TextureMaker.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -framework AppKit -o /Users/greg/code/RealTimeFx/TextureMaker/build/Debug/TextureMaker0#
+
+CProcessPCH /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TextureMaker_Prefix-ewxgqctyyvhvfgcgqihdfmayqwal/TextureMaker_Prefix.pch.gch TextureMaker_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s299909803.340092
+e299909805.797888
+r1
+xProcessPCH
+x/var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TextureMaker_Prefix-ewxgqctyyvhvfgcgqihdfmayqwal/TextureMaker_Prefix.pch.gch
+xTextureMaker_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@34"Precompile TextureMaker_Prefix.pch299909803#299909805#0(0"0(0#0#64"/Users/greg/code/RealTimeFx/TextureMaker/TextureMaker_Prefix.pch8616764960#1471"    cd /Users/greg/code/RealTimeFx/TextureMaker    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-generated-files.hmap -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-own-target-headers.hmap -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-all-target-headers.hmap -iquote /Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/TextureMaker-project-headers.hmap -F/Users/greg/code/RealTimeFx/TextureMaker/build/Debug -I/Users/greg/code/RealTimeFx/TextureMaker/build/Debug/include -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/DerivedSources/x86_64 -I/Users/greg/code/RealTimeFx/TextureMaker/build/TextureMaker.build/Debug/TextureMaker.build/DerivedSources -c /Users/greg/code/RealTimeFx/TextureMaker/TextureMaker_Prefix.pch -o /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TextureMaker_Prefix-ewxgqctyyvhvfgcgqihdfmayqwal/TextureMaker_Prefix.pch.gch0#
+
