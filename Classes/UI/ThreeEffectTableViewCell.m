@@ -8,6 +8,7 @@
 
 #import "ThreeEffectTableViewCell.h"
 #import "EffectSelectorViewController.h"
+#import "ThumbnailCache.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface ThreeEffectTableViewCell (private)
@@ -55,21 +56,20 @@
 
 - (void) setEffectForIndex: (NSInteger) index
                   withName: (NSString*) effectName
-                 thumbnail: (NSString*) thumbnailPath
 {
     switch(index)
     {
         case 0:
             labelLeft.text = effectName;
-            imageLeft.image = [UIImage imageWithContentsOfFile: thumbnailPath];
+            imageLeft.image = [[ThumbnailCache sharedCache] thumbnailForEffectWithName: effectName];
             break;
         case 1:
             labelCenter.text = effectName;
-            imageCenter.image = [UIImage imageWithContentsOfFile: thumbnailPath];
+            imageCenter.image = [[ThumbnailCache sharedCache] thumbnailForEffectWithName: effectName];
             break;
         case 2:
             labelRight.text = effectName;
-            imageRight.image = [UIImage imageWithContentsOfFile: thumbnailPath];
+            imageRight.image = [[ThumbnailCache sharedCache] thumbnailForEffectWithName: effectName];
             break;
         default:
             NSAssert(NO, @"Index must be between 0 and 2");

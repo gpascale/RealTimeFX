@@ -8,6 +8,7 @@
 
 #import "UpgradeTeaserViewController.h"
 #import "Store.h"
+#import "ThumbnailCache.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface UpgradeTeaserViewController (Private)
@@ -56,8 +57,19 @@
     return hasBeenShown;
 }
 
+static NSString* names[6] = 
+{
+    @"Emboss",
+    @"Cartoon",
+    @"Squeeze",
+    @"Heat Sensor",
+    @"Sketch",
+    @"Film"
+};
+
 - (void) viewDidLoad
 {
+    int n = 0;
     for(UIView* view in self.view.subviews)
     {
         if([view isKindOfClass: [UIImageView class]])
@@ -65,6 +77,9 @@
             UIImageView* imageView = (UIImageView*) view;
             imageView.layer.masksToBounds = YES;
             imageView.layer.cornerRadius = 10.0;
+            
+            imageView.image = [[ThumbnailCache sharedCache] thumbnailForEffectWithName: names[n]];
+            ++n;
         }
     }
     hasBeenShown = YES;

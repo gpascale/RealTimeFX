@@ -14,7 +14,7 @@ void main()
 	vec2 dispTexCoords = vec2(gray, 0.5);
 	gl_FragColor = texture2D(u_sampler1, dispTexCoords);
 
-	/* Uncomment this to visualize the displacement texture
-	gl_FragColor = texture2D(u_sampler1, v_texCoords);
-	 */
+	// Uncomment this to visualize the displacement texture
+	// gl_FragColor = texture2D(u_sampler1, v_texCoords);
+    
 }

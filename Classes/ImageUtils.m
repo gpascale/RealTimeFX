@@ -1,5 +1,5 @@
 /*
- *  ImageUtils.c
+ *  ImageUtils.m
  *  RealTimeFx
  *
  *  Created by Greg on 6/27/10.

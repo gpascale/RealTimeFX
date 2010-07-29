@@ -35,7 +35,9 @@
         GLCHECK(u_rotationAmt = glGetUniformLocation(self.shaderProgram, "u_rotationAmt"));
         GLCHECK(u_intensity = glGetUniformLocation(self.shaderProgram, "u_intensity"));
         assert(u_rotationAmt >= 0);
-        assert(u_intensity >= 0);                
+        assert(u_intensity >= 0);
+        
+        free(pixels);
 	}
 	
 	return self;

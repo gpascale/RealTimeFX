@@ -207,7 +207,7 @@ NSData* createBloomLUT()
     
     for(int i = 0; i < 0.3 * 256; ++i)
     {
-        data[i] = 0.032f;
+        data[i] = 0.022f;
     }
     for(int i = 0.3 * 256; i < 0.7 * 256; ++i)
     {

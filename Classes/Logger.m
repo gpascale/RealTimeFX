@@ -19,7 +19,7 @@
 + (Logger*) instance
 {
     return instance;
-}
+} 
 */
 
 + (NSInteger) logAppLaunch

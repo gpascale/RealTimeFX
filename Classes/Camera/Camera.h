@@ -18,6 +18,10 @@
 
 - (void) takePicture;
 
+// support for front + back cameras
+- (BOOL) hasMultipleCameras;
+- (void) toggleCameras;
+
 @property (readonly, nonatomic) BOOL isCapturing;
 @property (nonatomic) CGSize textureSize;
 @property (nonatomic) CGSize imageSize;

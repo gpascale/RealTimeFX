@@ -41,19 +41,14 @@ NSDictionary* createEffectDictionary()
     NSDictionary* ret = [[NSDictionary alloc] initWithObjectsAndKeys: 
                                        
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
-                                          fragmentShaderName: @"basic"
-                                                 effectClass: [Effect class]] autorelease],
-        @"None",
-                                       
-        [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"grayscale"
                                                  effectClass: [Effect class]] autorelease],
-        @"Grayscale",
+        @"Black and White",
         
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"invert"
                                                  effectClass: [Effect class]] autorelease],
-        @"Invert",
+        @"Negative",
         
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"sepia"
@@ -71,17 +66,11 @@ NSDictionary* createEffectDictionary()
                                                  effectClass: [BloomEffect class]] autorelease],
         @"Glow",
         
-        // Mosaic effect
-        [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
-                                          fragmentShaderName: @"mosaic"
-                                                 effectClass: [Effect class]] autorelease],
-        @"Mosaic",
-        
-        // Heatmap effect
+        // Heat Sensor effect
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"heatmap"
                                                  effectClass: [HeatmapEffect class]] autorelease],
-        @"Heatmap",
+        @"Heat Sensor",
         
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"posterize"
@@ -89,14 +78,9 @@ NSDictionary* createEffectDictionary()
         @"Posterize",
         
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
-                                          fragmentShaderName: @"posterizeLUT"
-                                                 effectClass: [PosterizeLUTEffect class]] autorelease],
-        @"Posterize 2",
-        
-        [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"film"
                                                  effectClass: [FilmEffect class]] autorelease],
-        @"Old Movie",
+        @"Film",
                                        
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"motionblur"
@@ -112,11 +96,6 @@ NSDictionary* createEffectDictionary()
                                           fragmentShaderName: @"squeeze"
                                                  effectClass: [StretchEffect class]] autorelease],
         @"Stretch",
-                                       
-        [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
-                                          fragmentShaderName: @"popArt"
-                                                 effectClass: [PopArtEffect class]] autorelease],
-        @"Pop Art",
                          
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"emboss"
@@ -131,7 +110,7 @@ NSDictionary* createEffectDictionary()
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"comic"
                                                  effectClass: [ComicEffect class]] autorelease],
-        @"Comic Book",
+        @"Newspaper",
 
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"sketch"
@@ -153,8 +132,8 @@ static NSArray* createFreeEffectNames()
 {
     NSArray* ret = [[NSArray alloc] initWithObjects:
                            @"Sepia",
-                           @"Invert",
-                           @"Heatmap",
+                           @"Negative",
+                           @"Edge",
                            @"Glow",
                            @"Squeeze",
                            nil];
@@ -164,11 +143,11 @@ static NSArray* createFreeEffectNames()
 NSArray* createEP1EffectNames()
 {
     NSArray* ret = [[NSArray alloc] initWithObjects:
-                           @"Sepia", @"Grayscale", @"Invert",
-                           @"Edge", @"Glow", @"Heatmap",
-                           @"Posterize", @"Old Movie", @"Motion Blur",
+                           @"Sepia", @"Black and White", @"Negative",
+                           @"Edge", @"Glow", @"Heat Sensor",
+                           @"Posterize", @"Film", @"Motion Blur",
                            @"Squeeze", @"Stretch", @"Cartoon",
-                           @"Emboss", @"Comic Book", @"Sketch", @"Spectrum",
+                           @"Emboss", @"Newspaper", @"Sketch", @"Spectrum",
                     (id) nil];
     return ret;
 }

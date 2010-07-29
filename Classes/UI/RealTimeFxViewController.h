@@ -39,6 +39,10 @@
     UISlider* sliderOne;
     UISlider* sliderTwo;
     
+    UIButton* toggleCameraButton;
+    
+    UITextField* effectNameTextField;
+    
     // Camera
     NSObject<Camera>* camera;
     
@@ -56,6 +60,8 @@
 @property (nonatomic, retain) IBOutlet UILabel* vfpsLabel;
 @property (nonatomic, retain) IBOutlet UISlider* sliderOne;
 @property (nonatomic, retain) IBOutlet UISlider* sliderTwo;
+@property (nonatomic, retain) IBOutlet UIButton* toggleCameraButton;
+@property (nonatomic, retain) IBOutlet UITextField* effectNameTextField;
 
 @property (nonatomic, retain) IBOutlet CapturePreviewViewController* capturePreviewViewController;
 @property (nonatomic, retain) IBOutlet EffectSelectorViewController* selectorViewController;
@@ -67,6 +73,7 @@
 - (void) stopRendering;
 
 - (IBAction) didTapCaptureButton;
+- (IBAction) didTapToggleCameraButton;
 - (IBAction) showEffectSelectorView;
 - (IBAction) goToNextEffect;
 - (IBAction) goToPreviousEffect;

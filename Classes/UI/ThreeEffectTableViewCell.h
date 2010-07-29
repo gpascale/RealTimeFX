@@ -55,8 +55,7 @@ typedef enum ButtonTag_t
 @property (nonatomic, retain) IBOutlet EffectSelectorViewController* parentView;
 
 - (void) setEffectForIndex: (NSInteger) index
-                  withName: (NSString*) effectName
-                 thumbnail: (NSString*) thumbnailPath;
+                  withName: (NSString*) effectName;
 
 - (void) clearSelection;
 

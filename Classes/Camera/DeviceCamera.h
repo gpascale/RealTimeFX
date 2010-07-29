@@ -32,6 +32,12 @@
 	CMVideoDimensions videoDimensions;
 	CMVideoCodecType videoType;
     
+    // Inputs
+    AVCaptureDevice* backCamera;
+    AVCaptureDevice* frontCamera;
+    AVCaptureDevice* activeCamera;
+    AVCaptureDeviceInput* activeVideoInput;
+    
     // Still-image output for taking pictures
     AVCaptureStillImageOutput* stillImageOutput;
     
@@ -39,8 +45,14 @@
 	
 	GLuint m_displacementTexture;
     
-    BOOL isRecording;
+    BOOL isRecording;    
 }
+
+- (BOOL) hasFrontCamera;
+
+- (void) toggleCameras;
+
+- (void) activateCameraWithPosition: (AVCaptureDevicePosition) position;
 
 // AVCaptureVideoDataOutputSampleBufferDelegate methods
 - (void) captureOutput: (AVCaptureOutput*) captureOutput
@@ -66,6 +78,7 @@ error: (NSError*) error;
 @property (readwrite) CMVideoDimensions videoDimensions;
 @property (readwrite) CMVideoCodecType videoType;
 @property (readwrite) CMTime previousTimestamp;
+@property (nonatomic, retain) AVCaptureDeviceInput* videoInput;
 
 @property (nonatomic) CGSize textureSize;
 @property (nonatomic) CGSize imageSize;

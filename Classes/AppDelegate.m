@@ -14,6 +14,7 @@
 #import "Store.h"
 #import "Logger.h"
 #import "Mobclix.h"
+#import "ThumbnailCache.h"
 
 @implementation AppDelegate
 
@@ -132,12 +133,10 @@ static BOOL showedUpgradeTeaserViewOnLaunch = NO;
 #pragma mark -
 #pragma mark Memory management
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-    /*
-     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
-     */
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    [[ThumbnailCache sharedCache] clear];
 }
-
 
 - (void)dealloc
 {

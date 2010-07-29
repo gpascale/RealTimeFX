@@ -13,6 +13,9 @@
 @interface BloomEffect : Effect
 {
 	GLuint texture;
+    
+    GLint u_multiplier;
+    float multiplier;
 }
 @end
 
@@ -50,6 +53,35 @@
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, texture);
 	glActiveTexture(GL_TEXTURE0);
+    
+    multiplier = 0.5f;
+    GLCHECK(u_multiplier = glGetUniformLocation(self.shaderProgram, "u_multiplier"));
+    assert(u_multiplier >= 0);
+}
+
+- (void) willRenderFrame
+{
+    glUniform1f(u_multiplier, multiplier);
+}
+
+- (EffectVariable*) effectVariableAtIndex: (NSInteger) index
+{
+    if(index == 0)
+    {
+        return [[[EffectVariable alloc] initWithMinValue: 0.2f 
+                                                maxValue: 1.2f 
+                                            defaultValue: 0.7f] autorelease];
+    }
+    else
+    {
+        return nil;
+    }
+}
+
+- (void) effectVariableAtIndex: (NSInteger) index
+                didChangeValue: (float) newValue
+{
+    multiplier = newValue;
 }
 
 @end

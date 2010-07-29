@@ -24,6 +24,9 @@
     [super activate];
     
     multiplier = 1.0f;
+    
+    GLCHECK(u_multiplier = glGetUniformLocation(self.shaderProgram, "u_multiplier"));
+    assert(u_multiplier >= 0);
 }
 
 - (void) willRenderFrame
@@ -46,6 +49,7 @@
 - (void) effectVariableAtIndex: (NSInteger) index
                 didChangeValue: (float) newValue
 {
+    printf("new value = %f\n", newValue);
     multiplier = newValue;
 }
 

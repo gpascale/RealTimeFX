@@ -99,6 +99,8 @@ GLint uniforms[NUM_UNIFORMS];
 	GLCHECK(glActiveTexture(GL_TEXTURE0));
 }
 
+NSDate* curDate = nil;
+
 - (void) render
 {
     [EAGLContext setCurrentContext:context];
@@ -110,7 +112,7 @@ GLint uniforms[NUM_UNIFORMS];
 		 -1.0f, 1.0f, 0.0f, 1.0f,
 	  	 1.0f, 1.0f, 0.0f, 1.0f
     };
-	
+
 #if TARGET_IPHONE_SIMULATOR
     static const GLfloat texCoords[] =
 	{
@@ -162,12 +164,11 @@ GLint uniforms[NUM_UNIFORMS];
     
     GLCHECK(glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer));
     [context presentRenderbuffer:GL_RENDERBUFFER];
- /*   
-    static unsigned char pixels[4 * 320 * 480];
-    GLCHECK(glReadPixels(0, 0, backingWidth, backingHeight, GL_RGBA, GL_UNSIGNED_BYTE, pixels));
-*/
+    
+    [curDate release];
+    curDate = [[NSDate date] retain];
     [[NSNotificationCenter defaultCenter] postNotificationName: @"RenderedFrame"
-                                                        object: [[NSDate date] retain]];
+                                                        object: curDate];
 }
 
 - (UIImage*) captureScreen

@@ -84,16 +84,16 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 300689406;
-			PBXWorkspaceStateSaveDate = 300689406;
+			PBXPerProjectTemplateStateSaveDate = 301789975;
+			PBXWorkspaceStateSaveDate = 301789975;
 		};
 		perUserProjectItems = {
-			3776244111EC295100536A63 /* XCBuildMessageTextBookmark */ = 3776244111EC295100536A63 /* XCBuildMessageTextBookmark */;
-			3776244611EC296A00536A63 /* XCBuildMessageTextBookmark */ = 3776244611EC296A00536A63 /* XCBuildMessageTextBookmark */;
-			3776264611EC68C800536A63 /* PBXTextBookmark */ = 3776264611EC68C800536A63 /* PBXTextBookmark */;
-			3776264711EC68C800536A63 /* PBXTextBookmark */ = 3776264711EC68C800536A63 /* PBXTextBookmark */;
-			377D43B011E042B100C0AFBE /* PBXTextBookmark */ = 377D43B011E042B100C0AFBE /* PBXTextBookmark */;
-			377D43B111E042B100C0AFBE /* PBXBookmark */ = 377D43B111E042B100C0AFBE /* PBXBookmark */;
+			3776244111EC295100536A63 = 3776244111EC295100536A63 /* PBXTextBookmark */;
+			3776244611EC296A00536A63 = 3776244611EC296A00536A63 /* PBXTextBookmark */;
+			3776264611EC68C800536A63 = 3776264611EC68C800536A63 /* PBXTextBookmark */;
+			3776264711EC68C800536A63 = 3776264711EC68C800536A63 /* PBXTextBookmark */;
+			377D43B011E042B100C0AFBE = 377D43B011E042B100C0AFBE /* PBXTextBookmark */;
+			377D43B111E042B100C0AFBE = 377D43B111E042B100C0AFBE /* PBXBookmark */;
 		};
 		sourceControlManager = 37027E8C11E03CDD00B201CD /* Source Control */;
 		userBuildSettings = {
@@ -153,20 +153,18 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	3776244111EC295100536A63 /* XCBuildMessageTextBookmark */ = {
+	3776244111EC295100536A63 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		comments = "Initializer element is not constant";
 		fRef = 08FB7796FE84155DC02AAC07 /* TextureMaker.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
 		rLoc = 229;
 		rType = 1;
 	};
-	3776244611EC296A00536A63 /* XCBuildMessageTextBookmark */ = {
+	3776244611EC296A00536A63 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		comments = "Initializer element is not constant";
 		fRef = 08FB7796FE84155DC02AAC07 /* TextureMaker.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
 		rLoc = 229;
 		rType = 1;

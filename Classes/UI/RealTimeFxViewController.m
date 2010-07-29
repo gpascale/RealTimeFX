@@ -61,6 +61,8 @@ static int numberOfEffectsViewed = 0;
 @synthesize vfpsLabel;
 @synthesize sliderOne;
 @synthesize sliderTwo;
+@synthesize toggleCameraButton;
+@synthesize effectNameTextField;
 @synthesize selectorViewController;
 @synthesize capturePreviewViewController;
 @synthesize upgradeTeaserViewController;
@@ -163,7 +165,19 @@ static int numberOfEffectsViewed = 0;
     [self.vfpsLabel removeFromSuperview];
     self.vfpsLabel = nil;
     
-#endif    
+#endif
+    
+    if (![camera hasMultipleCameras])
+    {
+        [self.toggleCameraButton setHidden: YES];
+    }
+    
+    printf("%d toolbar items\n", [self.toolBar.items count]);
+    [[self.toolBar.items objectAtIndex: 0] setAccessibilityLabel: @"previousButton"];
+    [[self.toolBar.items objectAtIndex: 2] setAccessibilityLabel: @"effectTitle"];
+    [[self.toolBar.items objectAtIndex: 4] setAccessibilityLabel: @"nextButton"];
+    
+    self.effectNameTextField.text = effectManager.activeEffectName;
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -242,6 +256,11 @@ static int numberOfEffectsViewed = 0;
                                   }
      
     ];        
+}
+
+- (IBAction) didTapToggleCameraButton
+{
+    [camera toggleCameras];
 }
 
 - (IBAction) showEffectSelectorView
@@ -331,6 +350,8 @@ static int numberOfEffectsViewed = 0;
     withEffectVariable: [effectManager.activeEffect effectVariableAtIndex: 1]];
         
     [self startHideUITimer];
+    
+    self.effectNameTextField.text = effectManager.activeEffectName;
 }
 
 - (void) updateSlider: (UISlider*) slider
@@ -434,6 +455,10 @@ static int numberOfEffectsViewed = 0;
     newEffectNameLabelFrame.origin.y = toolBar.frame.size.height;
     effectNameLabel.frame = newEffectNameLabelFrame;
     
+    CGRect newToggleCameraButtonFrame = toggleCameraButton.frame;
+    newToggleCameraButtonFrame.origin.x = self.view.frame.size.width - toggleCameraButton.frame.size.width;
+    toggleCameraButton.frame = newToggleCameraButtonFrame;
+    
     if (animated)
     {
         [UIView commitAnimations];
@@ -469,6 +494,10 @@ static int numberOfEffectsViewed = 0;
     CGRect newEffectNameLabelFrame = effectNameLabel.frame;
     newEffectNameLabelFrame.origin.y = -effectNameLabel.frame.size.height;
     effectNameLabel.frame = newEffectNameLabelFrame;
+    
+    CGRect newToggleCameraButtonFrame = toggleCameraButton.frame;
+    newToggleCameraButtonFrame.origin.x = self.view.frame.size.width;
+    toggleCameraButton.frame = newToggleCameraButtonFrame;
     
     if (animated)
     {

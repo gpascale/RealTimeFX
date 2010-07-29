@@ -28,6 +28,7 @@
 @synthesize videoDimensions;
 @synthesize videoType;
 @synthesize previousTimestamp;
+@synthesize videoInput;
 
 #undef MAX
 #undef MIN
@@ -38,13 +39,29 @@
 {
 	if ((self = [super init]))
 	{
+        // Find out which cameras we have on this device
+        NSArray* devices = [AVCaptureDevice devicesWithMediaType: AVMediaTypeVideo];
+        for (AVCaptureDevice* device in devices)
+        {
+            if([device position] == AVCaptureDevicePositionBack)
+            {
+                backCamera = device;
+            }
+            else if ([device position] == AVCaptureDevicePositionFront)
+            {
+                frontCamera = device;
+            }
+        }
+        NSAssert(backCamera != nil, @"Back camera must exist"); 
+        
 		// Setup our Capture Session.
 		avSession = [[AVCaptureSession alloc] init];
 		if(![self configureAVSession])
 		{
 			return nil;
-		}		
-		
+		}				        
+        
+        // Start capturing
 		[avSession startRunning];
 	}
 	return self;
@@ -75,10 +92,82 @@
     [avSession stopRunning];
 }
 
+- (BOOL) hasMultipleCameras
+{
+    return backCamera != nil && frontCamera != nil;
+}
+
+- (void) toggleCameras
+{
+    if(frontCamera != nil && activeCamera == backCamera)
+    {
+        printf("activation start\n");
+        [self activateCameraWithPosition: AVCaptureDevicePositionFront];
+        printf("activation done\n");
+    }
+    else if (backCamera != nil && activeCamera == frontCamera)
+    {
+        printf("activation start\n");
+        [self activateCameraWithPosition: AVCaptureDevicePositionBack];
+        printf("activation done\n");
+    }
+    else
+    {
+        NSAssert(NO, @"Unable to toggle camera");
+    }    
+}
+
+- (void) activateCameraWithPosition: (AVCaptureDevicePosition) position
+{
+    NSError* error;
+    AVCaptureDeviceInput* newInput = nil;
+    
+    switch (position)
+    {
+        case AVCaptureDevicePositionFront:
+            newInput = [[AVCaptureDeviceInput alloc] initWithDevice: frontCamera error: &error];
+            activeCamera = frontCamera;
+            break;            
+        case AVCaptureDevicePositionBack:
+            newInput = [[AVCaptureDeviceInput alloc] initWithDevice: backCamera error: &error];
+            activeCamera = backCamera;
+            break;
+        default:
+            NSAssert(NO, @"Invalid camera selected");
+            break;
+    }
+    
+    if (newInput != nil)
+    {
+        [avSession stopRunning];
+        
+        [avSession beginConfiguration];
+        
+        [avSession removeInput: self.videoInput];
+        if([avSession canAddInput: newInput])
+        {
+            [avSession addInput: newInput];
+            [self setVideoInput: newInput];            
+        }
+        else
+        {
+            [avSession addInput: self.videoInput];
+        }
+
+        [avSession commitConfiguration];
+        
+        [self performSelector: @selector(startCapturing)
+                        withObject: nil
+                        afterDelay: 0.5f];
+    } 
+}
+
 - (void) captureOutput: (AVCaptureOutput*) captureOutput
  didOutputSampleBuffer: (CMSampleBufferRef) sampleBuffer
 	    fromConnection: (AVCaptureConnection*) connection
 {
+    NSAssert([NSThread isMainThread], @"");
+    
     NSDate* processBegin = [NSDate date];
     
 	CMTime timestamp = CMSampleBufferGetPresentationTimeStamp( sampleBuffer );
@@ -116,7 +205,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName: @"ProcessedVideoFrame" object: [[NSDate date] retain]];
     
     NSLog(@"Processed Frame in %f seconds", [[NSDate date] timeIntervalSinceDate: processBegin]);
-
 }
 
 - (BOOL) configureAVSession
@@ -124,26 +212,7 @@
 	[avSession beginConfiguration];
 		
 	//-- Set a preset session size. 
-	[avSession setSessionPreset: AVCaptureSessionPresetMedium];
-	
-	//-- Creata a video device and input from that Device.  Add the input to the capture session.
-	AVCaptureDevice* videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-	if(videoDevice == nil)
-	{
-		return NO;
-	}	
-	//-- Add the device to the session.
-	NSError* error;
-	AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
-	if(error)
-	{
-		return NO;
-	}	
-	[avSession addInput:input];
-	
-    // Create a still-image output so we can take pictures
-    stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-    [avSession addOutput: stillImageOutput];
+	[avSession setSessionPreset: AVCaptureSessionPresetMedium];           
     
 	//-- Create the output for the capture session.  We want 32bit BRGA
 	AVCaptureVideoDataOutput* dataOutput = [[[AVCaptureVideoDataOutput alloc] init] autorelease];
@@ -178,6 +247,8 @@
     dataOutput.minFrameDuration = CMTimeMake(1, 24);
     
 	[avSession commitConfiguration];
+    
+    [self activateCameraWithPosition: AVCaptureDevicePositionBack];
 	
 	return YES;
 }

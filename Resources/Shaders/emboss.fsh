@@ -36,6 +36,5 @@ void main()
                       dot(xMatrix[1], colorMat[1]) + 
                       dot(xMatrix[2], colorMat[2]);
 	
-    gl_FragColor = texture2D(u_sampler0, v_texCoords) * combColor;
     gl_FragColor = vec4(0.5, 0.5, 0.5, 0.0) + vec4(combColor, combColor, combColor, 1.0);
 }

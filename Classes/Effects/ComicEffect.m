@@ -37,6 +37,8 @@
 		GLCHECK(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
 		GLCHECK(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
 		GLCHECK(glBindTexture(GL_TEXTURE_2D, 0));
+        
+        free(pixels);
 	}
 	
 	return self;

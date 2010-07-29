@@ -13,6 +13,8 @@
 - (void) activate
 {
     power = -0.5f;
+    GLCHECK(u_power = glGetUniformLocation(self.shaderProgram, "u_power"));
+    assert(u_power >= 0);
 }
 
 - (void) willRenderFrame
@@ -24,7 +26,7 @@
 {
     if(index == 0)
     {
-        return [[[EffectVariable alloc] initWithMinValue: -0.3f maxValue: -0.8f defaultValue: -0.5f] autorelease];
+        return [[[EffectVariable alloc] initWithMinValue: -0.3f maxValue: -0.7f defaultValue: -0.5f] autorelease];
     }
     else
     {

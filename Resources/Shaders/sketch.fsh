@@ -39,9 +39,9 @@ void main()
 
     vec4 paperColor = vec4(texture2D(u_sampler1, v_texCoords).xyz, 1.0);
 
-    float edgeMult = max(0.0, min(1.0, ceil(edgeContribution - 0.3)));
+    float edgeMult = max(0.0, min(1.0, ceil(edgeContribution - 0.2)));
     
-    float edgeColor = max(0.3, 1.0 - (2.0 * edgeContribution * edgeContribution));
+    float edgeColor = max(0.2, 1.0 - (2.0 * edgeContribution * edgeContribution));
     
     gl_FragColor = (edgeMult * vec4(edgeColor, edgeColor, edgeColor, 1.0))
                     + ((1.0 - edgeMult) * paperColor);    

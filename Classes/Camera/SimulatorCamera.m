@@ -54,8 +54,8 @@
 	GLCHECK(glBindTexture(GL_TEXTURE_2D, m_texture));
 	
 	int width, height, bufferWidth, bufferHeight;
-	UIImage* image = [[UIImage alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"Tillicum" ofType: @"jpg"]];
-	const void* pixels = decodeImage(image, &width, &height);		
+	UIImage* image = [[UIImage alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"image" ofType: @"JPG"]];
+    const void* pixels = decodeImage(image, &width, &height);		
  
 	GLCHECK(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels));
 	
@@ -67,6 +67,8 @@
 	
 	imageSize = CGSizeMake(width, height);
 	textureSize = CGSizeMake(bufferWidth, bufferHeight);
+    
+    free(pixels);
 }
 
 - (void) takePicture
@@ -80,6 +82,16 @@
 }
 
 - (void) stopCapturing
+{
+    
+}
+
+- (BOOL) hasMultipleCameras
+{
+    return NO;
+}
+
+- (void) toggleCameras
 {
     
 }

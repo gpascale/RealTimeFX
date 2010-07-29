@@ -156,9 +156,6 @@
         cell = [objs objectAtIndex: 0];
     }
     
-    NSString* dummyThumbnailPath = [[NSBundle mainBundle] pathForResource: @"EffectThumbnailPlaceholder"
-                                                                   ofType: @"png"];
-    
     for(int i = 0; i < 3; ++i)
     {
         const int index = 3 * row + i;
@@ -169,9 +166,10 @@
         }
         
         NSString* effectName = [effectManager.effectNames objectAtIndex: index];
+        
         [cell setEffectForIndex: i
-                       withName: effectName
-                      thumbnail: dummyThumbnailPath];
+                       withName: effectName];
+        
         if([effectName isEqualToString: effectManager.activeEffectName])
         {
             [cell setSelection: i];

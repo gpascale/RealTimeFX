@@ -40,6 +40,7 @@ using namespace std;
     
     if(lastFrameTime)
     {
+        
         const float frameDuration = [frameTime timeIntervalSinceDate: lastFrameTime];
         if(lastNFrames.size() >= 5)
         {
@@ -48,7 +49,8 @@ using namespace std;
         lastNFrames.push_back(frameDuration);
     }
     
-    lastFrameTime = frameTime;
+    [lastFrameTime release];
+    lastFrameTime = [frameTime retain];
     
     const int nFramesInAverage = lastNFrames.size();
     float totalTime = 0.0f;

@@ -36,6 +36,11 @@ void main()
                       dot(xMatrix[1], colorMat[1]) + 
                       dot(xMatrix[2], colorMat[2]);
 	
-    combColor = 1.0 - min(1.0, 2.0 * combColor * combColor);
-    gl_FragColor = texture2D(u_sampler0, v_texCoords) * combColor;
+    gl_FragColor = texture2D(u_sampler0, v_texCoords);
+    
+    if(combColor > 0.3)
+    {
+        combColor = 1.0 - min(1.0, 2.0 * combColor * combColor);
+        gl_FragColor = gl_FragColor * combColor;
+    }
 }
