@@ -10,3 +10,5 @@
 #endif
 
 #define SHOWFPS 0
+
+//#define TARGET_IPHONE_SIMULATOR 1

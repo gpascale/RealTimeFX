@@ -202,7 +202,7 @@ NSDate* curDate = nil;
     CGContextRelease(bitmapContext);
     CGImageRelease(cgImage);
     
-    return ret;
+    return [ret autorelease];
 }
 
 - (void) setEffect: (Effect*) effect

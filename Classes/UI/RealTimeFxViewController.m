@@ -16,6 +16,9 @@
 #import "Effect.h"
 #import "FPSCalculator.h"
 
+#import "FlurryAPI.h"
+#import "LocalyticsSession.h"
+
 #if TARGET_IPHONE_SIMULATOR
     #import "SimulatorCamera.h"
 #else
@@ -255,12 +258,32 @@ static int numberOfEffectsViewed = 0;
                                       [self stopRendering];
                                   }
      
-    ];        
+    ];
+    
+    @try
+    {
+        NSString* effectNameWithoutSpaces = [effectManager.activeEffectName stringByReplacingOccurrencesOfString: @" "
+                                                                                                      withString: @""];
+        
+        NSDictionary* logInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 effectNameWithoutSpaces, @"ActiveEffect",
+                                 [NSNumber numberWithBool: [Store hasEffectPackOne]], @"HasFXPack1", 
+                                 nil];
+        
+        [FlurryAPI logEvent: @"TookPicture"
+             withParameters: logInfo];
+    }             
+    @catch (NSException*e)
+    {
+        NSAssert(NO, @"Failed to upload log to mobclix");
+    }
+    
 }
 
 - (IBAction) didTapToggleCameraButton
 {
     [camera toggleCameras];
+    [self startHideUITimer];
 }
 
 - (IBAction) showEffectSelectorView
@@ -516,7 +539,7 @@ static int numberOfEffectsViewed = 0;
      
     [UIView animateWithDuration: 0.5
                           delay: 0.0
-                        options: NULL
+                        options: 0
                      animations: ^{
                                       capturePreviewViewController.view.alpha = 0.0f;
                                       self.view.alpha = 1.0f;
@@ -588,6 +611,7 @@ static const float sliderOneX = 212.0f;
 
 - (void) didProcessVideoFrame: (NSNotification*) notification
 {
+    [notification.object release];
 #if SHOWFPS
     if (frame == 0)
     {

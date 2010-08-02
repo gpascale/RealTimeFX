@@ -38,9 +38,7 @@ void main()
 	
     gl_FragColor = texture2D(u_sampler0, v_texCoords);
     
-    if(combColor > 0.3)
-    {
-        combColor = 1.0 - min(1.0, 2.0 * combColor * combColor);
-        gl_FragColor = gl_FragColor * combColor;
-    }
+
+    combColor = 1.0 - min(1.0, 2.0 * combColor * combColor);
+    gl_FragColor = gl_FragColor * combColor;
 }

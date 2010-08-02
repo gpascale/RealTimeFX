@@ -48,10 +48,6 @@
     BOOL isRecording;    
 }
 
-- (BOOL) hasFrontCamera;
-
-- (void) toggleCameras;
-
 - (void) activateCameraWithPosition: (AVCaptureDevicePosition) position;
 
 // AVCaptureVideoDataOutputSampleBufferDelegate methods
@@ -67,8 +63,6 @@ didStartRecordingToOutputFileAtURL: (NSURL*) fileURL
 didFinishRecordingToOutputFileAtURL: (NSURL*) fileURL
        fromConnections: (NSArray*) connections
 error: (NSError*) error;
-
-- (void) takePicture;
 
 - (GLuint) getTexture;
 - (GLuint) getDisplacementTexture;

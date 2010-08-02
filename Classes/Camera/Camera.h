@@ -16,8 +16,6 @@
 - (void) startCapturing;
 - (void) stopCapturing;
 
-- (void) takePicture;
-
 // support for front + back cameras
 - (BOOL) hasMultipleCameras;
 - (void) toggleCameras;

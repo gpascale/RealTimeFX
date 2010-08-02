@@ -12,12 +12,20 @@
 @interface Store : NSObject <SKProductsRequestDelegate,
                              SKPaymentTransactionObserver>
 {
-
+    BOOL deviceIsAuthorizedToGetFXPackOneForFree;
+    
+    NSURLConnection* mConnection;
+    NSMutableData* mResponseData;
+    
+    NSMutableDictionary* featurePriceObjects;
+    NSMutableDictionary* featurePriceCallbacks;
 }
 
 + (Store*) instance;
 
 + (BOOL) hasEffectPackOne;
+
+- (void) queryPricesForFeatures: (NSSet*) featureNames;
 
 - (void) makePurchase;
 

@@ -37,12 +37,13 @@ void* decodeImage(UIImage* imageToDecode,
                                                        8,
                                                        *widthOut * 4 * sizeof(unsigned char),
                                                        colorSpace,            
-                                                       kCGImageAlphaPremultipliedLast);
+                                                       kCGImageAlphaPremultipliedLast);        
     
     CGContextDrawImage(spriteContext, 
                        CGRectMake(0.0f, 0.0f, *widthOut, *heightOut),
                        cgImage);
     
+    CGColorSpaceRelease(colorSpace);
     CGContextRelease(spriteContext);
     
     return (void*) buffer;
@@ -87,6 +88,7 @@ void* decodeImageToPow2Buffer(UIImage* imageToDecode,
                        CGRectMake(0.0f, *bufferHeightOut - *heightOut, *widthOut, *heightOut),
                        cgImage);
     
+    CGColorSpaceRelease(colorSpace);
     CGContextRelease(spriteContext);
     
     return (void*) buffer;

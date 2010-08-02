@@ -54,6 +54,20 @@
     self.backgroundView = backgroundView;
 }
 
+- (void) dealloc
+{
+    self.buttonLeft = nil;
+    self.buttonCenter = nil;
+    self.buttonRight = nil;
+    self.labelLeft = nil;
+    self.labelCenter = nil;
+    self.labelRight = nil;
+    self.imageLeft = nil;
+    self.imageCenter = nil;
+    self.imageRight = nil;
+    [super dealloc];
+}
+
 - (void) setEffectForIndex: (NSInteger) index
                   withName: (NSString*) effectName
 {

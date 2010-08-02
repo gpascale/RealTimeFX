@@ -13,8 +13,10 @@
 #import "UpgradeTeaserViewController.h"
 #import "Store.h"
 #import "Logger.h"
-#import "Mobclix.h"
 #import "ThumbnailCache.h"
+
+#import "FlurryAPI.h"
+#import "LocalyticsSession.h"
 
 @implementation AppDelegate
 
@@ -35,7 +37,7 @@ static BOOL showedUpgradeTeaserViewOnLaunch = NO;
     [Store instance];
  
 // Can't upgrade on simulator, so just make it the full version
-#if TARGET_IPHONE_SIMULATOR
+#if 0//TARGET_IPHONE_SIMULATOR
     [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithBool: YES] 
                                               forKey: @"HasEffectPackOne"];
 #endif    
@@ -69,8 +71,15 @@ static BOOL showedUpgradeTeaserViewOnLaunch = NO;
     
     wasRendering = NO;
     
-    //[Mobclix startWithApplicationId: @"6C98D739-A8DA-48D3-8938-534FE2920C03"];
-    
+    @try
+    {
+        [FlurryAPI startSession: @"CZPJASWUCD4426KDM5RM"];
+    }
+    @catch (NSException * e)
+    {
+        NSAssert(NO, @"Failed to start analytics");
+    }
+        
     return YES;
 }
 

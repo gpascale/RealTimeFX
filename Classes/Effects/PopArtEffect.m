@@ -27,8 +27,8 @@
 		GLCHECK(glBindTexture(GL_TEXTURE_2D, texture));
         
 		int width, height;
-		UIImage* image = [[UIImage imageNamed: @"sketch.png"] autorelease];
-		const void* pixels = decodeImage(image, &width, &height);		
+		UIImage* image = [UIImage imageNamed: @"sketch.png"];
+		unsigned char* pixels = decodeImage(image, &width, &height);		
         
 		GLCHECK(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels));
         

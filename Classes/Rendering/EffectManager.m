@@ -39,7 +39,12 @@ static NSArray* ep1EffectNames;
 NSDictionary* createEffectDictionary()
 {
     NSDictionary* ret = [[NSDictionary alloc] initWithObjectsAndKeys: 
-                                       
+          
+        [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
+                                          fragmentShaderName: @"basic"
+                                                 effectClass: [Effect class]] autorelease],
+        @"None",
+                         
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"grayscale"
                                                  effectClass: [Effect class]] autorelease],
@@ -121,6 +126,11 @@ NSDictionary* createEffectDictionary()
                                           fragmentShaderName: @"spectrum"
                                                  effectClass: [SpectrumEffect class]] autorelease],
         @"Spectrum",
+                         
+        [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
+                                          fragmentShaderName: @"mirror"
+                                                 effectClass: [Effect class]] autorelease],
+        @"Mirror",
         
         (id)nil
     ];
@@ -134,8 +144,9 @@ static NSArray* createFreeEffectNames()
                            @"Sepia",
                            @"Negative",
                            @"Edge",
-                           @"Glow",
+                           @"Posterize",
                            @"Squeeze",
+                           @"None",
                            nil];
     return ret;
 }
@@ -144,11 +155,11 @@ NSArray* createEP1EffectNames()
 {
     NSArray* ret = [[NSArray alloc] initWithObjects:
                            @"Sepia", @"Black and White", @"Negative",
-                           @"Edge", @"Glow", @"Heat Sensor",
-                           @"Posterize", @"Film", @"Motion Blur",
-                           @"Squeeze", @"Stretch", @"Cartoon",
-                           @"Emboss", @"Newspaper", @"Sketch", @"Spectrum",
-                    (id) nil];
+                           @"Edge", @"Posterize", @"Heat Sensor",
+                           @"Glow", @"Film", @"Motion Blur",
+                           @"Squeeze", @"Stretch", @"Mirror", @"Cartoon",
+                           @"Emboss", @"Newspaper", @"Sketch", @"Spectrum", @"None",
+                           (id) nil];
     return ret;
 }
 

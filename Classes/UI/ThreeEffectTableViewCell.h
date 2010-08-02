@@ -36,10 +36,7 @@ typedef enum ButtonTag_t
     
     UIImageView* imageLeft;
     UIImageView* imageCenter;
-    UIImageView* imageRight;
-    
-    // Selection UI
-    UIView* selectionView;
+    UIImageView* imageRight;    
 }
 
 @property (nonatomic, retain) IBOutlet UIButton* buttonLeft;

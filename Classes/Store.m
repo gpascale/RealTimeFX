@@ -8,11 +8,18 @@
 
 #import "Store.h"
 
+@interface Store (Private)
+
+- (void) checkToSeeIfDeviceIsAuthorizedToGetFXPackOneForFree;
+- (void) _activateFXPackOne: (SKPaymentTransaction*) transaction;
+
+@end
+
 @implementation Store
 
 static Store* storeInstance;
 
-static NSString* effectPackOneProductId = @"com.gregpascale.rtfx.ep1";
+static NSString* effectPackOneProductId = @"com.gregpascale.rtfx2.fxp1";
 
 + (void) initialize
 {
@@ -29,6 +36,12 @@ static NSString* effectPackOneProductId = @"com.gregpascale.rtfx.ep1";
     if (self = [super init])
     {
         [[SKPaymentQueue defaultQueue] addTransactionObserver: self];
+        
+        if(![Store hasEffectPackOne])
+        {
+            deviceIsAuthorizedToGetFXPackOneForFree = NO;
+            [self checkToSeeIfDeviceIsAuthorizedToGetFXPackOneForFree];
+        }
     }
     
     return self;
@@ -41,10 +54,54 @@ static NSString* effectPackOneProductId = @"com.gregpascale.rtfx.ep1";
            [(NSNumber*)value boolValue] == YES;
 }
 
+- (void) queryPricesForFeatures: (NSSet*) featureNames
+{
+    for(NSString* s in featureNames)
+    {
+        NSLog(@"Lookup %@", s);
+    }
+	SKProductsRequest *request= [[SKProductsRequest alloc] initWithProductIdentifiers:featureNames];
+	request.delegate = self;
+	[request start];
+}
+
+- (void)productsRequest:(SKProductsRequest *)request
+     didReceiveResponse:(SKProductsResponse *)response
+{
+    NSMutableDictionary* priceDictionary = [[NSMutableDictionary alloc] init];
+    
+    for(SKProduct* product in [response products])
+	{
+		NSLog(@"Feature: %@, Cost: %f, ID: %@",[product localizedTitle],
+			  [[product price] doubleValue], [product productIdentifier]);
+                
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [numberFormatter setLocale:product.priceLocale];
+        NSString *formattedPriceString = [numberFormatter stringFromNumber:product.price];
+        
+        [priceDictionary setObject:formattedPriceString forKey:[product productIdentifier]];
+	}
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"PricesFound"
+                                                        object: self
+                                                      userInfo: priceDictionary];
+    
+	[request autorelease];
+}
+
 - (void) makePurchase
 {
     NSLog(@"Make purchase called");
-    if ([SKPaymentQueue canMakePayments])
+    
+    if (deviceIsAuthorizedToGetFXPackOneForFree)
+    {
+        // activate FX Pack 1
+        [self _activateFXPackOne: nil];
+        return;
+    }    
+    else if ([SKPaymentQueue canMakePayments])
     {
         SKPayment *payment = [SKPayment paymentWithProductIdentifier: effectPackOneProductId];
         [[SKPaymentQueue defaultQueue] addPayment: payment];
@@ -53,8 +110,8 @@ static NSString* effectPackOneProductId = @"com.gregpascale.rtfx.ep1";
     {
         [[NSNotificationCenter defaultCenter] postNotificationName: @"PurchaseFailed"
                                                             object: nil];
-        NSString* errorMessage = @"This iPhone reports that it is unable to make purchases."
-                                 @"Are parental controls enabled?";
+        NSString* errorMessage = @"The iPhone reports that it is unable to make purchases."
+                                 @"This could be because you do not have network access or parental controls are enabled";
         UIAlertView* errorView = [[UIAlertView alloc] initWithTitle: @"Error"
                                                             message: errorMessage
                                                            delegate: nil
@@ -62,20 +119,6 @@ static NSString* effectPackOneProductId = @"com.gregpascale.rtfx.ep1";
                                                   otherButtonTitles: nil];
         [errorView show];
     }
-}
-
-#pragma mark SKProductsRequestDelegate methods
-- (void) productsRequest: (SKProductsRequest*) request
-      didReceiveResponse: (SKProductsResponse*) response
-{
-    NSLog(@"Received response: %@", response);
-    NSLog(@"Found %d products", [response.products count]);    
-    for(id obj in response.invalidProductIdentifiers)
-    {
-        NSLog(@"Invalid product id: %@", obj);
-    }
-    SKPayment *payment = [SKPayment paymentWithProductIdentifier: effectPackOneProductId];
-    [[SKPaymentQueue defaultQueue] addPayment: payment];
 }
 
 #pragma mark SKPaymentTransactionObserver methods
@@ -88,28 +131,7 @@ static NSString* effectPackOneProductId = @"com.gregpascale.rtfx.ep1";
         {
             case SKPaymentTransactionStatePurchased:
             {
-                [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithBool: YES]
-                                                          forKey: @"HasEffectPackOne"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                id value = [[NSUserDefaults standardUserDefaults] objectForKey: @"HasEffectPackOne"];
-                NSAssert([value isKindOfClass: [NSNumber class]], @"");
-                NSAssert([(NSNumber*)value boolValue] == YES, @"");
-                
-                [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
-                
-                NSString* successMessage = @"You successfully purchased Effect Pack 1. Please restart the app for the changes"
-                                           @" to take effect.";
-                UIAlertView* successAlert = [[UIAlertView alloc] initWithTitle: @""
-                                                                       message: successMessage
-                                                                      delegate: nil
-                                                             cancelButtonTitle: @"Ok"
-                                                             otherButtonTitles: nil];
-                [successAlert show];
-                
-                [[NSNotificationCenter defaultCenter] postNotificationName: @"PurchaseSucceeded"
-                                                                    object: nil];
-                
+                [self _activateFXPackOne: transaction];
                 break;
             }
             case SKPaymentTransactionStateFailed:
@@ -145,6 +167,97 @@ static NSString* effectPackOneProductId = @"com.gregpascale.rtfx.ep1";
             default:
                 return;
         }        
+    }
+}
+
+- (void) _activateFXPackOne: (SKPaymentTransaction*) transaction
+{
+    [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithBool: YES]
+                                              forKey: @"HasEffectPackOne"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    id value = [[NSUserDefaults standardUserDefaults] objectForKey: @"HasEffectPackOne"];
+    NSAssert([value isKindOfClass: [NSNumber class]], @"");
+    NSAssert([(NSNumber*)value boolValue] == YES, @"");
+    
+    if (transaction)
+    {
+        [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+    }
+    
+    NSString* successMessage = @"Thanks for buying FX Pack 1. Please restart the app for your purchase to take effect.";
+    UIAlertView* successAlert = [[UIAlertView alloc] initWithTitle: @""
+                                                           message: successMessage
+                                                          delegate: nil
+                                                 cancelButtonTitle: @"Ok"
+                                                 otherButtonTitles: nil];
+    [successAlert show];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"PurchaseSucceeded"
+                                                        object: nil];
+    
+}
+         
+- (void) checkToSeeIfDeviceIsAuthorizedToGetFXPackOneForFree
+{
+	NSString *uniqueID = [[UIDevice currentDevice] uniqueIdentifier];
+	// check udid and featureid with developer's server
+	
+	NSURL *url = [NSURL URLWithString: @"http://gregpascale.nfshost.com/fxpack1/checkUDID.php"];
+	
+	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url 
+                                                              cachePolicy:NSURLRequestReloadIgnoringCacheData 
+                                                          timeoutInterval:20];
+	
+	[theRequest setHTTPMethod:@"POST"];
+	[theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	
+	NSString *postData = [NSString stringWithFormat:@"udid=%@", uniqueID];
+	
+	NSString *length = [NSString stringWithFormat:@"%d", [postData length]];	
+	[theRequest setValue:length forHTTPHeaderField:@"Content-Length"];	
+	
+	[theRequest setHTTPBody:[postData dataUsingEncoding:NSASCIIStringEncoding]];
+    
+    NSLog(@"Device id is %@", uniqueID);
+    
+    mResponseData = [[NSMutableData alloc] init];
+    mConnection = [[NSURLConnection alloc] initWithRequest: theRequest delegate: self];
+}
+
+#pragma mark NSURLConnectionDelegate methods
+
+- (void) connectionDidFinishLoading: (NSURLConnection *) connection
+{    
+    NSString *responseString = [[NSString alloc] initWithData:mResponseData encoding:NSASCIIStringEncoding];
+    NSString* responseStringClean = [responseString stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    NSLog(@"response was \'%@\'", responseStringClean);
+    
+	if([responseStringClean isEqualToString:@"YES"])		
+	{
+		deviceIsAuthorizedToGetFXPackOneForFree = YES;
+	}
+	
+	[responseString release];
+    [mResponseData release];
+    [connection release];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [mResponseData appendData: data];
+}
+
+static int failCount = 0;
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{        
+    [mResponseData release];
+    mResponseData = nil;
+    
+    if (++failCount < 3)
+    {
+        [self checkToSeeIfDeviceIsAuthorizedToGetFXPackOneForFree];
     }
 }
 

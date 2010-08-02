@@ -13,13 +13,16 @@
 {
     UIView* maskingView;
     UIActivityIndicatorView* spinner;
-    BOOL hasBeenShown;
+    UIBarButtonItem* titleBarButtonItem;
+    
+    BOOL hasBeenShown;    
 }
 
 - (BOOL) hasBeenShown;
 - (IBAction) didClickYesButton;
 - (IBAction) didClickNoButton;
 
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* titleBarButtonItem;
 @property (nonatomic, retain) IBOutlet UIView* maskingView;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* spinner;
 

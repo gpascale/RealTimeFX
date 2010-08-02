@@ -28,7 +28,7 @@
         
 		int width, height;
 		UIImage* image = [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"sketch" ofType: @"png"]];
-		const void* pixels = decodeImage(image, &width, &height);		
+		void* pixels = decodeImage(image, &width, &height);		
         
 		GLCHECK(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels));
         

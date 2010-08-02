@@ -125,11 +125,11 @@
     switch (position)
     {
         case AVCaptureDevicePositionFront:
-            newInput = [[AVCaptureDeviceInput alloc] initWithDevice: frontCamera error: &error];
+            newInput = [[[AVCaptureDeviceInput alloc] initWithDevice: frontCamera error: &error] autorelease];
             activeCamera = frontCamera;
             break;            
         case AVCaptureDevicePositionBack:
-            newInput = [[AVCaptureDeviceInput alloc] initWithDevice: backCamera error: &error];
+            newInput = [[[AVCaptureDeviceInput alloc] initWithDevice: backCamera error: &error] autorelease];
             activeCamera = backCamera;
             break;
         default:
@@ -168,8 +168,6 @@
 {
     NSAssert([NSThread isMainThread], @"");
     
-    NSDate* processBegin = [NSDate date];
-    
 	CMTime timestamp = CMSampleBufferGetPresentationTimeStamp( sampleBuffer );
 	if (CMTIME_IS_VALID( self.previousTimestamp ))
 		self.videoFrameRate = 1.0 / CMTimeGetSeconds( CMTimeSubtract( timestamp, self.previousTimestamp ) );
@@ -202,9 +200,7 @@
     
 	CVPixelBufferUnlockBaseAddress( pixelBuffer, 0 );
     
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"ProcessedVideoFrame" object: [[NSDate date] retain]];
-    
-    NSLog(@"Processed Frame in %f seconds", [[NSDate date] timeIntervalSinceDate: processBegin]);
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"ProcessedVideoFrame" object: [[NSDate date] retain]];    
 }
 
 - (BOOL) configureAVSession

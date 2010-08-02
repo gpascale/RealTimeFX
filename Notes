@@ -41,10 +41,10 @@ Functionality:
     DONE - Keep rendering/capturing at times when shouldn't. Check - showing camera preview, selector view, teaser view
     DONE - Don't start rendering after coming back from an ad unless we we were rendering when the add started
         DONE - Same deal with this applicationDidBecomeActive guy
-    Actual thumbnails once decided on final free/paid shader lists.
+    DONE - Actual thumbnails once decided on final free/paid shader lists.
         What image to use?
-    Finalize free/paid shader list
-    Change selector outline to be white - more consistent
+    DONE - Finalize free/paid shader list
+    DONE - Change selector outline to be white - more consistent
     Thank CGTextures
         
 StoreKit:

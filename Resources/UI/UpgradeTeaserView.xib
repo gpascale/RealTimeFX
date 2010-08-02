@@ -354,7 +354,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Buy FX Pack 1 to unlock more than 10 new effects, including the ones above, and remove ads!</string>
+						<string key="IBUIText">Buy FX Pack 1 to unlock 12 new effects, including the ones above, and remove ads!</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -445,6 +445,14 @@
 						<reference key="destination" ref="995204432"/>
 					</object>
 					<int key="connectionID">13</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">titleBarButtonItem</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="997080124"/>
+					</object>
+					<int key="connectionID">36</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -692,7 +700,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">35</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -738,11 +746,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>maskingView</string>
 							<string>spinner</string>
+							<string>titleBarButtonItem</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIView</string>
 							<string>UIActivityIndicatorView</string>
+							<string>UIBarButtonItem</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -751,6 +761,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>maskingView</string>
 							<string>spinner</string>
+							<string>titleBarButtonItem</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -761,6 +772,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">spinner</string>
 								<string key="candidateClassName">UIActivityIndicatorView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">titleBarButtonItem</string>
+								<string key="candidateClassName">UIBarButtonItem</string>
 							</object>
 						</object>
 					</object>
@@ -1045,7 +1060,7 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{86, 86}</string>
+				<string>{16, 16}</string>
 				<string>{134, 51}</string>
 				<string>{134, 51}</string>
 			</object>

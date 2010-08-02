@@ -25,6 +25,7 @@
 
 @implementation UpgradeTeaserViewController
 
+@synthesize titleBarButtonItem;
 @synthesize maskingView;
 @synthesize spinner;
 
@@ -41,6 +42,11 @@
         [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(onPurchaseFailed:)
                                                      name: @"PurchaseFailed"
+                                                   object: nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(pricesFound:)
+                                                     name: @"PricesFound"
                                                    object: nil];
         
         hasBeenShown = NO;
@@ -69,6 +75,8 @@ static NSString* names[6] =
 
 - (void) viewDidLoad
 {
+    [[Store instance] queryPricesForFeatures: [NSSet setWithObject: @"com.gregpascale.rtfx2.fxp1"]];
+    
     int n = 0;
     for(UIView* view in self.view.subviews)
     {
@@ -83,6 +91,24 @@ static NSString* names[6] =
         }
     }
     hasBeenShown = YES;
+}
+
+- (void) viewDidUnload
+{
+    titleBarButtonItem = nil;
+    maskingView = nil;
+    spinner = nil;
+    [super viewDidUnload];
+}
+
+- (void) pricesFound: (NSNotification*) notification
+{
+    NSString* fxPackOnePrice = [[notification userInfo] objectForKey: @"com.gregpascale.rtfx2.fxp1"];
+    if(fxPackOnePrice != nil)
+    {
+        NSLog(@"FX Pack 1 costs %@", fxPackOnePrice);
+        self.titleBarButtonItem.title = [NSString stringWithFormat: @"FX Pack 1 - %@", fxPackOnePrice, (id)nil];
+    }
 }
 
 - (IBAction) didClickYesButton
