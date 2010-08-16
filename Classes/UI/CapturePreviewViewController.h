@@ -6,10 +6,13 @@
 //  Copyright 2010 Brown University. All rights reserved.
 //
 
+#import "ShareViewController.h"
+
 #import <UIKit/UIKit.h>
 
+@class ShareViewController;
 
-@interface CapturePreviewViewController : UIViewController
+@interface CapturePreviewViewController : UIViewController <ShareViewControllerDelegate>
 {
 @private
     UIImage* image;
@@ -21,12 +24,6 @@
 @property (nonatomic, retain) UIImage* image;
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 @property (nonatomic, retain) IBOutlet UIView* actionMenuView;
-
-- (IBAction) didTapDoneButton;
-- (IBAction) showActionMenu;
-- (IBAction) hideActionMenu;
-
-// Action Menu button actions
-- (IBAction) didTapSaveToCameraRollButton;
+@property (nonatomic, retain) IBOutlet ShareViewController* shareViewController;
 
 @end

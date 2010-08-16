@@ -12,9 +12,10 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="12"/>
 			<integer value="25"/>
 			<integer value="32"/>
+			<integer value="12"/>
+			<integer value="37"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -78,6 +79,14 @@
 			</object>
 			<object class="IBUIViewController" id="132950827">
 				<string key="IBUINibName">UpgradeTeaserView</string>
+				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+					<int key="interfaceOrientation">1</int>
+				</object>
+				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<bool key="IBUIHorizontal">NO</bool>
+			</object>
+			<object class="IBUIViewController" id="621296004">
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 					<int key="interfaceOrientation">1</int>
@@ -183,6 +192,14 @@
 					</object>
 					<int key="connectionID">36</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">shareViewController</string>
+						<reference key="source" ref="778059924"/>
+						<reference key="destination" ref="621296004"/>
+					</object>
+					<int key="connectionID">38</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -243,6 +260,11 @@
 						<reference key="object" ref="132950827"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">37</int>
+						<reference key="object" ref="621296004"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -270,6 +292,9 @@
 					<string>32.CustomClassName</string>
 					<string>32.IBEditorWindowLastContentRect</string>
 					<string>32.IBPluginDependency</string>
+					<string>37.CustomClassName</string>
+					<string>37.IBEditorWindowLastContentRect</string>
+					<string>37.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -287,12 +312,15 @@
 					<string>{{21, 642}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>ShellViewController</string>
-					<string>{{42, 619}, {320, 480}}</string>
+					<string>{{42, 376}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>AppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UpgradeTeaserViewController</string>
-					<string>{{0, 643}, {320, 480}}</string>
+					<string>{{0, 376}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>ShareViewController</string>
+					<string>{{0, 365}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
@@ -312,7 +340,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">36</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -380,11 +408,15 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>didTapDoneButton</string>
 							<string>didTapSaveToCameraRollButton</string>
+							<string>didTapShareOnFacebookButton</string>
+							<string>didTapShareOnTwitterButton</string>
 							<string>hideActionMenu</string>
 							<string>showActionMenu</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -397,6 +429,8 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>didTapDoneButton</string>
 							<string>didTapSaveToCameraRollButton</string>
+							<string>didTapShareOnFacebookButton</string>
+							<string>didTapShareOnTwitterButton</string>
 							<string>hideActionMenu</string>
 							<string>showActionMenu</string>
 						</object>
@@ -408,6 +442,14 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">didTapSaveToCameraRollButton</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">didTapShareOnFacebookButton</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">didTapShareOnTwitterButton</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -426,11 +468,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>actionMenuView</string>
 							<string>imageView</string>
+							<string>shareViewController</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIView</string>
 							<string>UIImageView</string>
+							<string>ShareViewController</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -439,6 +483,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>actionMenuView</string>
 							<string>imageView</string>
+							<string>shareViewController</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -449,6 +494,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">imageView</string>
 								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">shareViewController</string>
+								<string key="candidateClassName">ShareViewController</string>
 							</object>
 						</object>
 					</object>
@@ -544,6 +593,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>didTapCaptureButton</string>
+							<string>didTapToggleCameraButton</string>
 							<string>goToNextEffect</string>
 							<string>goToPreviousEffect</string>
 							<string>showEffectSelectorView</string>
@@ -551,6 +601,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -563,6 +614,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>didTapCaptureButton</string>
+							<string>didTapToggleCameraButton</string>
 							<string>goToNextEffect</string>
 							<string>goToPreviousEffect</string>
 							<string>showEffectSelectorView</string>
@@ -572,6 +624,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
 								<string key="name">didTapCaptureButton</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">didTapToggleCameraButton</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -598,11 +654,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>capturePreviewViewController</string>
 							<string>effectNameLabel</string>
+							<string>effectNameTextField</string>
 							<string>fpsLabel</string>
 							<string>renderView</string>
 							<string>selectorViewController</string>
 							<string>sliderOne</string>
 							<string>sliderTwo</string>
+							<string>toggleCameraButton</string>
 							<string>toolBar</string>
 							<string>upgradeTeaserViewController</string>
 							<string>vfpsLabel</string>
@@ -611,11 +669,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>CapturePreviewViewController</string>
 							<string>UILabel</string>
+							<string>UITextField</string>
 							<string>UILabel</string>
 							<string>RenderView</string>
 							<string>EffectSelectorViewController</string>
 							<string>UISlider</string>
 							<string>UISlider</string>
+							<string>UIButton</string>
 							<string>UIToolbar</string>
 							<string>UpgradeTeaserViewController</string>
 							<string>UILabel</string>
@@ -627,11 +687,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>capturePreviewViewController</string>
 							<string>effectNameLabel</string>
+							<string>effectNameTextField</string>
 							<string>fpsLabel</string>
 							<string>renderView</string>
 							<string>selectorViewController</string>
 							<string>sliderOne</string>
 							<string>sliderTwo</string>
+							<string>toggleCameraButton</string>
 							<string>toolBar</string>
 							<string>upgradeTeaserViewController</string>
 							<string>vfpsLabel</string>
@@ -645,6 +707,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">effectNameLabel</string>
 								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">effectNameTextField</string>
+								<string key="candidateClassName">UITextField</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">fpsLabel</string>
@@ -665,6 +731,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">sliderTwo</string>
 								<string key="candidateClassName">UISlider</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">toggleCameraButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">toolBar</string>
@@ -713,6 +783,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/Rendering/RenderView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ShareViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/UI/ShareViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -811,11 +889,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>maskingView</string>
 							<string>spinner</string>
+							<string>titleBarButtonItem</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIView</string>
 							<string>UIActivityIndicatorView</string>
+							<string>UIBarButtonItem</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -824,6 +904,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>maskingView</string>
 							<string>spinner</string>
+							<string>titleBarButtonItem</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -834,6 +915,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">spinner</string>
 								<string key="candidateClassName">UIActivityIndicatorView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">titleBarButtonItem</string>
+								<string key="candidateClassName">UIBarButtonItem</string>
 							</object>
 						</object>
 					</object>
@@ -975,6 +1060,22 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">UIBarButtonItem</string>
+					<string key="superclassName">UIBarItem</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">UIKit.framework/Headers/UIBarButtonItem.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">UIBarItem</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">UIKit.framework/Headers/UIBarItem.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">UIButton</string>
 					<string key="superclassName">UIControl</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -1052,6 +1153,14 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">UITextField</string>
+					<string key="superclassName">UIControl</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="1034664344">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">UIKit.framework/Headers/UITextField.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">UIToolbar</string>
 					<string key="superclassName">UIView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -1061,10 +1170,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">UIKit.framework/Headers/UITextField.h</string>
-					</object>
+					<reference key="sourceIdentifier" ref="1034664344"/>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">UIView</string>

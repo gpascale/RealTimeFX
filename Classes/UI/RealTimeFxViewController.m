@@ -17,7 +17,6 @@
 #import "FPSCalculator.h"
 
 #import "FlurryAPI.h"
-#import "LocalyticsSession.h"
 
 #if TARGET_IPHONE_SIMULATOR
     #import "SimulatorCamera.h"

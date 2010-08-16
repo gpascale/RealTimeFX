@@ -16,7 +16,6 @@
 #import "ThumbnailCache.h"
 
 #import "FlurryAPI.h"
-#import "LocalyticsSession.h"
 
 @implementation AppDelegate
 

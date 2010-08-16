@@ -7,13 +7,16 @@
 //
 
 #import "CapturePreviewViewController.h"
-
+#import "FacebookHelper.h"
+#import "ShareViewController.h"
+#import "Store.h"
 
 @implementation CapturePreviewViewController
 
 @synthesize image;
 @synthesize imageView;
 @synthesize actionMenuView;
+@synthesize shareViewController;
 
 - (UIImage*) image
 {
@@ -39,6 +42,7 @@
 {
     [super viewDidUnload];
     self.actionMenuView = nil;
+    self.shareViewController = nil;
     imageView = nil;
 }
 
@@ -54,6 +58,7 @@
 - (void)dealloc
 {
     self.actionMenuView = nil;
+    self.shareViewController = nil;
     imageView = nil;
     [super dealloc];
 }
@@ -114,6 +119,33 @@
     }
     
     [theImage release];
+}
+
+// ShareViewController delegate method
+- (void) shareViewControllerIsDone
+{
+    [shareViewController.view removeFromSuperview];
+}
+
+- (IBAction) didTapShareOnFacebookButton
+{    
+    /*[[FacebookHelper sharedInstance] uploadPhoto: image
+                                     withCaption: @"Check out this cool photo I took with Realtime FX for iPhone!"];*/
+    //[self presentModalViewController:shareViewController animated:YES];
+    shareViewController.delegate = self;
+    shareViewController.style = ShareViewStyle_Facebook;
+    [self.view addSubview: shareViewController.view];
+    shareViewController.imageView.image = image;
+    [shareViewController willShow];
+}
+
+- (IBAction) didTapShareOnTwitterButton
+{
+    shareViewController.delegate = self;
+    shareViewController.style = ShareViewStyle_Twitter;
+    [self.view addSubview: shareViewController.view];
+    shareViewController.imageView.image = image;
+    [shareViewController willShow];
 }
 
 @end
