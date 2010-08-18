@@ -1,724 +1,0 @@
-TDemoApp
-v7
-r0
-t303614660.995634
-cCheck dependencies
-cCpResource build/Debug-iphoneos/DemoApp.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-cProcessInfoPlistFile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/Info.plist DemoApp-Info.plist
-cCompileXIB /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/MainWindow.xib
-cCompileXIB /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.xib
-cCpResource build/Debug-iphoneos/DemoApp.app/FBConnect.bundle ../FBConnect.bundle
-cCpResource build/Debug-iphoneos/DemoApp.app/FBDialog.bundle ../../src/FBDialog.bundle
-cProcessPCH /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch.gch DemoApp_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/main.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppAppDelegate.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppViewController.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginButton.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSObject+SBJSON.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSObject+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSString+SBJSON.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSString+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJSON.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonBase.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonBase.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonParser.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonParser.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonWriter.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonWriter.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBRequest.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBRequest.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/Facebook.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/Facebook.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginDialog.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBLoginDialog.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBDialog.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoApp normal armv7
-cProcessProductPackaging "/Users/greg/Library/MobileDevice/Provisioning Profiles/91DB126A-F609-4AA4-BC45-906ECD009CBA.mobileprovision" /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/embedded.mobileprovision
-cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp.xcent
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
-c000000004C05C1B10000000000000110
-t1275445681
-s272
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
-c000000004BF4B7F900000000000001A7
-t1274329081
-s423
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-c000000004BF4B7F900000000000001E5
-t1274329081
-s485
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004BFE06FA000000000034A850
-t1274939130
-s3450960
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004BFE07D200000000003E1EB0
-t1274939346
-s4071088
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004BFE07B10000000000001466
-t1274939313
-s5222
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C04711400000000000009CD
-t1275359508
-s2509
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C0471FC0000000002D563E0
-t1275359740
-s47539168
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/dlfcn.h
-c000000004BFDF0D30000000000000B1C
-t1274933459
-s2844
-
-N/Users/greg/Library/MobileDevice/Provisioning Profiles/91DB126A-F609-4AA4-BC45-906ECD009CBA.mobileprovision
-c000000004C54A0EF00000000000025AA
-t1280614639
-s9642
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBConnect.h
-c000000004C64AAF800000000000002C2
-t1281665784
-s706
-i"Facebook.h"
-i"FBDialog.h"
-i"FBLoginDialog.h"
-i"FBRequest.h"
-i"SBJSON.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.bundle
-c000000004C64AAF80000000000000066
-t1281665784
-s102
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m
-c000000004C64AAF80000000000005639
-t1281665784
-s22073
-i"FBDialog.h"
-i"Facebook.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBLoginDialog.m
-c000000004C64AAF80000000000000BBA
-t1281665784
-s3002
-i"FBDialog.h"
-i"FBLoginDialog.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBRequest.m
-c000000004C68919F000000000000287D
-t1281921439
-s10365
-i"FBRequest.h"
-i"JSON.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/Facebook.m
-c000000004C64AAF80000000000003DCB
-t1281665784
-s15819
-i"Facebook.h"
-i"FBLoginDialog.h"
-i"FBRequest.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/JSON.h
-c000000004C64AAF800000000000008F9
-t1281665784
-s2297
-i"SBJSON.h"
-i"NSObject+SBJSON.h"
-i"NSString+SBJSON.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSObject+SBJSON.m
-c000000004C64AAF8000000000000089E
-t1281665784
-s2206
-i"NSObject+SBJSON.h"
-i"SBJsonWriter.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSString+SBJSON.m
-c000000004C64AAF8000000000000087D
-t1281665784
-s2173
-i"NSString+SBJSON.h"
-i"SBJsonParser.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.h
-c000000004C64AAF80000000000000AED
-t1281665784
-s2797
-i<Foundation/Foundation.h>
-i"SBJsonParser.h"
-i"SBJsonWriter.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.m
-c000000004C64AAF80000000000001ABC
-t1281665784
-s6844
-i"SBJSON.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonBase.m
-c000000004C64AAF80000000000000AC1
-t1281665784
-s2753
-i"SBJsonBase.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonParser.m
-c000000004C64AAF800000000000036D0
-t1281665784
-s14032
-i"SBJsonParser.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonWriter.m
-c000000004C64AAF80000000000001F26
-t1281665784
-s7974
-i"SBJsonWriter.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../FBConnect.bundle
-c000000004C64AAF80000000000000066
-t1281665784
-s102
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.h
-c000000004C64AAF8000000000000034B
-t1281665784
-s843
-i<UIKit/UIKit.h>
-i"DemoAppViewController.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.m
-c000000004C64AAF800000000000004A0
-t1281665784
-s1184
-i"DemoAppAppDelegate.h"
-i"DemoAppViewController.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.h
-c000000004C64AAF8000000000000051E
-t1281665784
-s1310
-i<UIKit/UIKit.h>
-i"FBConnect.h"
-i"FBLoginButton.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.m
-c000000004C6893430000000000001EFD
-t1281921859
-s7933
-i"DemoAppViewController.h"
-i"FBConnect.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.xib
-c000000004C64AAF8000000000000795D
-t1281665784
-s31069
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.h
-c000000004C64AAF800000000000003CB
-t1281665784
-s971
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.m
-c000000004C64AAF800000000000007C4
-t1281665784
-s1988
-i"FBLoginButton.h"
-i"Facebook.h"
-i<dlfcn.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/DemoApp_Prefix.pch
-c000000004C64AAF800000000000000B7
-t1281665784
-s183
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/MainWindow.xib
-c000000004C64AAF80000000000002108
-t1281665784
-s8456
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app
-t1281921546
-s340
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app.dSYM
-t2
-s0
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoApp
-t2
-s0
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoAppViewController.nib
-t1281921545
-s2952
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/FBConnect.bundle
-t1281921545
-s102
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/FBDialog.bundle
-t1281921545
-s102
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/Info.plist
-t1281921544
-s726
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/MainWindow.nib
-t1281921545
-s984
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/PkgInfo
-t1281921544
-s8
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/ResourceRules.plist
-t1281921544
-s485
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/embedded.mobileprovision
-t1281921546
-s9642
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp.xcent
-t1281921546
-s420
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoApp.LinkFileList
-c000000004C6892080000000000000902
-t1281921544
-s2306
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppAppDelegate.o
-t1281921545
-s47864
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppViewController.o
-t1281921860
-s58692
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBDialog.o
-t1281921546
-s98504
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginButton.o
-t1281921546
-s37068
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginDialog.o
-t1281921546
-s40392
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBRequest.o
-t1281921546
-s39428
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/Facebook.o
-t1281921546
-s59272
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSObject+SBJSON.o
-t1281921546
-s8340
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSString+SBJSON.o
-t1281921546
-s8264
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJSON.o
-t1281921546
-s18316
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonBase.o
-t1281921546
-s12872
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonParser.o
-t1281921546
-s32596
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonWriter.o
-t1281921546
-s24404
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/main.o
-t1281921546
-s6504
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/main.m
-c000000004C64AAF80000000000000336
-t1281665784
-s822
-i<UIKit/UIKit.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/FBDialog.h
-c000000004C64AAF800000000000011EE
-t1281665784
-s4590
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/FBLoginDialog.h
-c000000004C64AAF80000000000000566
-t1281665784
-s1382
-i"FBDialog.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/FBRequest.h
-c000000004C64AAF80000000000000B46
-t1281665784
-s2886
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/Facebook.h
-c000000004C64AAF80000000000000C7B
-t1281665784
-s3195
-i"FBLoginDialog.h"
-i"FBRequest.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/JSON/NSObject+SBJSON.h
-c000000004C64AAF80000000000000A01
-t1281665784
-s2561
-i<Foundation/Foundation.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/JSON/NSString+SBJSON.h
-c000000004C64AAF80000000000000916
-t1281665784
-s2326
-i<Foundation/Foundation.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/JSON/SBJSON.h
-c000000004C64AAF80000000000000AED
-t1281665784
-s2797
-i<Foundation/Foundation.h>
-i"SBJsonParser.h"
-i"SBJsonWriter.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/JSON/SBJsonBase.h
-c000000004C64AAF80000000000000B82
-t1281665784
-s2946
-i<Foundation/Foundation.h>
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/JSON/SBJsonParser.h
-c000000004C64AAF80000000000000C0B
-t1281665784
-s3083
-i<Foundation/Foundation.h>
-i"SBJsonBase.h"
-
-N/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/src/JSON/SBJsonWriter.h
-c000000004C64AAF80000000000001140
-t1281665784
-s4416
-i<Foundation/Foundation.h>
-i"SBJsonBase.h"
-
-N/var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch.gch
-t1281921545
-s10319408
-
-NDemoApp-Info.plist
-c000000004C64AAF8000000000000038D
-t1281665784
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies303614660#303614660#0(85"[BWARN]warning: building for deployment target '4.0' requires an armv6 architecture.1(22@77"warning: building for deployment target '4.0' requires an armv6 architecture.303614660#18446744073709551615#0#0(1@0"0(0#1#0"8627497696#0"0#
-
-CCodeSign /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app
-r0
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppAppDelegate.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614345.868029
-e303614345.992390
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppAppDelegate.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@116"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.m303614345#303614345#0(0"0(0#0#108"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.m8634309376#2331"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppAppDelegate.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppAppDelegate.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppViewController.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614660.832174
-e303614660.986218
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppViewController.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@119"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.m303614660#303614660#0(0"0(0#0#111"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.m8635127072#2337"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoAppViewController.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBDialog.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.664498
-e303614346.877201
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBDialog.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-o/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m: In function '-[FBDialog init]':
-o/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m:317: warning: 'setFont:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIButton.h:106)
-lSLF07#2@108"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m303614346#303614346#0(423"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m: In function '-[FBDialog init]':/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m:317: warning: 'setFont:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIButton.h:106)1(22@173"'setFont:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIButton.h:106)303614346#134#289#0(6@100"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m303358584#317#0#317#0#33"'*' is deprecated (declared at *)0(0#0#100"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m8634984992#2313"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBDialog.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginButton.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.030515
-e303614346.120601
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginButton.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@111"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.m303614346#303614346#0(0"0(0#0#103"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.m8636329472#2321"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/FBLoginButton.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginButton.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginDialog.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBLoginDialog.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.647687
-e303614346.745117
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginDialog.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBLoginDialog.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@113"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBLoginDialog.m303614346#303614346#0(0"0(0#0#105"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBLoginDialog.m8639214784#2323"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBLoginDialog.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBLoginDialog.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBRequest.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBRequest.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.467936
-e303614346.664350
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBRequest.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBRequest.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@109"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBRequest.m303614346#303614346#0(0"0(0#0#101"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBRequest.m8640955040#2315"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBRequest.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/FBRequest.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/Facebook.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/Facebook.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.524003
-e303614346.647583
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/Facebook.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/Facebook.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@108"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/Facebook.m303614346#303614346#0(0"0(0#0#100"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/Facebook.m8638714784#2313"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/Facebook.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/Facebook.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSObject+SBJSON.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSObject+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.120882
-e303614346.214662
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSObject+SBJSON.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSObject+SBJSON.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@120"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSObject+SBJSON.m303614346#303614346#0(0"0(0#0#112"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSObject+SBJSON.m8633771200#2332"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSObject+SBJSON.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSObject+SBJSON.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSString+SBJSON.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSString+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.130378
-e303614346.202879
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSString+SBJSON.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSString+SBJSON.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@120"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSString+SBJSON.m303614346#303614346#0(0"0(0#0#112"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSString+SBJSON.m8632720128#2332"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/NSString+SBJSON.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/NSString+SBJSON.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJSON.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.202981
-e303614346.401105
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJSON.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@111"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.m303614346#303614346#0(0"0(0#0#103"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.m8596584160#2314"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJSON.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJSON.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonBase.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonBase.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.214768
-e303614346.325072
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonBase.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonBase.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@115"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonBase.m303614346#303614346#0(0"0(0#0#107"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonBase.m8595140192#2322"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonBase.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonBase.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonParser.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonParser.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.325194
-e303614346.467824
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonParser.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonParser.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@117"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonParser.m303614346#303614346#0(0"0(0#0#109"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonParser.m8634681824#2326"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonParser.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonParser.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonWriter.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonWriter.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614346.401205
-e303614346.523890
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonWriter.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonWriter.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@117"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonWriter.m303614346#303614346#0(0"0(0#0#109"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonWriter.m8632554240#2326"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/JSON/SBJsonWriter.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/SBJsonWriter.o0#
-
-CCompileC build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/main.o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614345.866857
-e303614346.030409
-r1
-xCompileC
-xbuild/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/main.o
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/main.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@94"Compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/main.m303614345#303614346#0(0"0(0#0#86"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/main.m8635862496#2295"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -include /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/main.m -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/main.o0#
-
-CCompileXIB /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.xib
-s303614344.611688
-e303614345.185462
-r1
-xCompileXIB
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.xib
-lSLF07#2@44"CompileXIB Classes/DemoAppViewController.xib303614344#303614345#0(0"0(0#0#113"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.xib8630676288#806"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoAppViewController.nib /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/Classes/DemoAppViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
-
-CCompileXIB /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/MainWindow.xib
-s303614344.610882
-e303614345.056107
-r1
-xCompileXIB
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib303614344#303614345#0(0"0(0#0#94"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/MainWindow.xib8632249792#776"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/MainWindow.nib /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
-
-CCpResource build/Debug-iphoneos/DemoApp.app/FBConnect.bundle ../FBConnect.bundle
-s303614345.056195
-e303614345.063150
-r1
-xCpResource
-xbuild/Debug-iphoneos/DemoApp.app/FBConnect.bundle
-x../FBConnect.bundle
-lSLF07#2@24"Copy ../FBConnect.bundle303614345#303614345#0(0"0(0#0#99"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../FBConnect.bundle8636972512#683"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../FBConnect.bundle /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app0#
-
-CCpResource build/Debug-iphoneos/DemoApp.app/FBDialog.bundle ../../src/FBDialog.bundle
-s303614345.057849
-e303614345.064801
-r1
-xCpResource
-xbuild/Debug-iphoneos/DemoApp.app/FBDialog.bundle
-x../../src/FBDialog.bundle
-lSLF07#2@30"Copy ../../src/FBDialog.bundle303614345#303614345#0(0"0(0#0#105"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.bundle8636457184#689"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/../../src/FBDialog.bundle /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app0#
-
-CCpResource build/Debug-iphoneos/DemoApp.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-s303614344.603365
-e303614344.609054
-r1
-xCpResource
-xbuild/Debug-iphoneos/DemoApp.app/ResourceRules.plist
-x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist303614344#303614344#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8633356672#673"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app0#
-
-CGenerateDSYMFile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app.dSYM /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoApp
-r0
-
-CLd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoApp normal armv7
-s303614660.986314
-e303614660.995364
-r0
-xLd
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoApp
-xnormal
-xarmv7
-oarm-apple-darwin10-gcc-4.2.1: libgomp.spec: No such file or directory
-lSLF07#2@125"Link /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoApp303614660#303614660#0(167"arm-apple-darwin10-gcc-4.2.1: libgomp.spec: No such file or directoryCommand /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 failed with exit code 11(4@96"Command /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 failed with exit code 1303614660#18446744073709551615#0#0(1@0"0(0#0#0"8639345216#1147"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -filelist /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/Objects-normal/armv7/DemoApp.LinkFileList -dead_strip -fopenmp -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/DemoApp1#
-
-CProcessInfoPlistFile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/Info.plist DemoApp-Info.plist
-s303614344.604276
-e303614344.610775
-r1
-xProcessInfoPlistFile
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/Info.plist
-xDemoApp-Info.plist
-lSLF07#2@26"Process DemoApp-Info.plist303614344#303614344#0(0"0(0#0#98"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/DemoApp-Info.plist8633097728#837"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    builtin-infoPlistUtility DemoApp-Info.plist -genpkginfo /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/ResourceRules.plist -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/Info.plist0#
-
-CProcessPCH /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch.gch DemoApp_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
-s303614345.185587
-e303614345.866747
-r1
-xProcessPCH
-x/var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch.gch
-xDemoApp_Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@29"Precompile DemoApp_Prefix.pch303614345#303614345#0(0"0(0#0#98"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/DemoApp_Prefix.pch8635289408#2152"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -fopenmp -mthumb -miphoneos-version-min=4.0 -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-generated-files.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-own-target-headers.hmap -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-all-target-headers.hmap -iquote /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp-project-headers.hmap -F/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/include -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources/armv7 -I/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DerivedSources -c /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/DemoApp_Prefix.pch -o /var/folders/39/39NnhOFIG4CylwW9DDk-ak+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DemoApp_Prefix-dmsbxwmsmbhtsghfgspbjyakkjtf/DemoApp_Prefix.pch.gch0#
-
-CProcessProductPackaging "/Users/greg/Library/MobileDevice/Provisioning Profiles/91DB126A-F609-4AA4-BC45-906ECD009CBA.mobileprovision" /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/embedded.mobileprovision
-s303614346.884995
-e303614346.942688
-r1
-xProcessProductPackaging
-x/Users/greg/Library/MobileDevice/Provisioning Profiles/91DB126A-F609-4AA4-BC45-906ECD009CBA.mobileprovision
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/embedded.mobileprovision
-lSLF07#2@191"ProcessProductPackaging "/Users/greg/Library/MobileDevice/Provisioning Profiles/91DB126A-F609-4AA4-BC45-906ECD009CBA.mobileprovision" build/Debug-iphoneos/DemoApp.app/embedded.mobileprovision303614346#303614346#0(0"0(0#0#137"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/embedded.mobileprovision8635267296#615"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    <com.apple.tools.product-pkg-utility> "/Users/greg/Library/MobileDevice/Provisioning Profiles/91DB126A-F609-4AA4-BC45-906ECD009CBA.mobileprovision" -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app/embedded.mobileprovision0#
-
-CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp.xcent
-s303614346.942772
-e303614346.963455
-r1
-xProcessProductPackaging
-x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
-x/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp.xcent
-lSLF07#2@175"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp.xcent303614346#303614346#0(0"0(0#0#142"/Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp.xcent8627617504#625"    cd /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:~/scripts:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/DemoApp.build/Debug-iphoneos/DemoApp.build/DemoApp.xcent0#
-
-CTouch /Users/greg/gitclients/gpascale1/RealTimeFX/ext/Facebook/iossdk2/sample/DemoApp/build/Debug-iphoneos/DemoApp.app
-r0
-

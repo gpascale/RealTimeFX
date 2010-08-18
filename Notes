@@ -1,4 +1,32 @@
 
+1.1 TODO:
+
+- (PUNT) Cap the maximum tweet length at 140 - (length of a twitpic url)
+- (PUNT?) Prompts for twitter v. facebook (e.g. "Give your photo a caption (optional)", "Tweet body..."). Maybe can cut this
+- (DONE) Update title depending on twitter vs. facebook.
+- (DONE) Failure notifications. Need success notifications too?
+- Why does twitter often return 403?
+- (DONE) Bug where hitting cancel on the twitter pin webview causes you to bounce back and forth
+  between ShareView and it. Should go back to capture preview view
+- Can tap tab bar buttons while facebook login view is on screen
+- (DONE) Facebook login (X) button is missing - maybe a resource path issue?
+- (TEST) Write facebook username into userdefaults
+- (DONE) Change clear message button to an (X) - can easily design in inkscape
+- (TEST MORE) Email?
+- (PUNT) Add like/follow buttons on twitter?
+- (DONE - WE'RE COOL) Email Jaanus Kase to ask about using same twitter screen or design a new one
+- (DONE) Create a button that actually says Email
+- (TEST MORE) Attach photo to email - figure out the mime type stuff
+- Create a twitter account for Realtime FX?
+    - Add like and follow buttons to accounts page?
+- (DONE) Update the upgrade screen to talk about the watermark thing
+- (TEST MORE) Upload twitter/fb/email events to Flurry
+- (DONE) Create a new flurry version
+- (DONE) Create an uncaught exception handler for crash reports
+- Raise the sign in button in the TwitterLoginPopup so it's not obscured by ads
+- Put "Realtime FX" in quotes in watermark test
+- Log email as an event
+
 Name Ideas:
 
     Real-Time FX
