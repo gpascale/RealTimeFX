@@ -170,6 +170,9 @@
     
 	self.title = @"Sign In";
 	
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = NO;
+    
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
 										  initWithTitle:@"Cancel"
 										  style:UIBarButtonItemStylePlain

@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="21"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -205,7 +205,7 @@
 								<reference key="IBUINormalTitleShadowColor" ref="956044333"/>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 267}, {320, 213}}</string>
+						<string key="NSFrame">{{0, 447}, {320, 213}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
