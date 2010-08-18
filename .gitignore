@@ -1,0 +1,10 @@
+
+
+# Xcode crap
+build/*
+*.pbxuser
+*.mode1v3
+
+#OS X crap
+.DS_STORE
+profile

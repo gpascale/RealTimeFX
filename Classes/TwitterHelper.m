@@ -9,11 +9,8 @@
 #import "TwitterHelper.h"
 #import <OAuth/OAuth.h>
 #import <OAuth/ASIFormDataRequest.h>
-//Twitpic shit
-#import <OAuth/ASIFormDataRequest.h>
-//#import <JSON.h>
-#import <OAuth/OAuthConsumerCredentials.h>
-
+#import <OAuth/OAuth+UserDefaults.h>
+#import <JSON/NSString+SBJSON.h>
 #import "FlurryAPI.h"
 
 @interface TwitterHelper (Private)

@@ -1066,7 +1066,6 @@
 				INFOPLIST_FILE = "RealTimeFx-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ext/mobclix\"",
 					"\"$(SRCROOT)/ext/FlurryLib\"",
 				);
 				OTHER_CFLAGS = "-DDEBUG";
@@ -1092,7 +1091,6 @@
 				INFOPLIST_FILE = "RealTimeFx-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ext/mobclix\"",
 					"\"$(SRCROOT)/ext/FlurryLib\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -1133,7 +1131,6 @@
 				INFOPLIST_FILE = "RealTimeFx-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ext/mobclix\"",
 					"\"$(SRCROOT)/ext/FlurryLib\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -1173,7 +1170,6 @@
 				INFOPLIST_FILE = "RealTimeFx-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ext/mobclix\"",
 					"\"$(SRCROOT)/ext/FlurryLib\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";

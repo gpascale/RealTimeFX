@@ -23,6 +23,8 @@
 	EAGLContext* context;
 	
 	GLuint m_displacementTexture;
+    
+    BOOL isCapturing;
 }
 
 - (GLuint) getTexture;

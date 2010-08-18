@@ -7,6 +7,7 @@
 //
 
 #import "Watermarker.h"
+#import <QuartzCore/CALayer.h>
 
 static Watermarker* instance;
 
@@ -17,6 +18,8 @@ static Watermarker* instance;
 @end
 
 @implementation Watermarker
+
+@synthesize watermark;
 
 + (void) initialize
 {
@@ -45,7 +48,6 @@ static Watermarker* instance;
     {
         compositeView.image = image;
     }
-    
     
     UIGraphicsBeginImageContext(compositeView.frame.size);
     [compositeView.layer renderInContext:UIGraphicsGetCurrentContext()];

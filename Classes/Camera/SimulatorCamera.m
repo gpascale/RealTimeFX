@@ -27,6 +27,7 @@
 
 @synthesize imageSize;
 @synthesize textureSize;
+@synthesize isCapturing;
 
 - (id) init
 {
@@ -34,6 +35,7 @@
 	{
 		// Create a texture to use for rendering and processing video
 		[self createTexture];
+        isCapturing = YES;
 	}
 	return self;
 }
@@ -55,7 +57,7 @@
 	
 	int width, height, bufferWidth, bufferHeight;
 	UIImage* image = [[UIImage alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"image" ofType: @"JPG"]];
-    const void* pixels = decodeImage(image, &width, &height);		
+    void* pixels = decodeImage(image, &width, &height);		
  
 	GLCHECK(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels));
 	
@@ -73,7 +75,7 @@
 
 - (void) takePicture
 {
-    UIImage* image = [[UIImage alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"Tillicum" ofType: @"jpg"]];    
+
 }
 
 - (void) startCapturing
