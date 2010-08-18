@@ -9,7 +9,18 @@
 #import "CapturePreviewViewController.h"
 #import "FacebookHelper.h"
 #import "ShareViewController.h"
-#import "Store.h"
+#import "SocialInfoViewController.h"
+#import "Watermarker.h"
+
+@interface CapturePreviewViewController (Private)
+
+- (void) _showShareViewController;
+- (void) _hideShareViewController;
+- (void) _showActionMenu;
+- (void) _hideActionMenu;
+
+@end
+
 
 @implementation CapturePreviewViewController
 
@@ -17,6 +28,7 @@
 @synthesize imageView;
 @synthesize actionMenuView;
 @synthesize shareViewController;
+@synthesize socialInfoViewController;
 
 - (UIImage*) image
 {
@@ -46,15 +58,6 @@
     imageView = nil;
 }
 
-- (void) viewDidDisappear: (BOOL)animated
-{
-    // Make sure the action menu is hidden
-    actionMenuView.frame = CGRectMake(0,
-                                      self.view.frame.size.height,
-                                      actionMenuView.frame.size.width,
-                                      actionMenuView.frame.size.height);
-}
-
 - (void)dealloc
 {
     self.actionMenuView = nil;
@@ -63,34 +66,25 @@
     [super dealloc];
 }
 
+- (void) willShow
+{
+    UIImage* watermarkedImage = [[Watermarker addWatermarkIfNoUpgrade: image] retain];
+    UIImageWriteToSavedPhotosAlbum(watermarkedImage,
+                                   self,
+                                   @selector(image:didFinishSavingWithError:contextInfo:),
+                                   NULL);
+    [self _showActionMenu];
+}
+
+- (void) willHide
+{
+    [self _hideActionMenu];
+}
+
 - (IBAction) didTapDoneButton
 {
     [[NSNotificationCenter defaultCenter] postNotificationName: @"didTapDoneButton"
                                                         object: self];
-}
-
-- (IBAction) showActionMenu
-{
-    [UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationDelegate:self];
-    actionMenuView.frame = CGRectMake(0,
-                                      self.view.frame.size.height - actionMenuView.frame.size.height,
-                                      actionMenuView.frame.size.width,
-                                      actionMenuView.frame.size.height);
-    [UIView commitAnimations];
-}
-
-- (IBAction) hideActionMenu
-{
-    [UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationDelegate:self];
-    actionMenuView.frame = CGRectMake(0,
-                                      self.view.frame.size.height,
-                                      actionMenuView.frame.size.width,
-                                      actionMenuView.frame.size.height);
-    [UIView commitAnimations];
 }
 
 - (IBAction) didTapSaveToCameraRollButton
@@ -127,6 +121,59 @@
     [shareViewController.view removeFromSuperview];
 }
 
+- (void) _showActionMenu
+{
+    [UIView animateWithDuration: 0.3
+                     animations: ^{
+                         actionMenuView.frame = CGRectMake(
+                            0, self.view.frame.size.height - actionMenuView.frame.size.height,
+                            actionMenuView.frame.size.width, actionMenuView.frame.size.height);
+                     }
+                     completion: ^( BOOL finished )
+                     {
+                         actionMenuVisible = YES;
+                     }
+     ];
+}
+
+- (void) _hideActionMenu
+{
+    [UIView animateWithDuration: 0.3
+                     animations: ^{
+                         actionMenuView.frame = CGRectMake(
+                            0, self.view.frame.size.height - 33,
+                            actionMenuView.frame.size.width, actionMenuView.frame.size.height);
+                     }
+                     completion: ^( BOOL finished )
+                     {
+                        actionMenuVisible = NO;
+                    }
+     ];
+}
+
+- (void) _showShareViewController
+{
+    shareViewController.view.alpha = 0.0f;
+    [self.view addSubview: shareViewController.view];
+    [UIView animateWithDuration: 0.3
+                     animations: ^{
+                         shareViewController.view.alpha = 1.0f;
+                     }
+                     completion: ^( BOOL finished ) { } ];
+}
+
+- (void) _hideShareViewController
+{
+    [UIView animateWithDuration: 0.3
+                     animations: ^{
+                         shareViewController.view.alpha = 0.0f;
+                     }
+                     completion: ^( BOOL finished )
+                     {
+                         [shareViewController.view removeFromSuperview];
+                     }];
+}
+
 - (IBAction) didTapShareOnFacebookButton
 {    
     /*[[FacebookHelper sharedInstance] uploadPhoto: image
@@ -134,18 +181,89 @@
     //[self presentModalViewController:shareViewController animated:YES];
     shareViewController.delegate = self;
     shareViewController.style = ShareViewStyle_Facebook;
-    [self.view addSubview: shareViewController.view];
+    [self _showShareViewController];
     shareViewController.imageView.image = image;
     [shareViewController willShow];
 }
 
 - (IBAction) didTapShareOnTwitterButton
-{
+{    
     shareViewController.delegate = self;
     shareViewController.style = ShareViewStyle_Twitter;
-    [self.view addSubview: shareViewController.view];
+    [self _showShareViewController];
     shareViewController.imageView.image = image;
     [shareViewController willShow];
+}
+
+- (IBAction) didTapEmailButton
+{
+    if(![MFMailComposeViewController canSendMail])
+    {
+        static NSString* errorMessage = @"This device is not set up for email. You can"
+        " set up a mail account using the builtin mail application";
+        UIAlertView* errorView = [[[UIAlertView alloc] initWithTitle: @""
+                                                             message: errorMessage
+                                                            delegate: nil
+                                                   cancelButtonTitle: @"Ok"
+                                                   otherButtonTitles: nil] autorelease];
+        [errorView show];
+        return;
+    }
+    
+    static NSString* messageBody = @"Check out this photo I took with <a href=\""
+    "http://gregpascale.com/apps/realtimefx\">Realtime FX</a> for iPhone!";
+    NSData* imageData = UIImagePNGRepresentation([Watermarker addWatermarkIfNoUpgrade: imageView.image]);
+
+    MFMailComposeViewController* mailViewController =
+        [[MFMailComposeViewController alloc] init];
+    mailViewController.mailComposeDelegate = self;
+    [mailViewController setSubject:@"Cool Photo"];
+    [mailViewController setMessageBody:messageBody isHTML:YES];
+    [mailViewController addAttachmentData:imageData
+                                 mimeType:@"image/png"
+                                 fileName:@"photo.png"];
+    [self presentModalViewController:mailViewController animated:YES];
+}
+
+- (IBAction) didTapSocialInfoButton
+{
+    //[self.view addSubview: socialInfoViewController.view];
+    [self presentModalViewController: socialInfoViewController animated: YES];
+    socialInfoViewController.delegate = self;
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void) socialInfoViewControllerIsDone: (SocialInfoViewController*) controller
+{
+    [self dismissModalViewControllerAnimated: YES];
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // Only consider single touches on the view itself - not on subviews
+    if(actionMenuVisible &&
+       ([touches count] > 1 ||
+       CGRectContainsPoint(actionMenuView.bounds,
+                           [[touches anyObject] locationInView:actionMenuView])))
+    {
+        return;
+    }
+    
+    if(actionMenuVisible)
+    {
+        [self _hideActionMenu];
+    }
+    else
+    {
+        [self _showActionMenu];
+    }
+
 }
 
 @end

@@ -14,6 +14,8 @@
 //#import <JSON.h>
 #import <OAuth/OAuthConsumerCredentials.h>
 
+#import "FlurryAPI.h"
+
 @interface TwitterHelper (Private)
 
 // Adds the twitpic url to the tweet body, truncating the tweet if necessary
@@ -60,6 +62,22 @@ static TwitterHelper* instance;
     return oAuth && oAuth.oauth_token_authorized;
 }
 
+- (NSString*) username
+{
+    if(![self isLoggedIn])
+    {
+        return nil;
+    }
+    
+    return oAuth.screen_name;
+}
+
+- (void) logout
+{
+    [oAuth forget];
+    [oAuth saveOAuthTwitterContextToUserDefaults];
+}
+
 - (void) postPhoto:(UIImage*)photo
          withTweet:(NSString*)tweet
 {
@@ -71,6 +89,10 @@ static TwitterHelper* instance;
     currentTweet = [tweet retain];
     
     twitpicRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.twitpic.com/2/upload.json"]];
+    
+    NSLog(@"Header: %@", [oAuth oAuthHeaderForMethod:@"GET"
+          andUrl:@"https://api.twitter.com/1/account/verify_credentials.json"
+          andParams:nil]);
     
     [twitpicRequest addRequestHeader:@"X-Auth-Service-Provider" value:@"https://api.twitter.com/1/account/verify_credentials.json"];
     [twitpicRequest addRequestHeader:@"X-Verify-Credentials-Authorization"
@@ -131,7 +153,7 @@ static TwitterHelper* instance;
         {
             NSLog(@"Tweet failed with HTTP code %d", twitterRequest.responseStatusCode);
             [self _finishTweet: NO];
-        }                
+        }             
     }
 }
 
@@ -140,9 +162,22 @@ static TwitterHelper* instance;
 */
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
+    @try
+    {
+        [FlurryAPI logError:@"TwitterError"
+                    message:@""
+                      error:request.error];
+    }
+    @catch (id)
+    {
+         NSLog(@"Log twitter fail failed");
+    }
+        
+    
     if(request == twitpicRequest)
     {
-        NSLog(@"Twitpic request failed: %@", [[twitpicRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
+        NSLog(@"Twitpic request failed: %@ - %@", [twitpicRequest responseStatusMessage],
+                                                  [[twitpicRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
         [self _finishTweet:NO];
     }
     else if (request == twitterRequest)

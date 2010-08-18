@@ -27,10 +27,13 @@
 }
 
 @property (nonatomic, readonly) OAuth* oAuth;
+@property (nonatomic, readonly) NSString* username;
 
 + (TwitterHelper*) sharedInstance;
 
 - (BOOL) isLoggedIn;
+
+- (void) logout;
 
 - (void) postPhoto:(UIImage*)image
          withTweet:(NSString*)tweet;

@@ -7,52 +7,15 @@
 //
 
 #import "FacebookHelper.h"
+#import "FlurryAPI.h"
 
 static NSString* apiKey = @"f504560da96cd7644e8732e279471596";
 static FacebookHelper* instance;
 
-@interface FacebookPendingOperation : NSObject
-{
-    NSString* operationName;
-    NSDictionary* operationArgs;
-}
-
-@property(nonatomic, retain) NSString* operationName;
-@property(nonatomic, retain) NSDictionary* operationArgs;
-
-- (id) initWithName: (NSString*) name
-            andArgs: (NSDictionary*) args;
-
-@end
-
-@implementation FacebookPendingOperation
-
-@synthesize operationName;
-@synthesize operationArgs;
-
-- (id) initWithName: (NSString*) name
-            andArgs: (NSDictionary*) args
-{
-    if(self = [super init])
-    {
-        self.operationName = name;
-        self.operationArgs = args;
-    }
-    return self;
-}
-
-- (void) dealloc
-{
-    self.operationName = nil;
-    self.operationArgs = nil;
-    [super dealloc];
-}
-
-@end
-
 @interface FacebookHelper (Private)
 
-- (void) _handlePendingOperations;
+- (void) _readFromUserDefaults;
+- (void) _writeToUserDefaults;
 
 @end
 
@@ -60,6 +23,7 @@ static FacebookHelper* instance;
 @implementation FacebookHelper
 
 @synthesize isLoggedIn = mIsLoggedIn;
+@synthesize username;
 
 + (void) initialize
 {
@@ -75,7 +39,7 @@ static FacebookHelper* instance;
 {
     if (self = [super init])
     {
-        mPendingOperations = [[NSMutableArray alloc] init];
+        [self _readFromUserDefaults];
     }
     return self;
 }
@@ -86,22 +50,21 @@ static FacebookHelper* instance;
                      @"read_stream", @"photo_upload", nil] retain];
     
     mFacebook = [[Facebook alloc] init];
-    [mFacebook authorize:apiKey permissions:mPermissions delegate:self];    
+    [mFacebook authorize:apiKey permissions:mPermissions delegate:self];
+}
+
+- (void) logout
+{
+    [mFacebook logout:self];
+    mIsLoggedIn = NO;
+    username = nil;
+    [self _writeToUserDefaults];
 }
 
 - (void) uploadPhoto:(UIImage*)photo withCaption:(NSString*)caption
 {
     if(!mIsLoggedIn)
     {
-        FacebookPendingOperation* operation = 
-            [[FacebookPendingOperation alloc] initWithName: @"uploadPhoto"
-            andArgs: [NSDictionary dictionaryWithObjectsAndKeys: photo, @"photo",
-                                                                 caption, @"caption",
-                                                                 nil]];                    
-        [mPendingOperations addObject: operation];
-        
-        [self login];
-        
         return;
     }
     
@@ -116,29 +79,24 @@ static FacebookHelper* instance;
                          andDelegate: self];
 }
 
-- (void) _handlePendingOperations
-{
-    for(FacebookPendingOperation* operation in mPendingOperations)
-    {
-        if([operation.operationName isEqualToString: @"uploadPhoto"])
-        {
-            UIImage* photo = [operation.operationArgs objectForKey: @"photo"];
-            NSString* caption = [operation.operationArgs objectForKey: @"caption"];
-            [self uploadPhoto:photo withCaption:caption];
-        }
-        else
-        {
-            NSAssert(NO, @"Unknown pending operation type");
-        }
-    }
-    
-    [mPendingOperations removeAllObjects];
-}
-
 - (void) dealloc
 {
-    [mPendingOperations release];
+    [mFacebook release];
+    [mPermissions release];
     [super dealloc];
+}
+
+- (void) _readFromUserDefaults
+{
+    username = [[NSUserDefaults standardUserDefaults] objectForKey: @"username"];
+    NSLog(@"Facebook logged in as %@", username);
+}
+
+- (void) _writeToUserDefaults
+{
+    [[NSUserDefaults standardUserDefaults] setObject:username
+                                              forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,6 +110,17 @@ static FacebookHelper* instance;
     NSLog(@"Request failed with error %@", error);
     [[NSNotificationCenter defaultCenter] postNotificationName: @"FBRequestFail"
                                                         object: self];
+    
+    @try
+    {
+        [FlurryAPI logError:@"FacebookError"
+                    message:@""
+                      error:error];
+    }
+    @catch (id)
+    {
+        NSLog(@"Log facebook error failed");
+    }
 };
 
 /**
@@ -161,9 +130,20 @@ static FacebookHelper* instance;
  */
 - (void)request:(FBRequest*)request didLoad:(id)result
 {
+    if([result isKindOfClass:[NSDictionary class]])
+    {
+        if ([result objectForKey:@"owner"]) 
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName: @"FBRequestSuccess"
+                                                                object: self];
+        }
+        else
+        {
+            username = [[result objectForKey:@"name"] retain];
+            [self _writeToUserDefaults];
+        }
+    }
     NSLog(@"Request loaded");
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"FBRequestSuccess"
-                                                        object: self];
 };
 
 
@@ -179,6 +159,8 @@ static FacebookHelper* instance;
 
     [[NSNotificationCenter defaultCenter] postNotificationName: @"FBLoginSuccess"
                                                         object: self];
+    
+    [mFacebook requestWithGraphPath: @"/me" andDelegate: self];
 }
 
 /**
@@ -200,6 +182,8 @@ static FacebookHelper* instance;
 {
     NSLog(@"Logged out of Facebook");
     mIsLoggedIn = NO;
+    [username release];
+    username = nil;
     
     [[NSNotificationCenter defaultCenter] postNotificationName: @"FBLogout"
                                                         object: self];

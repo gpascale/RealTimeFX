@@ -6,6 +6,7 @@
 //  Copyright 2010 Brown University. All rights reserved.
 //
 
+#import "EffectManager.h"
 #import <UIKit/UIKit.h>
 #import <OAuth/TwitterLoginUiFeedback.h>
 
@@ -30,6 +31,7 @@ typedef enum ShareViewStyle_t
     UITextView* textView;
     
     UIBarButtonItem* titleLabel;
+    UILabel* promptLabel;
     
     NSObject<ShareViewControllerDelegate>* mDelegate;
     ShareViewStyle mStyle;
@@ -47,11 +49,13 @@ typedef enum ShareViewStyle_t
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 @property (nonatomic, retain) IBOutlet UITextView* textView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* titleLabel;
+@property (nonatomic, retain) IBOutlet UILabel* promptLabel;
 @property (nonatomic, retain) IBOutlet UIView* uiMaskView;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* uiMaskViewSpinner;
 
 - (IBAction) didTapCancelButton;
 - (IBAction) didTapUploadButton;
+- (IBAction) clearMessage;
 
 - (void) willShow;
 

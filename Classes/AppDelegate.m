@@ -14,8 +14,14 @@
 #import "Store.h"
 #import "Logger.h"
 #import "ThumbnailCache.h"
-
+#import "Version.h"
 #import "FlurryAPI.h"
+#import "FacebookHelper.h"
+
+void uncaughtExceptionHandler(NSException *exception)
+{
+    [FlurryAPI logError:@"Uncaught" message:@"Crash!" exception:exception];
+}
 
 @implementation AppDelegate
 
@@ -70,15 +76,21 @@ static BOOL showedUpgradeTeaserViewOnLaunch = NO;
     
     wasRendering = NO;
     
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     @try
     {
         [FlurryAPI startSession: @"CZPJASWUCD4426KDM5RM"];
+        [FlurryAPI setAppVersion: [NSString stringWithUTF8String: APP_VERSION_STRING]];
     }
     @catch (NSException * e)
     {
         NSAssert(NO, @"Failed to start analytics");
     }
-        
+    
+    // Hacky
+    [FacebookHelper initialize];
+    
     return YES;
 }
 

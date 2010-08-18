@@ -15,14 +15,15 @@
     Facebook* mFacebook;
     NSArray* mPermissions;
     BOOL mIsLoggedIn;
-    NSMutableArray* mPendingOperations;
 }
 
-@property(nonatomic, readonly) BOOL isLoggedIn;
+@property (nonatomic, readonly) BOOL isLoggedIn;
+@property (nonatomic, readonly) NSString* username;
 
 + (FacebookHelper*) sharedInstance;
 
 - (void) login;
+- (void) logout;
 
 - (void) uploadPhoto:(UIImage*)photo withCaption:(NSString*)caption;
 

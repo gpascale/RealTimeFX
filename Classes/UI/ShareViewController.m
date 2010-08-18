@@ -10,13 +10,12 @@
 #import "FacebookHelper.h"
 #import "TwitterHelper.h"
 #import "Store.h"
+#import "Watermarker.h"
+#import "FlurryAPI.h"
 #import <OAuth/CustomLoginPopup.h>
 
 
 @interface ShareViewController (Private)
-
-// Creates a watermarked version of an image for upload is the user hasn't paid for the upgrade
-- (UIImage*) _addWatermarkIfNoUpgrade:(UIImage*)image;
 
 // Signin methods
 - (void) _signInToFacebook;
@@ -39,6 +38,11 @@
 - (void) _suspendUIWithMessage: (NSString*) message;
 - (void) _resumeUI;
 
+// Show an alert to tell the user that upload failed
+- (void) _showUploadFailedAlert;
+// Show an alert to tell the user that upload failed
+- (void) _showLoginFailedAlert:(NSString*) serviceName;
+
 @end
 
 @implementation ShareViewController
@@ -48,6 +52,7 @@
 @synthesize delegate = mDelegate;
 @synthesize style = mStyle;
 @synthesize titleLabel;
+@synthesize promptLabel;
 @synthesize uiMaskView;
 @synthesize uiMaskViewSpinner;
 
@@ -103,6 +108,8 @@
     if(mStyle == ShareViewStyle_Facebook)        
     {
         self.titleLabel.title = @"Facebook";
+        self.promptLabel.text = @"Optionally enter a caption";
+        self.textView.text = @"Check out this photo I took with Realtime FX for iPhone!";
         if(![[FacebookHelper sharedInstance] isLoggedIn])
         {
             [self _suspendUIWithMessage: @"Loggin in to Facebook..."]; 
@@ -116,6 +123,8 @@
     else if(mStyle == ShareViewStyle_Twitter)
     {
         self.titleLabel.title = @"Twitter";
+        self.promptLabel.text = @"Optionally enter a message";
+        self.textView.text = @"Check out this photo I took with #RealtimeFX for iPhone!";
         if(![[TwitterHelper sharedInstance] isLoggedIn])
         {
             [self _suspendUIWithMessage: @"Loggin in to Twitter..."]; 
@@ -125,7 +134,7 @@
         {
             [self.textView becomeFirstResponder];
         }
-    }    
+    }
 }
 
 - (void)viewDidUnload
@@ -141,13 +150,13 @@
     switch (mStyle)
     {
         case ShareViewStyle_Facebook:
-            [[FacebookHelper sharedInstance] uploadPhoto: [self _addWatermarkIfNoUpgrade:self.imageView.image]
+            [[FacebookHelper sharedInstance] uploadPhoto: [Watermarker addWatermarkIfNoUpgrade:self.imageView.image]
                                              withCaption: self.textView.text];
             [self _suspendUIWithMessage: @"Uploading..."];
             break;
         case ShareViewStyle_Twitter:
         {
-            [[TwitterHelper sharedInstance] postPhoto: [self _addWatermarkIfNoUpgrade:self.imageView.image]
+            [[TwitterHelper sharedInstance] postPhoto: [Watermarker addWatermarkIfNoUpgrade:self.imageView.image]
                                             withTweet: self.textView.text];
             [self _suspendUIWithMessage: @"Tweet Tweet..."];
             break;
@@ -163,28 +172,9 @@
     [mDelegate shareViewControllerIsDone];
 }
 
-- (UIImage*) _addWatermarkIfNoUpgrade:(UIImage*)image
+- (IBAction) clearMessage
 {
-    if([Store hasEffectPackOne])
-    {
-        // No watermark if they have the upgrade
-        return image;
-    }
-    
-    UIImageView* compositeView = [[UIImageView alloc] initWithImage:image];
-    UILabel* watermark = [[UILabel alloc] initWithFrame: CGRectMake(0, 450, 320, 30)];
-    watermark.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.5f];
-    watermark.textColor = [UIColor whiteColor];
-    watermark.text = @"Realtime FX for iPhone";
-    watermark.textAlignment = UITextAlignmentCenter;
-    [compositeView addSubview:watermark];
-    UIGraphicsBeginImageContext(compositeView.frame.size);
-    [compositeView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage* blendedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    [watermark release];
-    [compositeView release];    
-    return blendedImage;
+    self.textView.text = nil;
 }
 
 #pragma mark Facebook
@@ -206,6 +196,7 @@
     NSLog(@"_onFacebookLoginFail");
     [self _resumeUI];
     [mDelegate shareViewControllerIsDone];
+    [self _showLoginFailedAlert:@"Facebook"];
 }
 
 - (void) _onFacebookUploadSuccess
@@ -213,12 +204,26 @@
     NSLog(@"_onFacebookUploadSuccess");
     [self _resumeUI];
     [mDelegate shareViewControllerIsDone];
+    @try
+    {
+        [FlurryAPI logEvent:@"SharedPhoto"
+             withParameters: [NSDictionary dictionaryWithObjectsAndKeys:
+                              @"Facebook", @"Method",
+                              [NSNumber numberWithBool: [Store hasEffectPackOne]], @"HasFXPack1",
+                              nil]];
+    }
+    @catch (id)
+    {
+        NSLog(@"Log facebook success failed");
+    }
 }
 
 - (void) _onFacebookUploadFail
 {
     NSLog(@"_onFacebookUploadFail");
     [self _resumeUI];
+    [mDelegate shareViewControllerIsDone];
+    [self _showUploadFailedAlert];
 }
 
 - (void) _signInToTwitter
@@ -238,16 +243,17 @@
 - (void) _onTwitterLoginSuccess
 {
     NSLog(@"_onTwitterLoginSuccess");
-    [self dismissModalViewControllerAnimated: YES];
+    [self dismissModalViewControllerAnimated:YES];
     [self _resumeUI];
 }
 
 - (void) _onTwitterLoginFail
 {
     NSLog(@"_onTwitterLoginFail");    
-    [self dismissModalViewControllerAnimated: NO];
+    [self dismissModalViewControllerAnimated:NO];
     [self _resumeUI];
     [mDelegate shareViewControllerIsDone];
+    [self _showLoginFailedAlert:@"Twitter"];
 }
 
 - (void) _onTwitterUploadSuccess
@@ -255,12 +261,29 @@
     NSLog(@"_onTwitterUploadSuccess");
     [self _resumeUI];
     [mDelegate shareViewControllerIsDone];
+    
+    @try
+    {
+        [FlurryAPI logEvent:@"SharedPhoto"
+             withParameters: [NSDictionary dictionaryWithObjectsAndKeys:
+                              @"Twitter", @"Method",
+                              [TwitterHelper sharedInstance].username, @"TwitterName",
+                              [NSNumber numberWithBool: [Store hasEffectPackOne]], @"HasFXPack1",
+                              nil]];
+    }
+    @catch (id)
+    {
+        NSLog(@"Log twitter success failed");
+    }
+                          
 }
 
 - (void) _onTwitterUploadFail
 {
     NSLog(@"_onTwitterUploadFail");
     [self _resumeUI];
+    [mDelegate shareViewControllerIsDone];
+    [self _showUploadFailedAlert];
 }
   
 - (void) _suspendUIWithMessage: (NSString*) message
@@ -279,7 +302,28 @@
     self.textView.editable = YES;
     [self.textView becomeFirstResponder];    
 }
-     
+
+- (void) _showUploadFailedAlert
+{
+    UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@""
+                                                         message:@"Upload failed. Check your network connection"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil] autorelease];
+    [alertView show];
+}
+
+- (void) _showLoginFailedAlert:(NSString*) serviceName
+{
+    NSString* message = [NSString stringWithFormat: @"Could not connect to %@. Check your network connection", serviceName];
+    UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@""
+                                                         message:message
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil] autorelease];
+    [alertView show];
+}
+
 // Delegate methods       
 
 - (void) tokenRequestDidStart:(TwitterLoginPopup *)twitterLogin

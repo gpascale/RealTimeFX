@@ -248,13 +248,14 @@ static int numberOfEffectsViewed = 0;
     [self.view addSubview: capturePreviewViewController.view];
     capturePreviewViewController.view.alpha = 0.0f;    
     
+    [self stopRendering];
     [UIView animateWithDuration: 0.3
                      animations: ^{
                                       capturePreviewViewController.view.alpha = 1.0f;
                                   }
                      completion: ^( BOOL finished )
                                   {
-                                      [self stopRendering];
+                                      [capturePreviewViewController willShow];
                                   }
      
     ];
@@ -535,7 +536,8 @@ static int numberOfEffectsViewed = 0;
 - (void) dismissModalViewController: (NSNotification*) notification
 {
     [self startRendering];
-     
+    
+    [capturePreviewViewController willHide];
     [UIView animateWithDuration: 0.5
                           delay: 0.0
                         options: 0
