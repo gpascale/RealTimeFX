@@ -16,16 +16,20 @@
 - (PUNT) Add like/follow buttons on twitter?
 - (DONE - WE'RE COOL) Email Jaanus Kase to ask about using same twitter screen or design a new one
 - (DONE) Create a button that actually says Email
-- (TEST MORE) Attach photo to email - figure out the mime type stuff
+- (DONE) Attach photo to email - figure out the mime type stuff
 - Create a twitter account for Realtime FX?
     - Add like and follow buttons to accounts page?
 - (DONE) Update the upgrade screen to talk about the watermark thing
 - (TEST MORE) Upload twitter/fb/email events to Flurry
 - (DONE) Create a new flurry version
-- (DONE) Create an uncaught exception handler for crash reports
-- Raise the sign in button in the TwitterLoginPopup so it's not obscured by ads
-- Put "Realtime FX" in quotes in watermark test
-- Log email as an event
+- (DONE) (DONE) Create an uncaught exception handler for crash reports
+- Fix text. Raise the sign in button in the TwitterLoginPopup so it's not obscured by ads
+- (DONE) Put "Realtime FX" in quotes in watermark test
+- (TEST) Log email as an event
+- Hide Log out buttons when logged in to FB/Twitter
+- Look into prompting user to follow/like when they sign into twitter/fb
+- Mosaic effect (work on boat)
+- Add slider to mirror effect
 
 Name Ideas:
 

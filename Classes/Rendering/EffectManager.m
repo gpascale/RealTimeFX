@@ -146,6 +146,8 @@ static NSArray* createFreeEffectNames()
                            @"Edge",
                            @"Posterize",
                            @"Squeeze",
+                           @"Mirror",
+                           @"Cartoon",
                            @"None",
                            nil];
     return ret;

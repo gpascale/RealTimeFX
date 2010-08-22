@@ -13,7 +13,7 @@
 #import "Watermarker.h"
 #import "FlurryAPI.h"
 #import <OAuth/CustomLoginPopup.h>
-
+#import <QuartzCore/QuartzCore.h>
 
 @interface ShareViewController (Private)
 
@@ -23,12 +23,14 @@
 
 // Facebook event handlers
 - (void) _onFacebookLoginSuccess;
+- (void) _onFacebookLoginCancel;
 - (void) _onFacebookLoginFail;
 - (void) _onFacebookUploadSuccess;
 - (void) _onFacebookUploadFail;
 
 // Twitter event handlers
 - (void) _onTwitterLoginSuccess;
+- (void) _onTwitterLoginCancel;
 - (void) _onTwitterLoginFail;
 - (void) _onTwitterUploadSuccess;
 - (void) _onTwitterUploadFail;
@@ -54,7 +56,9 @@
 @synthesize titleLabel;
 @synthesize promptLabel;
 @synthesize uiMaskView;
+@synthesize uiMaskSubview;
 @synthesize uiMaskViewSpinner;
+@synthesize uiMaskViewLabel;
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
@@ -70,6 +74,12 @@
                                                  selector: @selector(_onFacebookLoginFail)
                                                      name: @"FBLoginFail"
                                                    object: nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_onFacebookLoginCancel)
+                                                     name: @"FBLoginCancel"
+                                                   object: nil];
+        
         [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(_onFacebookUploadSuccess)
                                                      name: @"FBRequestSuccess"
@@ -87,9 +97,15 @@
                                                    object: nil];
         
         [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_onTwitterLoginCancel)
+                                                     name: @"TWLoginCancel"
+                                                   object: nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(_onTwitterLoginFail)
                                                      name: @"TWLoginFail"
                                                    object: nil];
+        
         [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(_onTwitterUploadSuccess)
                                                      name: @"TWPostSuccess"
@@ -112,7 +128,7 @@
         self.textView.text = @"Check out this photo I took with Realtime FX for iPhone!";
         if(![[FacebookHelper sharedInstance] isLoggedIn])
         {
-            [self _suspendUIWithMessage: @"Loggin in to Facebook..."]; 
+            [self _suspendUIWithMessage: @"Logging in to Facebook"]; 
             [self _signInToFacebook];
         }
         else
@@ -127,7 +143,7 @@
         self.textView.text = @"Check out this photo I took with #RealtimeFX for iPhone!";
         if(![[TwitterHelper sharedInstance] isLoggedIn])
         {
-            [self _suspendUIWithMessage: @"Loggin in to Twitter..."]; 
+            [self _suspendUIWithMessage: @"Logging in to Twitter"]; 
             [self _signInToTwitter];
         }
         else
@@ -137,12 +153,21 @@
     }
 }
 
-- (void)viewDidUnload
+- (void) viewDidLoad
+{
+    uiMaskSubview.layer.masksToBounds = YES;
+    uiMaskSubview.layer.cornerRadius = 10.0;
+}
+
+- (void) viewDidUnload
 {
     [super viewDidUnload];
     self.imageView = nil;
     self.textView = nil;
     self.uiMaskView = nil;
+    self.uiMaskSubview = nil;
+    self.uiMaskViewSpinner = nil;
+    self.uiMaskViewLabel = nil;
 }
 
 - (void) didTapUploadButton
@@ -152,13 +177,13 @@
         case ShareViewStyle_Facebook:
             [[FacebookHelper sharedInstance] uploadPhoto: [Watermarker addWatermarkIfNoUpgrade:self.imageView.image]
                                              withCaption: self.textView.text];
-            [self _suspendUIWithMessage: @"Uploading..."];
+            [self _suspendUIWithMessage: @"Uploading"];
             break;
         case ShareViewStyle_Twitter:
         {
             [[TwitterHelper sharedInstance] postPhoto: [Watermarker addWatermarkIfNoUpgrade:self.imageView.image]
                                             withTweet: self.textView.text];
-            [self _suspendUIWithMessage: @"Tweet Tweet..."];
+            [self _suspendUIWithMessage: @"Tweeting"];
             break;
         }
         default:
@@ -247,6 +272,14 @@
     [self _resumeUI];
 }
 
+- (void) _onTwitterLoginCancel
+{
+    NSLog(@"_onTwitterLoginCancel");
+    [self dismissModalViewControllerAnimated:NO];
+    [self _resumeUI];
+    [mDelegate shareViewControllerIsDone];
+}
+
 - (void) _onTwitterLoginFail
 {
     NSLog(@"_onTwitterLoginFail");    
@@ -289,18 +322,45 @@
 - (void) _suspendUIWithMessage: (NSString*) message
 {
     NSLog(@"Suspending UI: %@", message);
-    [self.uiMaskView setHidden: NO];
+
+    self.uiMaskView.alpha = 0.0f;
+    self.uiMaskView.hidden = NO;
+    self.uiMaskSubview.alpha = 0.0f;
+    self.uiMaskSubview.hidden = NO;
     [self.uiMaskViewSpinner startAnimating];
     self.textView.editable = NO;
+    self.uiMaskViewLabel.text = message;
+    
+    [UIView animateWithDuration: 0.3
+                     animations: ^{
+                         self.uiMaskView.alpha = 1.0f;
+                         self.uiMaskSubview.alpha = 1.0f;
+                     }
+                     completion: ^( BOOL finished )
+                     {
+                     }
+     ];
 }
 
 - (void) _resumeUI
 {
     NSLog(@"Resume UI");
-    [self.uiMaskViewSpinner stopAnimating];
-    [self.uiMaskView setHidden: YES];
-    self.textView.editable = YES;
-    [self.textView becomeFirstResponder];    
+    
+    [UIView animateWithDuration: 0.3
+                     animations: ^{
+                         self.uiMaskView.alpha = 0.0f;
+                         self.uiMaskSubview.alpha = 0.0f;
+                     }
+                     completion: ^( BOOL finished )
+                     {
+                         [self.uiMaskViewSpinner stopAnimating];
+                         self.uiMaskView.hidden = YES;
+                         self.uiMaskSubview.hidden = YES;
+                         self.textView.editable = YES;
+                         [self.textView becomeFirstResponder];
+                         self.uiMaskViewLabel.text = nil;
+                     }
+    ];
 }
 
 - (void) _showUploadFailedAlert

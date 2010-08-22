@@ -85,28 +85,32 @@ static TwitterHelper* instance;
     
     currentTweet = [tweet retain];
     
-    twitpicRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.twitpic.com/2/upload.json"]];
+    twitpicRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://posterous.com/api2/upload.json"]];
     
-    NSLog(@"Header: %@", [oAuth oAuthHeaderForMethod:@"GET"
-          andUrl:@"https://api.twitter.com/1/account/verify_credentials.json"
-          andParams:nil]);
-    
-    [twitpicRequest addRequestHeader:@"X-Auth-Service-Provider" value:@"https://api.twitter.com/1/account/verify_credentials.json"];
     [twitpicRequest addRequestHeader:@"X-Verify-Credentials-Authorization"
-                    value:[oAuth oAuthHeaderForMethod:@"GET"
-                                               andUrl:@"https://api.twitter.com/1/account/verify_credentials.json"
-                                            andParams:nil]];    
+                               value:[oAuth oAuthHeaderForMethod:@"GET"
+                                                          andUrl:@"https://api.twitter.com/1/account/verify_credentials.json"
+                                                       andParams:nil]]; 
+    [twitpicRequest addRequestHeader:@"X-Auth-Service-Provider" value:@"https://api.twitter.com/1/account/verify_credentials.json"];
     
+    /*
+    NSLog(@"Header: %@", [oAuth oAuthHeaderForMethod:@"GET"
+                                              andUrl:@"https://api.twitter.com/1/account/verify_credentials.json"
+                                           andParams:nil]);
+    */
     [twitpicRequest setData:UIImageJPEGRepresentation(photo, 0.8) forKey:@"media"];
+    //NSLog(@"%@", [twitpicRequest postBody]);
     
     // Define this somewhere or replace with your own key inline right here.
-    [twitpicRequest setPostValue:@"4fca9546ac7700015ed60f873641a474" forKey:@"key"];
+    //[twitpicRequest setPostValue:@"4fca9546ac7700015ed60f873641a474" forKey:@"key"];
     
     // TwitPic API doc says that message is mandatory, but looks like
     // it's actually optional in practice as of July 2010. You may or may not send it, both work.
-    [twitpicRequest setPostValue:@"" forKey:@"message"];
+    [twitpicRequest setPostValue:currentTweet forKey:@"message"];
+    //NSLog(@"%@", [twitpicRequest debugBodyString]);
     [twitpicRequest setDelegate: self];
-    [twitpicRequest startAsynchronous];        
+    [twitpicRequest startAsynchronous];
+    
 }
 
 - (void) requestFinished:(ASIHTTPRequest*)request
@@ -124,6 +128,9 @@ static TwitterHelper* instance;
             [self _finishTweet: NO];
             return;
         }
+        
+        [self _finishTweet: YES];
+        return;
         
         // Post to twitter
         NSString *postUrl = @"https://api.twitter.com/1/statuses/update.json";        
@@ -158,7 +165,23 @@ static TwitterHelper* instance;
  how now this is a tweet that is exactly, precisely, not one more, not one less, but exactly a whopping one hundred and forty characters long
 */
 - (void)requestFailed:(ASIHTTPRequest *)request
-{
+{    
+    if(request == twitpicRequest)
+    {
+        NSLog(@"Retain count %d\n", [twitpicRequest retainCount]);
+        NSLog(@"Twitpic request failed: %d %@ - %@", [twitpicRequest responseStatusCode], [twitpicRequest responseStatusMessage],
+                                                  [[twitpicRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
+        NSLog(@"response was %@", [twitpicRequest responseString]);
+      
+        [self _finishTweet:NO];
+        NSLog(@"Failed");
+    }
+    else if (request == twitterRequest)
+    {
+        NSLog(@"Twitter request failed: %@", [[twitterRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
+        [self _finishTweet:NO];
+    }
+    
     @try
     {
         [FlurryAPI logError:@"TwitterError"
@@ -167,20 +190,7 @@ static TwitterHelper* instance;
     }
     @catch (id)
     {
-         NSLog(@"Log twitter fail failed");
-    }
-        
-    
-    if(request == twitpicRequest)
-    {
-        NSLog(@"Twitpic request failed: %@ - %@", [twitpicRequest responseStatusMessage],
-                                                  [[twitpicRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
-        [self _finishTweet:NO];
-    }
-    else if (request == twitterRequest)
-    {
-        NSLog(@"Twitter request failed: %@", [[twitterRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
-        [self _finishTweet:NO];
+        NSLog(@"Log twitter fail failed");
     }
 }
 
@@ -219,7 +229,7 @@ static TwitterHelper* instance;
 // TwitterLoginPopup delegate methods
 - (void)twitterLoginPopupDidCancel:(TwitterLoginPopup *)popup
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"TWLoginFail" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"TWLoginCancel" object:nil];
 }
 
 - (void)twitterLoginPopupDidAuthorize:(TwitterLoginPopup *)popup

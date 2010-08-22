@@ -21,7 +21,8 @@
 @property (nonatomic, retain) EffectManager* effectManager;
 @property (nonatomic, retain) IBOutlet UITableView* tableView;
 @property (nonatomic, retain) IBOutlet UpgradeTeaserViewController* upgradeTeaserViewController;
-@property (nonatomic, retain) IBOutlet UIButton* moreButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* moreButton;
+@property (nonatomic, retain) IBOutlet UINavigationItem* navItem;
 
 - (IBAction) didTapCancelButton: (id) sender;
 - (IBAction) didTapMoreButton: (id) sender;

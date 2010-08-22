@@ -51,7 +51,9 @@ typedef enum ShareViewStyle_t
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel* promptLabel;
 @property (nonatomic, retain) IBOutlet UIView* uiMaskView;
+@property (nonatomic, retain) IBOutlet UIView* uiMaskSubview;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* uiMaskViewSpinner;
+@property (nonatomic, retain) IBOutlet UILabel* uiMaskViewLabel;
 
 - (IBAction) didTapCancelButton;
 - (IBAction) didTapUploadButton;

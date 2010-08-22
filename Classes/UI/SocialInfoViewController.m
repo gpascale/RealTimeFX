@@ -21,6 +21,8 @@
 
 @synthesize facebookLabel;
 @synthesize twitterLabel;
+@synthesize facebookLogoutButton;
+@synthesize twitterLogoutButton;
 @synthesize delegate;
 
 - (void) viewDidAppear:(BOOL)animated
@@ -31,8 +33,12 @@
 
 - (void)viewDidUnload
 {
+    self.delegate = nil;
     self.facebookLabel = nil;
-    self.twitterLabel = nil;    
+    self.twitterLabel = nil;
+    self.facebookLogoutButton = nil;
+    self.twitterLogoutButton = nil;
+    [super viewDidUnload];
 }
 
 - (IBAction) logOutOfFacebook
@@ -58,10 +64,12 @@
     if(facebookUserName)
     {
         facebookLabel.text = [NSString stringWithFormat: @"Logged in as %@", facebookUserName];
+        facebookLogoutButton.hidden = NO;
     }
     else
     {
         facebookLabel.text = @"Not Logged In";
+        facebookLogoutButton.hidden = YES;
     }
 }
 
@@ -71,10 +79,12 @@
     if(twitterUsername)
     {
         twitterLabel.text = [NSString stringWithFormat: @"Logged in as %@", twitterUsername];
+        twitterLogoutButton.hidden = NO;
     }
     else
     {
         twitterLabel.text = @"Not Logged In";
+        twitterLogoutButton.hidden = YES;
     }
 }
 

@@ -66,8 +66,8 @@
 static NSString* names[6] = 
 {
     @"Emboss",
-    @"Cartoon",
-    @"Squeeze",
+    @"Spectrum",
+    @"Stretch",
     @"Heat Sensor",
     @"Sketch",
     @"Film"

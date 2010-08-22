@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="41"/>
+			<integer value="23"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -262,16 +262,16 @@
 									<object class="IBUILabel" id="718346790">
 										<reference key="NSNextResponder" ref="816949354"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{56, 177}, {208, 30}}</string>
+										<string key="NSFrame">{{56, 177}, {230, 30}}</string>
 										<reference key="NSSuperview" ref="816949354"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">Tap on the link to go to Twitter’s website and get a PIN. Memorize or copy it.</string>
-										<object class="NSFont" key="IBUIFont" id="145146813">
+										<object class="NSFont" key="IBUIFont" id="966688679">
 											<string key="NSName">Helvetica</string>
-											<double key="NSSize">11</double>
+											<double key="NSSize">12</double>
 											<int key="NSfFlags">16</int>
 										</object>
 										<object class="NSColor" key="IBUITextColor">
@@ -285,15 +285,15 @@
 									</object>
 									<object class="IBUILabel" id="902705364">
 										<reference key="NSNextResponder" ref="816949354"/>
-										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{56, 198}, {251, 30}}</string>
+										<int key="NSvFlags">288</int>
+										<string key="NSFrame">{{56, 200}, {251, 29}}</string>
 										<reference key="NSSuperview" ref="816949354"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">This app will not see your Twitter login information.</string>
-										<reference key="IBUIFont" ref="145146813"/>
+										<string key="IBUIText">This app will not see your password.</string>
+										<reference key="IBUIFont" ref="966688679"/>
 										<object class="NSColor" key="IBUITextColor">
 											<int key="NSColorSpace">1</int>
 											<bytes key="NSRGB">MC4xMzMzMzMzNCAwLjEzMzMzMzM0IDAuMTMzMzMzMzQgMC44NTAwMDAwMgA</bytes>
@@ -467,12 +467,12 @@
 							<reference ref="700204189"/>
 							<reference ref="863228119"/>
 							<reference ref="523795442"/>
-							<reference ref="718346790"/>
 							<reference ref="116092459"/>
 							<reference ref="289348825"/>
 							<reference ref="460888242"/>
 							<reference ref="284308635"/>
 							<reference ref="902705364"/>
+							<reference ref="718346790"/>
 						</object>
 						<reference key="parent" ref="970859407"/>
 					</object>
@@ -517,8 +517,8 @@
 						<reference key="parent" ref="816949354"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">32</int>
-						<reference key="object" ref="718346790"/>
+						<int key="objectID">35</int>
+						<reference key="object" ref="289348825"/>
 						<reference key="parent" ref="816949354"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -527,8 +527,8 @@
 						<reference key="parent" ref="816949354"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">35</int>
-						<reference key="object" ref="289348825"/>
+						<int key="objectID">32</int>
+						<reference key="object" ref="718346790"/>
 						<reference key="parent" ref="816949354"/>
 					</object>
 				</object>
@@ -559,7 +559,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>TwitterLoginPopup</string>
 					<string>UIResponder</string>
-					<string>{{329, 188}, {320, 480}}</string>
+					<string>{{548, 201}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -592,7 +592,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">46</int>
+			<int key="maxID">47</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

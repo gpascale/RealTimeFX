@@ -42,6 +42,9 @@ static Watermarker* instance;
     if(compositeView == nil)
     {
         compositeView = [[UIImageView alloc] initWithImage:image];
+        [[NSBundle mainBundle] loadNibNamed:@"Watermark" owner:self options:nil];
+        watermark.frame = CGRectMake(0, compositeView.frame.size.height - watermark.frame.size.height,
+                                     compositeView.frame.size.width, compositeView.frame.size.height);
         [compositeView addSubview:watermark];
     }
     else

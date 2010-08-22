@@ -24,6 +24,8 @@
 @property (nonatomic, retain) IBOutlet NSObject<SocialInfoViewControllerDelegate>* delegate;
 @property (nonatomic, retain) IBOutlet UILabel* facebookLabel;
 @property (nonatomic, retain) IBOutlet UILabel* twitterLabel;
+@property (nonatomic, retain) IBOutlet UIButton* facebookLogoutButton;
+@property (nonatomic, retain) IBOutlet UIButton* twitterLogoutButton;
 
 - (IBAction) logOutOfFacebook;
 - (IBAction) logOutOfTwitter;

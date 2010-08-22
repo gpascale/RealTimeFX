@@ -26,6 +26,7 @@
 @synthesize tableView;
 @synthesize upgradeTeaserViewController;
 @synthesize moreButton;
+@synthesize navItem;
 
 - (void) viewWillAppear: (BOOL) animated
 {
@@ -37,7 +38,7 @@
 {
     if([Store hasEffectPackOne])
     {
-        [self.moreButton removeFromSuperview];
+        [navItem setRightBarButtonItem:nil];
         self.moreButton = nil;
     }
 }

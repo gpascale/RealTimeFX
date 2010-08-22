@@ -63,7 +63,7 @@
 #pragma mark -
 #pragma mark OAuthTwitterCallbacks protocol
 
-// For all of these methods, we invoked oAuth in a background thread, so these are also called
+// For all of these methods, we invoked oAuth in a background th`d, so these are also called
 // in background thread. So we first transfer the control back to main thread before doing
 // anything else.
 
@@ -126,6 +126,14 @@
 							waitUntilDone:NO];
 		return;
 	}
+    
+    UIAlertView* twitterConnectFailView = 
+    [[[UIAlertView alloc] initWithTitle:nil
+                                message:@"Could not connect to Twitter. Check your network connection"
+                               delegate:nil
+                      cancelButtonTitle:@"Ok"
+                      otherButtonTitles:nil] autorelease];
+    [twitterConnectFailView show];
 
     // Re-enable the link to try again.
     getPinButton.enabled = YES;

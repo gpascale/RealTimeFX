@@ -11,6 +11,7 @@
 #import "ShareViewController.h"
 #import "SocialInfoViewController.h"
 #import "Watermarker.h"
+#import "FlurryAPI.h"
 
 @interface CapturePreviewViewController (Private)
 
@@ -236,6 +237,24 @@
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError *)error
 {
+    switch(result)
+    {
+        case MFMailComposeResultSent:
+            [FlurryAPI logEvent:@"SharedPhoto"
+                 withParameters: [NSDictionary dictionaryWithObjectsAndKeys:
+                                  @"Email", @"Method",
+                                  [NSNumber numberWithBool: [Store hasEffectPackOne]], @"HasFXPack1",
+                                  nil]];
+            break;
+        case MFMailComposeResultFailed:
+            [FlurryAPI logError:@"MailError"
+                        message:@""
+                          error:error];
+            break;
+        default:
+            break;
+    }
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 

@@ -96,6 +96,7 @@
 		377625F111EC59CD00536A63 /* saveButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 377625EF11EC59CD00536A63 /* saveButton.png */; };
 		377D454411E0709300C0AFBE /* PosterizeLUTEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D454311E0709300C0AFBE /* PosterizeLUTEffect.m */; };
 		377D464911E0874600C0AFBE /* FilmEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D464811E0874600C0AFBE /* FilmEffect.m */; };
+		37975107122083690051B787 /* UpgradeTeaserViewPro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37975106122083690051B787 /* UpgradeTeaserViewPro.xib */; };
 		379D6CA611ED78E5005200F1 /* moreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D6CA511ED78E5005200F1 /* moreButton.png */; };
 		379D6CC811ED7E6F005200F1 /* buyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D6CC611ED7E6F005200F1 /* buyButton.png */; };
 		379D6CC911ED7E6F005200F1 /* skipButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D6CC711ED7E6F005200F1 /* skipButton.png */; };
@@ -348,6 +349,7 @@
 		377D464411E0872000C0AFBE /* film.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = film.fsh; sourceTree = "<group>"; };
 		377D464811E0874600C0AFBE /* FilmEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmEffect.m; sourceTree = "<group>"; };
 		377D46FE11E1336E00C0AFBE /* film.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = film.vsh; sourceTree = "<group>"; };
+		37975106122083690051B787 /* UpgradeTeaserViewPro.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpgradeTeaserViewPro.xib; sourceTree = "<group>"; };
 		379D6CA511ED78E5005200F1 /* moreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreButton.png; sourceTree = "<group>"; };
 		379D6CC611ED7E6F005200F1 /* buyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyButton.png; sourceTree = "<group>"; };
 		379D6CC711ED7E6F005200F1 /* skipButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skipButton.png; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 		37C01CA311E2DD09004C6B1A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				37975106122083690051B787 /* UpgradeTeaserViewPro.xib */,
 				3740CE1A121A81BF000553D0 /* SocialInfoView.xib */,
 				37C01CA411E2DD09004C6B1A /* EffectSelectorView.xib */,
 				37C01CA511E2DD09004C6B1A /* FilmEffectControlView.xib */,
@@ -969,6 +972,7 @@
 				3740CE1B121A81BF000553D0 /* SocialInfoView.xib in Resources */,
 				3740D154121B7EF3000553D0 /* clearButton.png in Resources */,
 				37EEBC4A121BC4A10093E80D /* Watermark.xib in Resources */,
+				37975107122083690051B787 /* UpgradeTeaserViewPro.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
