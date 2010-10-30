@@ -12,7 +12,6 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		370274F311FD1DE1002C341B /* image.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 370274F211FD1DE1002C341B /* image.JPG */; };
 		3702756C11FD254E002C341B /* Cartoon_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3702755C11FD254E002C341B /* Cartoon_thumb.png */; };
 		3702756D11FD254E002C341B /* Edge_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3702755D11FD254E002C341B /* Edge_thumb.png */; };
 		3702756E11FD254E002C341B /* Emboss_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3702755E11FD254E002C341B /* Emboss_thumb.png */; };
@@ -49,8 +48,6 @@
 		371C082011D84EF5001A3C67 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371C081F11D84EF5001A3C67 /* CoreVideo.framework */; };
 		371C087811D850B0001A3C67 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371C087711D850B0001A3C67 /* CoreMedia.framework */; };
 		371C092211D86ABF001A3C67 /* TextureRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3745296011D750D000F4AB63 /* TextureRenderer.m */; };
-		3740CCAF121A138C000553D0 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3740CCAD121A138C000553D0 /* facebook.png */; };
-		3740CCB0121A138C000553D0 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3740CCAE121A138C000553D0 /* twitter.png */; };
 		3740CCB8121A5D2E000553D0 /* emailButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3740CCB5121A5D2E000553D0 /* emailButton.png */; };
 		3740CCB9121A5D2E000553D0 /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3740CCB6121A5D2E000553D0 /* facebookButton.png */; };
 		3740CCBA121A5D2E000553D0 /* twitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3740CCB7121A5D2E000553D0 /* twitterButton.png */; };
@@ -96,8 +93,9 @@
 		377625F111EC59CD00536A63 /* saveButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 377625EF11EC59CD00536A63 /* saveButton.png */; };
 		377D454411E0709300C0AFBE /* PosterizeLUTEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D454311E0709300C0AFBE /* PosterizeLUTEffect.m */; };
 		377D464911E0874600C0AFBE /* FilmEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D464811E0874600C0AFBE /* FilmEffect.m */; };
-		37975107122083690051B787 /* UpgradeTeaserViewPro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37975106122083690051B787 /* UpgradeTeaserViewPro.xib */; };
-		379D6CA611ED78E5005200F1 /* moreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D6CA511ED78E5005200F1 /* moreButton.png */; };
+		379752021221DB390051B787 /* MirrorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 379752011221DB390051B787 /* MirrorEffect.m */; };
+		37975627122380C80051B787 /* cancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 37975626122380C80051B787 /* cancelButton.png */; };
+		3797564B122386710051B787 /* FBCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3797564A122386710051B787 /* FBCategories.m */; };
 		379D6CC811ED7E6F005200F1 /* buyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D6CC611ED7E6F005200F1 /* buyButton.png */; };
 		379D6CC911ED7E6F005200F1 /* skipButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D6CC711ED7E6F005200F1 /* skipButton.png */; };
 		379D6D0A11ED8879005200F1 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D6D0911ED8879005200F1 /* Logger.m */; };
@@ -106,10 +104,8 @@
 		37C019AD11E1692C004C6B1A /* bloom.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 376D148E11DBA1E900ABE14E /* bloom.fsh */; };
 		37C019AE11E1692C004C6B1A /* edge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 376D148F11DBA1E900ABE14E /* edge.fsh */; };
 		37C019AF11E1692C004C6B1A /* invert.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 376D149011DBA1E900ABE14E /* invert.fsh */; };
-		37C019B011E1692C004C6B1A /* mosaic cool bug.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 376D149111DBA1E900ABE14E /* mosaic cool bug.fsh */; };
 		37C019B111E1692C004C6B1A /* mosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 376D149211DBA1E900ABE14E /* mosaic.fsh */; };
 		37C019B211E1692C004C6B1A /* heatmap.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 376D16AD11DDD07300ABE14E /* heatmap.fsh */; };
-		37C019B311E1692C004C6B1A /* posterizeLUT.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 377D44A911E05CCD00C0AFBE /* posterizeLUT.fsh */; };
 		37C019B411E1692C004C6B1A /* posterize.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 377D453B11E06FE500C0AFBE /* posterize.fsh */; };
 		37C019B511E1692C004C6B1A /* sepia.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 377D45F211E0833400C0AFBE /* sepia.fsh */; };
 		37C019B611E1692C004C6B1A /* grayscale.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 377D45F811E083CE00C0AFBE /* grayscale.fsh */; };
@@ -123,11 +119,9 @@
 		37C01CAC11E2DD09004C6B1A /* heatmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C01C9E11E2DD09004C6B1A /* heatmap.png */; };
 		37C01CAD11E2DD09004C6B1A /* posterize.lut in Resources */ = {isa = PBXBuildFile; fileRef = 37C01C9F11E2DD09004C6B1A /* posterize.lut */; };
 		37C01CAE11E2DD09004C6B1A /* posterize.png in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA011E2DD09004C6B1A /* posterize.png */; };
-		37C01CAF11E2DD09004C6B1A /* SpectrumGradient.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA111E2DD09004C6B1A /* SpectrumGradient.jpg */; };
 		37C01CB111E2DD09004C6B1A /* EffectSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA411E2DD09004C6B1A /* EffectSelectorView.xib */; };
 		37C01CB211E2DD09004C6B1A /* FilmEffectControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA511E2DD09004C6B1A /* FilmEffectControlView.xib */; };
 		37C01CB311E2DD09004C6B1A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA611E2DD09004C6B1A /* MainWindow.xib */; };
-		37C01CB411E2DD09004C6B1A /* RealTimeFxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA711E2DD09004C6B1A /* RealTimeFxView.xib */; };
 		37C01CB511E2DD09004C6B1A /* RealTimeFxView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA811E2DD09004C6B1A /* RealTimeFxView2.xib */; };
 		37C01CB611E2DD09004C6B1A /* ThreeEffectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C01CA911E2DD09004C6B1A /* ThreeEffectTableViewCell.xib */; };
 		37C01CB911E2DD33004C6B1A /* ThreeEffectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C01CB811E2DD33004C6B1A /* ThreeEffectTableViewCell.m */; };
@@ -143,7 +137,6 @@
 		37EEBC4A121BC4A10093E80D /* Watermark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EEBC49121BC4A10093E80D /* Watermark.xib */; };
 		37EF007711E9BA8600109B61 /* SqueezeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EF007611E9BA8600109B61 /* SqueezeEffect.m */; };
 		37EF00CA11E9BFB600109B61 /* StretchEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EF00C911E9BFB600109B61 /* StretchEffect.m */; };
-		37EF015F11E9D12000109B61 /* popArt.png in Resources */ = {isa = PBXBuildFile; fileRef = 37EF015E11E9D12000109B61 /* popArt.png */; };
 		37EF016211E9D13500109B61 /* PopArtEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EF016111E9D13500109B61 /* PopArtEffect.m */; };
 		37EF016B11E9D1D200109B61 /* popArt.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 37EF016711E9D1CF00109B61 /* popArt.fsh */; };
 		37EFFCA311E94D3800109B61 /* CapturePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EFFCA211E94D3800109B61 /* CapturePreviewView.xib */; };
@@ -229,7 +222,6 @@
 		32CA4F630368D1EE00C91783 /* RealTimeFx_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealTimeFx_Prefix.pch; sourceTree = "<group>"; };
 		3702740311FD00B1002C341B /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		3702740511FD00C2002C341B /* takePictures.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = takePictures.js; sourceTree = "<group>"; };
-		370274F211FD1DE1002C341B /* image.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.JPG; sourceTree = "<group>"; };
 		3702755C11FD254E002C341B /* Cartoon_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cartoon_thumb.png; sourceTree = "<group>"; };
 		3702755D11FD254E002C341B /* Edge_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edge_thumb.png; sourceTree = "<group>"; };
 		3702755E11FD254E002C341B /* Emboss_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Emboss_thumb.png; sourceTree = "<group>"; };
@@ -269,8 +261,6 @@
 		371C081911D84EE1001A3C67 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		371C081F11D84EF5001A3C67 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		371C087711D850B0001A3C67 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		3740CCAD121A138C000553D0 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		3740CCAE121A138C000553D0 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		3740CCB5121A5D2E000553D0 /* emailButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailButton.png; sourceTree = "<group>"; };
 		3740CCB6121A5D2E000553D0 /* facebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookButton.png; sourceTree = "<group>"; };
 		3740CCB7121A5D2E000553D0 /* twitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterButton.png; sourceTree = "<group>"; };
@@ -317,7 +307,6 @@
 		376D148E11DBA1E900ABE14E /* bloom.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = bloom.fsh; sourceTree = "<group>"; };
 		376D148F11DBA1E900ABE14E /* edge.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = edge.fsh; sourceTree = "<group>"; };
 		376D149011DBA1E900ABE14E /* invert.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = invert.fsh; sourceTree = "<group>"; };
-		376D149111DBA1E900ABE14E /* mosaic cool bug.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = "mosaic cool bug.fsh"; sourceTree = "<group>"; };
 		376D149211DBA1E900ABE14E /* mosaic.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = mosaic.fsh; sourceTree = "<group>"; };
 		376D14AF11DD971F00ABE14E /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		376D153F11DDBD5700ABE14E /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
@@ -341,7 +330,6 @@
 		377625C911EC4E8800536A63 /* cameraButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraButton.png; sourceTree = "<group>"; };
 		377625EE11EC59CD00536A63 /* discardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discardButton.png; sourceTree = "<group>"; };
 		377625EF11EC59CD00536A63 /* saveButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveButton.png; sourceTree = "<group>"; };
-		377D44A911E05CCD00C0AFBE /* posterizeLUT.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = posterizeLUT.fsh; sourceTree = "<group>"; };
 		377D453B11E06FE500C0AFBE /* posterize.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = posterize.fsh; sourceTree = "<group>"; };
 		377D454311E0709300C0AFBE /* PosterizeLUTEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterizeLUTEffect.m; sourceTree = "<group>"; };
 		377D45F211E0833400C0AFBE /* sepia.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sepia.fsh; sourceTree = "<group>"; };
@@ -349,8 +337,12 @@
 		377D464411E0872000C0AFBE /* film.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = film.fsh; sourceTree = "<group>"; };
 		377D464811E0874600C0AFBE /* FilmEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmEffect.m; sourceTree = "<group>"; };
 		377D46FE11E1336E00C0AFBE /* film.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = film.vsh; sourceTree = "<group>"; };
-		37975106122083690051B787 /* UpgradeTeaserViewPro.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpgradeTeaserViewPro.xib; sourceTree = "<group>"; };
-		379D6CA511ED78E5005200F1 /* moreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreButton.png; sourceTree = "<group>"; };
+		379752011221DB390051B787 /* MirrorEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MirrorEffect.m; sourceTree = "<group>"; };
+		379752C41221F0D40051B787 /* PointillismEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointillismEffect.mm; sourceTree = "<group>"; };
+		379752E81221F5570051B787 /* pointillism.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = pointillism.fsh; sourceTree = "<group>"; };
+		37975626122380C80051B787 /* cancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelButton.png; sourceTree = "<group>"; };
+		37975649122386710051B787 /* FBCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCategories.h; sourceTree = "<group>"; };
+		3797564A122386710051B787 /* FBCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCategories.m; sourceTree = "<group>"; };
 		379D6CC611ED7E6F005200F1 /* buyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyButton.png; sourceTree = "<group>"; };
 		379D6CC711ED7E6F005200F1 /* skipButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skipButton.png; sourceTree = "<group>"; };
 		379D6D0811ED8879005200F1 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
@@ -369,11 +361,9 @@
 		37C01C9E11E2DD09004C6B1A /* heatmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heatmap.png; sourceTree = "<group>"; };
 		37C01C9F11E2DD09004C6B1A /* posterize.lut */ = {isa = PBXFileReference; lastKnownFileType = file; path = posterize.lut; sourceTree = "<group>"; };
 		37C01CA011E2DD09004C6B1A /* posterize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = posterize.png; sourceTree = "<group>"; };
-		37C01CA111E2DD09004C6B1A /* SpectrumGradient.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpectrumGradient.jpg; sourceTree = "<group>"; };
 		37C01CA411E2DD09004C6B1A /* EffectSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectSelectorView.xib; sourceTree = "<group>"; };
 		37C01CA511E2DD09004C6B1A /* FilmEffectControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmEffectControlView.xib; sourceTree = "<group>"; };
 		37C01CA611E2DD09004C6B1A /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		37C01CA711E2DD09004C6B1A /* RealTimeFxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealTimeFxView.xib; sourceTree = "<group>"; };
 		37C01CA811E2DD09004C6B1A /* RealTimeFxView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealTimeFxView2.xib; sourceTree = "<group>"; };
 		37C01CA911E2DD09004C6B1A /* ThreeEffectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThreeEffectTableViewCell.xib; sourceTree = "<group>"; };
 		37C01CB711E2DD33004C6B1A /* ThreeEffectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeEffectTableViewCell.h; sourceTree = "<group>"; };
@@ -396,7 +386,6 @@
 		37EF007611E9BA8600109B61 /* SqueezeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqueezeEffect.m; sourceTree = "<group>"; };
 		37EF00C811E9BFB600109B61 /* StretchEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StretchEffect.h; sourceTree = "<group>"; };
 		37EF00C911E9BFB600109B61 /* StretchEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StretchEffect.m; sourceTree = "<group>"; };
-		37EF015E11E9D12000109B61 /* popArt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popArt.png; sourceTree = "<group>"; };
 		37EF016111E9D13500109B61 /* PopArtEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopArtEffect.m; sourceTree = "<group>"; };
 		37EF016711E9D1CF00109B61 /* popArt.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = popArt.fsh; sourceTree = "<group>"; };
 		37EFFCA211E94D3800109B61 /* CapturePreviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CapturePreviewView.xib; sourceTree = "<group>"; };
@@ -628,6 +617,8 @@
 				3703336C1217E652004B132B /* PlainOAuth.xcodeproj */,
 				37C9EE5E1217A0C50062F334 /* facebook-ios-sdk.xcodeproj */,
 				37027874120162E7002C341B /* FlurryLib */,
+				37975649122386710051B787 /* FBCategories.h */,
+				3797564A122386710051B787 /* FBCategories.m */,
 			);
 			path = ext;
 			sourceTree = "<group>";
@@ -652,10 +643,8 @@
 				376D148E11DBA1E900ABE14E /* bloom.fsh */,
 				376D148F11DBA1E900ABE14E /* edge.fsh */,
 				376D149011DBA1E900ABE14E /* invert.fsh */,
-				376D149111DBA1E900ABE14E /* mosaic cool bug.fsh */,
 				376D149211DBA1E900ABE14E /* mosaic.fsh */,
 				376D16AD11DDD07300ABE14E /* heatmap.fsh */,
-				377D44A911E05CCD00C0AFBE /* posterizeLUT.fsh */,
 				377D453B11E06FE500C0AFBE /* posterize.fsh */,
 				377D45F211E0833400C0AFBE /* sepia.fsh */,
 				377D45F811E083CE00C0AFBE /* grayscale.fsh */,
@@ -670,6 +659,7 @@
 				3759FAB911EEDC7E00C8696F /* sketch.fsh */,
 				3759FCE511EF182000C8696F /* spectrum.fsh */,
 				370278EA12040F30002C341B /* mirror.fsh */,
+				379752E81221F5570051B787 /* pointillism.fsh */,
 			);
 			name = Shaders;
 			path = Resources/Shaders;
@@ -697,6 +687,8 @@
 				377621B811EAEE8400536A63 /* EffectDescription.m */,
 				3776257C11EC3D4600536A63 /* ComicEffect.m */,
 				3759FAA211EEDB4900C8696F /* SketchEffect.m */,
+				379752011221DB390051B787 /* MirrorEffect.m */,
+				379752C41221F0D40051B787 /* PointillismEffect.mm */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -727,21 +719,17 @@
 		37C01C9B11E2DD09004C6B1A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				37975626122380C80051B787 /* cancelButton.png */,
 				3740D153121B7EF3000553D0 /* clearButton.png */,
 				3740CCB5121A5D2E000553D0 /* emailButton.png */,
 				3740CCB6121A5D2E000553D0 /* facebookButton.png */,
 				3740CCB7121A5D2E000553D0 /* twitterButton.png */,
-				3740CCAD121A138C000553D0 /* facebook.png */,
-				3740CCAE121A138C000553D0 /* twitter.png */,
 				370276B311FD70FA002C341B /* toggleCameraButton.png */,
 				3702768711FD61EF002C341B /* Icon_57.png */,
 				3702751111FD2116002C341B /* EffectThumbnails */,
-				370274F211FD1DE1002C341B /* image.JPG */,
-				37EF015E11E9D12000109B61 /* popArt.png */,
 				3759FAB711EEDC6B00C8696F /* paper.jpg */,
 				379D6CC611ED7E6F005200F1 /* buyButton.png */,
 				379D6CC711ED7E6F005200F1 /* skipButton.png */,
-				379D6CA511ED78E5005200F1 /* moreButton.png */,
 				377625EE11EC59CD00536A63 /* discardButton.png */,
 				377625EF11EC59CD00536A63 /* saveButton.png */,
 				377625C911EC4E8800536A63 /* cameraButton.png */,
@@ -755,7 +743,6 @@
 				37C01C9E11E2DD09004C6B1A /* heatmap.png */,
 				37C01C9F11E2DD09004C6B1A /* posterize.lut */,
 				37C01CA011E2DD09004C6B1A /* posterize.png */,
-				37C01CA111E2DD09004C6B1A /* SpectrumGradient.jpg */,
 			);
 			name = Images;
 			path = Resources/Images;
@@ -764,12 +751,10 @@
 		37C01CA311E2DD09004C6B1A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				37975106122083690051B787 /* UpgradeTeaserViewPro.xib */,
 				3740CE1A121A81BF000553D0 /* SocialInfoView.xib */,
 				37C01CA411E2DD09004C6B1A /* EffectSelectorView.xib */,
 				37C01CA511E2DD09004C6B1A /* FilmEffectControlView.xib */,
 				37C01CA611E2DD09004C6B1A /* MainWindow.xib */,
-				37C01CA711E2DD09004C6B1A /* RealTimeFxView.xib */,
 				37C01CA811E2DD09004C6B1A /* RealTimeFxView2.xib */,
 				37C01CA911E2DD09004C6B1A /* ThreeEffectTableViewCell.xib */,
 				37EFFCA211E94D3800109B61 /* CapturePreviewView.xib */,
@@ -902,10 +887,8 @@
 				37C019AD11E1692C004C6B1A /* bloom.fsh in Resources */,
 				37C019AE11E1692C004C6B1A /* edge.fsh in Resources */,
 				37C019AF11E1692C004C6B1A /* invert.fsh in Resources */,
-				37C019B011E1692C004C6B1A /* mosaic cool bug.fsh in Resources */,
 				37C019B111E1692C004C6B1A /* mosaic.fsh in Resources */,
 				37C019B211E1692C004C6B1A /* heatmap.fsh in Resources */,
-				37C019B311E1692C004C6B1A /* posterizeLUT.fsh in Resources */,
 				37C019B411E1692C004C6B1A /* posterize.fsh in Resources */,
 				37C019B511E1692C004C6B1A /* sepia.fsh in Resources */,
 				37C019B611E1692C004C6B1A /* grayscale.fsh in Resources */,
@@ -915,16 +898,13 @@
 				37C01CAC11E2DD09004C6B1A /* heatmap.png in Resources */,
 				37C01CAD11E2DD09004C6B1A /* posterize.lut in Resources */,
 				37C01CAE11E2DD09004C6B1A /* posterize.png in Resources */,
-				37C01CAF11E2DD09004C6B1A /* SpectrumGradient.jpg in Resources */,
 				37C01CB111E2DD09004C6B1A /* EffectSelectorView.xib in Resources */,
 				37C01CB211E2DD09004C6B1A /* FilmEffectControlView.xib in Resources */,
 				37C01CB311E2DD09004C6B1A /* MainWindow.xib in Resources */,
-				37C01CB411E2DD09004C6B1A /* RealTimeFxView.xib in Resources */,
 				37C01CB511E2DD09004C6B1A /* RealTimeFxView2.xib in Resources */,
 				37C01CB611E2DD09004C6B1A /* ThreeEffectTableViewCell.xib in Resources */,
 				37EFFCA311E94D3800109B61 /* CapturePreviewView.xib in Resources */,
 				37EFFD7011E964EB00109B61 /* ShellView.xib in Resources */,
-				37EF015F11E9D12000109B61 /* popArt.png in Resources */,
 				3776253411EC39ED00536A63 /* emboss.fsh in Resources */,
 				37C7A71911E9E5EF005141D3 /* bloom.lut in Resources */,
 				3776223211EAFA8F00536A63 /* UpgradeTeaserView.xib in Resources */,
@@ -936,12 +916,10 @@
 				377625CA11EC4E8800536A63 /* cameraButton.png in Resources */,
 				377625F011EC59CD00536A63 /* discardButton.png in Resources */,
 				377625F111EC59CD00536A63 /* saveButton.png in Resources */,
-				379D6CA611ED78E5005200F1 /* moreButton.png in Resources */,
 				379D6CC811ED7E6F005200F1 /* buyButton.png in Resources */,
 				3759FABA11EEDC7E00C8696F /* sketch.fsh in Resources */,
 				379D6CC911ED7E6F005200F1 /* skipButton.png in Resources */,
 				3759FAB811EEDC6B00C8696F /* paper.jpg in Resources */,
-				370274F311FD1DE1002C341B /* image.JPG in Resources */,
 				3702756C11FD254E002C341B /* Cartoon_thumb.png in Resources */,
 				3702756D11FD254E002C341B /* Edge_thumb.png in Resources */,
 				3702756E11FD254E002C341B /* Emboss_thumb.png in Resources */,
@@ -964,15 +942,13 @@
 				3702791312041285002C341B /* Mirror_thumb.png in Resources */,
 				3702793B12041462002C341B /* None_thumb.png in Resources */,
 				37A06A731218A30800981934 /* ShareView.xib in Resources */,
-				3740CCAF121A138C000553D0 /* facebook.png in Resources */,
-				3740CCB0121A138C000553D0 /* twitter.png in Resources */,
 				3740CCB8121A5D2E000553D0 /* emailButton.png in Resources */,
 				3740CCB9121A5D2E000553D0 /* facebookButton.png in Resources */,
 				3740CCBA121A5D2E000553D0 /* twitterButton.png in Resources */,
 				3740CE1B121A81BF000553D0 /* SocialInfoView.xib in Resources */,
 				3740D154121B7EF3000553D0 /* clearButton.png in Resources */,
 				37EEBC4A121BC4A10093E80D /* Watermark.xib in Resources */,
-				37975107122083690051B787 /* UpgradeTeaserViewPro.xib in Resources */,
+				37975627122380C80051B787 /* cancelButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,6 +999,8 @@
 				37A06A821218A7C600981934 /* ShareViewController.m in Sources */,
 				3740CCCA121A62DD000553D0 /* Watermarker.m in Sources */,
 				3740CE18121A816F000553D0 /* SocialInfoViewController.m in Sources */,
+				379752021221DB390051B787 /* MirrorEffect.m in Sources */,
+				3797564B122386710051B787 /* FBCategories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1129,7 +1107,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RealTimeFx_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
-					"ext/PlainOAuth/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"ext/PlainOAuth/build/Release$(EFFECTIVE_PLATFORM_NAME)",
 					ext/Facebook/iossdk2/src/,
 				);
 				INFOPLIST_FILE = "RealTimeFx-Info.plist";
@@ -1168,7 +1146,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RealTimeFx_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
-					"ext/PlainOAuth/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"ext/PlainOAuth/build/Release$(EFFECTIVE_PLATFORM_NAME)",
 					ext/Facebook/iossdk2/src/,
 				);
 				INFOPLIST_FILE = "RealTimeFx-Info.plist";

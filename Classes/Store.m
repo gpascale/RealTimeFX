@@ -75,7 +75,7 @@ static NSString* effectPackOneProductId = @"com.gregpascale.rtfx2.fxp1";
 		NSLog(@"Feature: %@, Cost: %f, ID: %@",[product localizedTitle],
 			  [[product price] doubleValue], [product productIdentifier]);
                 
-        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
         [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
         [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         [numberFormatter setLocale:product.priceLocale];

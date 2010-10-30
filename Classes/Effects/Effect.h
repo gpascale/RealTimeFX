@@ -14,15 +14,22 @@
     float minValue;
     float maxValue;
     float defaultValue;
+    BOOL continuous;
 }
 
 @property(nonatomic, readonly) float minValue;
 @property(nonatomic, readonly) float maxValue;
 @property(nonatomic, readonly) float defaultValue;
+@property(nonatomic, readonly) BOOL continuous;
 
 - (id) initWithMinValue: (float) minValue
                maxValue: (float) maxValue
            defaultValue: (float) defaultValue;
+
+- (id) initWithMinValue: (float) minValue
+               maxValue: (float) maxValue
+           defaultValue: (float) defaultValue
+             continuous: (BOOL) continuous; 
 
 @end;
 

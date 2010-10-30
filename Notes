@@ -23,13 +23,13 @@
 - (TEST MORE) Upload twitter/fb/email events to Flurry
 - (DONE) Create a new flurry version
 - (DONE) (DONE) Create an uncaught exception handler for crash reports
-- Fix text. Raise the sign in button in the TwitterLoginPopup so it's not obscured by ads
+- (DONE) Fix text. Raise the sign in button in the TwitterLoginPopup so it's not obscured by ads
 - (DONE) Put "Realtime FX" in quotes in watermark test
-- (TEST) Log email as an event
-- Hide Log out buttons when logged in to FB/Twitter
+- (DONE) Log email as an event
+- (DONE) Hide Log out buttons when logged in to FB/Twitter
 - Look into prompting user to follow/like when they sign into twitter/fb
 - Mosaic effect (work on boat)
-- Add slider to mirror effect
+- (DONE) Add slider to mirror effect
 
 Name Ideas:
 

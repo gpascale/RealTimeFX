@@ -7,6 +7,7 @@
 //
 
 #import "FacebookHelper.h"
+#import "FBCategories.h"
 #import "FlurryAPI.h"
 
 static NSString* apiKey = @"f504560da96cd7644e8732e279471596";
@@ -77,6 +78,11 @@ static FacebookHelper* instance;
                            andParams: params
                        andHttpMethod: @"POST" 
                          andDelegate: self];
+}
+
+- (void) cancel
+{
+    [mFacebook cancel];
 }
 
 - (void) dealloc

@@ -25,6 +25,8 @@
 @interface ComicEffect : Effect { } @end
 @interface SketchEffect : Effect { } @end
 @interface SpectrumEffect : Effect { } @end
+@interface MirrorEffect : Effect { } @end
+@interface PointillismEffect : Effect { } @end
 
 @interface EffectManager (private)
 
@@ -129,8 +131,13 @@ NSDictionary* createEffectDictionary()
                          
         [[[EffectDescription alloc] initWithVertexShaderName: @"basic"
                                           fragmentShaderName: @"mirror"
-                                                 effectClass: [Effect class]] autorelease],
+                                                 effectClass: [MirrorEffect class]] autorelease],
         @"Mirror",
+
+        /*[[[EffectDescription alloc] initWithVertexShaderName:@"basic"
+                                          fragmentShaderName:@"pointillism"
+                                                 effectClass:[PointillismEffect class]] autorelease],
+        @"Pointillism",*/
         
         (id)nil
     ];

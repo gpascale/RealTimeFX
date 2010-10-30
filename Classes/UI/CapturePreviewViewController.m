@@ -119,7 +119,8 @@
 // ShareViewController delegate method
 - (void) shareViewControllerIsDone
 {
-    [shareViewController.view removeFromSuperview];
+    //[shareViewController.view removeFromSuperview];
+    [self _hideShareViewController];
 }
 
 - (void) _showActionMenu
@@ -133,6 +134,22 @@
                      completion: ^( BOOL finished )
                      {
                          actionMenuVisible = YES;
+                         
+                         BOOL hasShownMessage = [[NSUserDefaults standardUserDefaults] boolForKey:@"HasShownPhotoExplanationMessage"];
+                         if(!hasShownMessage)
+                         {
+                             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasShownPhotoExplanationMessage"];
+                             
+                             static NSString* message = @"Photos are now automatically saved to your camera roll. When you are finished sharing, "
+                                                        @"tap \"Done\" to go back to live view.\n\n"
+                                                        @"You can tap on the photo to see more of it.";
+                             UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:nil
+                                                                              message:message
+                                                                             delegate:nil
+                                                                    cancelButtonTitle:@"Ok"
+                                                                    otherButtonTitles:nil] autorelease];
+                             [alert show];
+                         }
                      }
      ];
 }
@@ -147,20 +164,24 @@
                      }
                      completion: ^( BOOL finished )
                      {
-                        actionMenuVisible = NO;
-                    }
+                         actionMenuVisible = NO;
+                     }
      ];
 }
 
 - (void) _showShareViewController
 {
+    [self _hideActionMenu];
+    
     shareViewController.view.alpha = 0.0f;
     [self.view addSubview: shareViewController.view];
     [UIView animateWithDuration: 0.3
                      animations: ^{
-                         shareViewController.view.alpha = 1.0f;
+                         shareViewController.view.alpha = 1.0f;                         
                      }
-                     completion: ^( BOOL finished ) { } ];
+                     completion: ^( BOOL finished )
+                     {                         
+                     } ];
 }
 
 - (void) _hideShareViewController
@@ -172,6 +193,7 @@
                      completion: ^( BOOL finished )
                      {
                          [shareViewController.view removeFromSuperview];
+                         [self _showActionMenu];
                      }];
 }
 

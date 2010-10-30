@@ -36,7 +36,6 @@
 @implementation CategoryFixA
 - (void) foo
 {
-    NSLog(@"Go fuck yourselves Apple\n");
 }
 @end
 

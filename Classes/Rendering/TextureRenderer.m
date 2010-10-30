@@ -155,7 +155,7 @@ NSDate* curDate = nil;
 		NSLog(@"Failed to validate program");
 		return;
 	}
-#endif		   
+#endif	   
     
     [activeEffect willRenderFrame];
 				

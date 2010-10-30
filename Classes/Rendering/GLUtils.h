@@ -8,10 +8,17 @@
  */
 
 #import <stdio.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 
 extern void checkGLError(const char* file, const int line, const char* code);
+
+#ifdef __cplusplus
+}
+#endif
 
 // uniform index
 enum

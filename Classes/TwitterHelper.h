@@ -38,4 +38,6 @@
 - (void) postPhoto:(UIImage*)image
          withTweet:(NSString*)tweet;
 
+- (void) cancel;
+
 @end

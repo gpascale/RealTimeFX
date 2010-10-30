@@ -13,6 +13,14 @@
 #import <JSON/NSString+SBJSON.h>
 #import "FlurryAPI.h"
 
+typedef enum TweetStatus_t
+{
+    TweetStatus_Success,
+    TweetStatus_Cancelled,
+    TweetStatus_Failed,
+    TweetStatus_TimedOut
+} TweetStatus;
+
 @interface TwitterHelper (Private)
 
 // Adds the twitpic url to the tweet body, truncating the tweet if necessary
@@ -20,7 +28,7 @@
 - (NSString*) _tweetWithTwitpicUrl;
 
 // Takes care of necessary cleanup/state management when finishing a post
-- (void) _finishTweet:(BOOL)success;
+- (void) _finishTweet:(TweetStatus)status;
 
 @end
 
@@ -48,7 +56,7 @@ static TwitterHelper* instance;
     if (self = [super init])
     {
         oAuth = [[OAuth alloc] initWithConsumerKey:OAUTH_CONSUMER_KEY andConsumerSecret:OAUTH_CONSUMER_SECRET];
-        [oAuth loadOAuthTwitterContextFromUserDefaults];                
+        [oAuth loadOAuthTwitterContextFromUserDefaults];
     }
     
     return self;
@@ -82,16 +90,40 @@ static TwitterHelper* instance;
         return;
     
     hasActiveRequest = YES;
+ 
+    /* This is my attempt to follow gpascale - don't have it working yet.
+     
+    NSString *postUrl = @"https://api.twitter.com/1/notifications/follow/41527341.json";        
+    ASIFormDataRequest* request = [[ASIFormDataRequest alloc]
+                                   initWithURL:[NSURL URLWithString:postUrl]];
+    
+    [request addRequestHeader:@"Authorization"
+                        value:[oAuth oAuthHeaderForMethod:@"POST"
+                                                   andUrl:postUrl
+                                                andParams:[NSDictionary dictionaryWithObject:@"41527341"
+                                                                                      forKey:@"user_id"]]];
+    [request setPostValue:@"41527341" forKey:@"user_id"];
+    
+    
+    [request addRequestHeader:@"Authorization"
+                        value:[oAuth oAuthHeaderForMethod:@"POST"
+                                                   andUrl:postUrl
+                                                andParams:nil]];
+    
+    [request startSynchronous];
+    NSLog(@"Response status is %@", [request responseStatusMessage]);
+    */
+    
     
     currentTweet = [tweet retain];
     
     twitpicRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://posterous.com/api2/upload.json"]];
-    
+    //twitpicRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.twitpic.com/2/upload.json"]];
+    [twitpicRequest addRequestHeader:@"X-Auth-Service-Provider" value:@"https://api.twitter.com/1/account/verify_credentials.json"];
     [twitpicRequest addRequestHeader:@"X-Verify-Credentials-Authorization"
                                value:[oAuth oAuthHeaderForMethod:@"GET"
                                                           andUrl:@"https://api.twitter.com/1/account/verify_credentials.json"
-                                                       andParams:nil]]; 
-    [twitpicRequest addRequestHeader:@"X-Auth-Service-Provider" value:@"https://api.twitter.com/1/account/verify_credentials.json"];
+                                                       andParams:nil]];     
     
     /*
     NSLog(@"Header: %@", [oAuth oAuthHeaderForMethod:@"GET"
@@ -102,15 +134,27 @@ static TwitterHelper* instance;
     //NSLog(@"%@", [twitpicRequest postBody]);
     
     // Define this somewhere or replace with your own key inline right here.
-    //[twitpicRequest setPostValue:@"4fca9546ac7700015ed60f873641a474" forKey:@"key"];
+    [twitpicRequest setPostValue:@"4fca9546ac7700015ed60f873641a474" forKey:@"key"];
     
     // TwitPic API doc says that message is mandatory, but looks like
     // it's actually optional in practice as of July 2010. You may or may not send it, both work.
     [twitpicRequest setPostValue:currentTweet forKey:@"message"];
     //NSLog(@"%@", [twitpicRequest debugBodyString]);
-    [twitpicRequest setDelegate: self];
+    [twitpicRequest setDelegate:self];
+    [twitpicRequest setTimeOutSeconds:60];
     [twitpicRequest startAsynchronous];
     
+}
+
+- (void) cancel
+{
+    [twitpicRequest cancel];
+    [twitpicRequest release];
+    twitpicRequest = nil;
+    
+    [twitterRequest cancel];
+    [twitterRequest release];
+    twitterRequest = nil;    
 }
 
 - (void) requestFinished:(ASIHTTPRequest*)request
@@ -125,12 +169,9 @@ static TwitterHelper* instance;
         // Make sure the URL is valid - otherwise the post is a failure
         if(currentTwitpicUrl == nil)
         {
-            [self _finishTweet: NO];
+            [self _finishTweet:TweetStatus_Failed];
             return;
         }
-        
-        [self _finishTweet: YES];
-        return;
         
         // Post to twitter
         NSString *postUrl = @"https://api.twitter.com/1/statuses/update.json";        
@@ -144,6 +185,7 @@ static TwitterHelper* instance;
                                                     andParams:[NSDictionary dictionaryWithObject:tweetBody
                                                                                           forKey:@"status"]]];
         [twitterRequest setDelegate: self];
+        [twitterRequest setTimeOutSeconds:60];
         [twitterRequest startAsynchronous];       
     }
     else if (request == twitterRequest)
@@ -151,12 +193,12 @@ static TwitterHelper* instance;
         if(twitterRequest.responseStatusCode == 200)
         {
             NSLog(@"Tweet success!");            
-            [self _finishTweet: YES];
+            [self _finishTweet: TweetStatus_Success];
         }
         else
         {
             NSLog(@"Tweet failed with HTTP code %d", twitterRequest.responseStatusCode);
-            [self _finishTweet: NO];
+            [self _finishTweet: TweetStatus_Failed];
         }             
     }
 }
@@ -165,21 +207,39 @@ static TwitterHelper* instance;
  how now this is a tweet that is exactly, precisely, not one more, not one less, but exactly a whopping one hundred and forty characters long
 */
 - (void)requestFailed:(ASIHTTPRequest *)request
-{    
-    if(request == twitpicRequest)
+{
+    NSError *error = [request error];
+    
+    // First see if the request was cancelled. If so, do nothing
+    if(error.code == ASIRequestCancelledErrorType)
     {
-        NSLog(@"Retain count %d\n", [twitpicRequest retainCount]);
-        NSLog(@"Twitpic request failed: %d %@ - %@", [twitpicRequest responseStatusCode], [twitpicRequest responseStatusMessage],
-                                                  [[twitpicRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
-        NSLog(@"response was %@", [twitpicRequest responseString]);
-      
-        [self _finishTweet:NO];
-        NSLog(@"Failed");
+        [self _finishTweet:TweetStatus_Cancelled];
+        return;
     }
-    else if (request == twitterRequest)
+    
+    // Then check to see if the request timed out.    
+    if (error.code == ASIRequestTimedOutErrorType)
     {
-        NSLog(@"Twitter request failed: %@", [[twitterRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
-        [self _finishTweet:NO];
+        [self _finishTweet:TweetStatus_TimedOut];
+    }
+    
+    else
+    {
+        if(request == twitpicRequest)
+        {
+            NSLog(@"Retain count %d\n", [twitpicRequest retainCount]);
+            NSLog(@"Twitpic request failed: %d %@ - %@", [twitpicRequest responseStatusCode], [twitpicRequest responseStatusMessage],
+                                                      [[twitpicRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
+            NSLog(@"response was %@", [twitpicRequest responseString]);
+          
+            [self _finishTweet:TweetStatus_Failed];
+            NSLog(@"Failed");
+        }
+        else if (request == twitterRequest)
+        {
+            NSLog(@"Twitter request failed: %@", [[twitterRequest.error userInfo] objectForKey:NSUnderlyingErrorKey]);
+            [self _finishTweet:TweetStatus_Failed];
+        }
     }
     
     @try
@@ -205,24 +265,36 @@ static TwitterHelper* instance;
     return [tweetTruncated stringByAppendingString: twitpicUrlWithSpace];
 }
 
-- (void) _finishTweet:(BOOL)success
-{
+- (void) _finishTweet:(TweetStatus)status
+{        
+    switch(status)
+    {
+        case TweetStatus_Success:
+            [[NSNotificationCenter defaultCenter] postNotificationName: @"TWPostSuccess" object:nil];
+            [currentTweet release];
+            currentTweet = nil;
+            break;
+        case TweetStatus_Failed:
+            [[NSNotificationCenter defaultCenter] postNotificationName: @"TWPostFail" object:nil];
+            [currentTweet release];
+            currentTweet = nil;
+            break;
+        case TweetStatus_TimedOut:
+            [[NSNotificationCenter defaultCenter] postNotificationName: @"TWPostTimeout" object:nil];
+            [currentTweet release];
+            currentTweet = nil;
+            break;
+        case TweetStatus_Cancelled:
+        default:
+            NSLog(@"Tweet Cancelled");
+            break;
+    }    
+    
     [twitpicRequest release];
     twitpicRequest = nil;
     [twitterRequest release];
     twitterRequest = nil;
-    [currentTweet release];
-    currentTweet = nil;
     
-    if(success)
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName: @"TWPostSuccess" object:nil];
-    }
-    else
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName: @"TWPostFail" object:nil];
-    }
-
     hasActiveRequest = NO;
 }
 

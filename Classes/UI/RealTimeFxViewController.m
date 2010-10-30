@@ -395,6 +395,7 @@ static int numberOfEffectsViewed = 0;
             slider.transform = CGAffineTransformMakeRotation(-M_PI_2);
         }
         slider.value = effectVariable.defaultValue;
+        slider.continuous = effectVariable.continuous;
         [self showSlider: slider animated: YES];
     }
     else
@@ -409,6 +410,12 @@ static int numberOfEffectsViewed = 0;
     NSAssert([sender isKindOfClass: [UISlider class]], @"Sender should be a UISlider");
     
     UISlider* slider = (UISlider*) sender;
+    
+    if (!slider.continuous)
+    {
+        int closestVal = (int) (slider.value + 0.5f);
+        slider.value = (float) closestVal;
+    }
     
     if (slider.tag == 0)
     {

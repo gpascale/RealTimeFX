@@ -58,6 +58,7 @@ typedef enum ShareViewStyle_t
 - (IBAction) didTapCancelButton;
 - (IBAction) didTapUploadButton;
 - (IBAction) clearMessage;
+- (IBAction) cancelUpload;
 
 - (void) willShow;
 

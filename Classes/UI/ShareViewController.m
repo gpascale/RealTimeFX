@@ -34,6 +34,7 @@
 - (void) _onTwitterLoginFail;
 - (void) _onTwitterUploadSuccess;
 - (void) _onTwitterUploadFail;
+- (void) _onTwitterUploadTimeout;
 
 // Methods to pause/resume UI interaction when logging in or uploading 
 // a photo
@@ -42,6 +43,7 @@
 
 // Show an alert to tell the user that upload failed
 - (void) _showUploadFailedAlert;
+- (void) _showUploadTimedOutAlert;
 // Show an alert to tell the user that upload failed
 - (void) _showLoginFailedAlert:(NSString*) serviceName;
 
@@ -114,6 +116,11 @@
         [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(_onTwitterUploadFail)
                                                      name: @"TWPostFail"
+                                                   object: nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_onTwitterUploadTimeout)
+                                                     name: @"TWPostTimeout"
                                                    object: nil];
     }
     return self;
@@ -202,6 +209,14 @@
     self.textView.text = nil;
 }
 
+- (IBAction) cancelUpload
+{
+    [[TwitterHelper sharedInstance] cancel];
+    [[FacebookHelper sharedInstance] cancel];
+    NSLog(@"Upload cancelled");
+    [self _resumeUI];
+}
+
 #pragma mark Facebook
 
 - (void) _signInToFacebook
@@ -221,7 +236,10 @@
     NSLog(@"_onFacebookLoginFail");
     [self _resumeUI];
     [mDelegate shareViewControllerIsDone];
-    [self _showLoginFailedAlert:@"Facebook"];
+    
+    // looks like this only actually happens when the user cancels,
+    // so don't show a popup
+    //[self _showLoginFailedAlert:@"Facebook"];
 }
 
 - (void) _onFacebookUploadSuccess
@@ -300,7 +318,6 @@
         [FlurryAPI logEvent:@"SharedPhoto"
              withParameters: [NSDictionary dictionaryWithObjectsAndKeys:
                               @"Twitter", @"Method",
-                              [TwitterHelper sharedInstance].username, @"TwitterName",
                               [NSNumber numberWithBool: [Store hasEffectPackOne]], @"HasFXPack1",
                               nil]];
     }
@@ -317,6 +334,14 @@
     [self _resumeUI];
     [mDelegate shareViewControllerIsDone];
     [self _showUploadFailedAlert];
+}
+
+- (void) _onTwitterUploadTimeout
+{
+    NSLog(@"_onTwitterUploadTimeout");
+    [self _resumeUI];
+    [mDelegate shareViewControllerIsDone];
+    [self _showUploadTimedOutAlert];
 }
   
 - (void) _suspendUIWithMessage: (NSString*) message
@@ -366,7 +391,18 @@
 - (void) _showUploadFailedAlert
 {
     UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@""
-                                                         message:@"Upload failed. Check your network connection"
+                                                         message:@"Upload failed. If this happened instantly, the problem is most "
+                                                                 @"likely your network connection. Otherwise, it may work if you try again."
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil] autorelease];
+    [alertView show];
+}
+
+- (void) _showUploadTimedOutAlert
+{
+    UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@""
+                                                         message:@"Upload timed out. It may work if you try again."
                                                         delegate:nil
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles:nil] autorelease];

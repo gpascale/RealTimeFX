@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="23"/>
+			<integer value="41"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -286,13 +286,13 @@
 									<object class="IBUILabel" id="902705364">
 										<reference key="NSNextResponder" ref="816949354"/>
 										<int key="NSvFlags">288</int>
-										<string key="NSFrame">{{56, 200}, {251, 29}}</string>
+										<string key="NSFrame">{{56, 201}, {263, 29}}</string>
 										<reference key="NSSuperview" ref="816949354"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">This app will not see your password.</string>
+										<string key="IBUIText">This app will not see your login information.</string>
 										<reference key="IBUIFont" ref="966688679"/>
 										<object class="NSColor" key="IBUITextColor">
 											<int key="NSColorSpace">1</int>

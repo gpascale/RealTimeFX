@@ -15,6 +15,7 @@
 @synthesize minValue;
 @synthesize maxValue;
 @synthesize defaultValue;
+@synthesize continuous;
 
 - (id) initWithMinValue: (float) minVal
                maxValue: (float) maxVal
@@ -25,6 +26,23 @@
         minValue = minVal;
         maxValue = maxVal;
         defaultValue = defaultVal;
+        continuous = YES;
+    }
+    
+    return self;
+}
+
+- (id) initWithMinValue: (float) minVal
+               maxValue: (float) maxVal
+           defaultValue: (float) defaultVal
+             continuous: (BOOL) cont
+{
+    if(self = [super init])
+    {
+        minValue = minVal;
+        maxValue = maxVal;
+        defaultValue = defaultVal;
+        continuous = cont;
     }
     
     return self;

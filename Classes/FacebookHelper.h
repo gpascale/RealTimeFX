@@ -27,5 +27,6 @@
 
 - (void) uploadPhoto:(UIImage*)photo withCaption:(NSString*)caption;
 
+- (void) cancel;
 
 @end
