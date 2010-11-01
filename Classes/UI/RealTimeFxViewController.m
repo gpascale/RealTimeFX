@@ -142,7 +142,7 @@ static int numberOfEffectsViewed = 0;
     
     [self activeEffectDidChange: nil];    
 
-    sliderOne.backgroundColor = [UIColor clearColor];        
+    sliderOne.backgroundColor = [UIColor clearColor];
     UIImage* sliderTrack = [[UIImage imageNamed:@"sliderTrack.png"]
                             stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
     [sliderOne setMinimumTrackImage: sliderTrack forState: UIControlStateNormal];

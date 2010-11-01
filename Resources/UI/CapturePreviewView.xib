@@ -2,17 +2,17 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1024</int>
-		<string key="IBDocument.SystemVersion">10D578</string>
+		<string key="IBDocument.SystemVersion">10F569</string>
 		<string key="IBDocument.InterfaceBuilderVersion">788</string>
 		<string key="IBDocument.AppKitVersion">1038.29</string>
-		<string key="IBDocument.HIToolboxVersion">460.00</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">117</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="21"/>
+			<integer value="48"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -99,26 +99,27 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<object class="NSFont" key="IBUIFont" id="488676783">
-									<string key="NSName">Helvetica-Bold</string>
-									<double key="NSSize">15</double>
+								<object class="NSFont" key="IBUIFont" id="617112510">
+									<string key="NSName">ArialMT</string>
+									<double key="NSSize">24</double>
 									<int key="NSfFlags">16</int>
 								</object>
+								<string key="IBUINormalTitle">Upload to Facebook</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor" id="324695528">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
-								<object class="NSColor" key="IBUINormalTitleColor">
+								<object class="NSColor" key="IBUINormalTitleColor" id="869442338">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+									<bytes key="NSRGB">MSAxIDEAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUINormalTitleShadowColor" id="956044333">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
 								</object>
-								<object class="NSCustomResource" key="IBUINormalImage">
+								<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="240283045">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">facebookButton.png</string>
+									<string key="NSResourceName">buttonBackground271x51.png</string>
 								</object>
 							</object>
 							<object class="IBUIButton" id="93703320">
@@ -130,17 +131,12 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<reference key="IBUIFont" ref="488676783"/>
+								<reference key="IBUIFont" ref="617112510"/>
+								<string key="IBUINormalTitle">Send Email</string>
 								<reference key="IBUIHighlightedTitleColor" ref="324695528"/>
-								<object class="NSColor" key="IBUINormalTitleColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-								</object>
+								<reference key="IBUINormalTitleColor" ref="869442338"/>
 								<reference key="IBUINormalTitleShadowColor" ref="956044333"/>
-								<object class="NSCustomResource" key="IBUINormalImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">emailButton.png</string>
-								</object>
+								<reference key="IBUINormalBackgroundImage" ref="240283045"/>
 							</object>
 							<object class="IBUIButton" id="13560696">
 								<reference key="NSNextResponder" ref="968379526"/>
@@ -151,17 +147,12 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<reference key="IBUIFont" ref="488676783"/>
+								<reference key="IBUIFont" ref="617112510"/>
+								<string key="IBUINormalTitle">Upload to Twitter</string>
 								<reference key="IBUIHighlightedTitleColor" ref="324695528"/>
-								<object class="NSColor" key="IBUINormalTitleColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-								</object>
+								<reference key="IBUINormalTitleColor" ref="869442338"/>
 								<reference key="IBUINormalTitleShadowColor" ref="956044333"/>
-								<object class="NSCustomResource" key="IBUINormalImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">twitterButton.png</string>
-								</object>
+								<reference key="IBUINormalBackgroundImage" ref="240283045"/>
 							</object>
 							<object class="IBUILabel" id="1066752718">
 								<reference key="NSNextResponder" ref="968379526"/>
@@ -194,7 +185,11 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<reference key="IBUIFont" ref="488676783"/>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica-Bold</string>
+									<double key="NSSize">15</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<int key="IBUIButtonType">3</int>
 								<bool key="IBUIShowsTouchWhenHighlighted">YES</bool>
 								<reference key="IBUIHighlightedTitleColor" ref="324695528"/>
@@ -205,7 +200,7 @@
 								<reference key="IBUINormalTitleShadowColor" ref="956044333"/>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 447}, {320, 213}}</string>
+						<string key="NSFrame">{{0, 267}, {320, 213}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -431,7 +426,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>CapturePreviewViewController</string>
 					<string>UIResponder</string>
-					<string>{{589, 175}, {320, 480}}</string>
+					<string>{{52, 181}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -582,12 +577,14 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>cancelUpload</string>
 							<string>clearMessage</string>
 							<string>didTapCancelButton</string>
 							<string>didTapUploadButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -597,12 +594,17 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>cancelUpload</string>
 							<string>clearMessage</string>
 							<string>didTapCancelButton</string>
 							<string>didTapUploadButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">cancelUpload</string>
+								<string key="candidateClassName">id</string>
+							</object>
 							<object class="IBActionInfo">
 								<string key="name">clearMessage</string>
 								<string key="candidateClassName">id</string>
@@ -626,7 +628,9 @@
 							<string>promptLabel</string>
 							<string>textView</string>
 							<string>titleLabel</string>
+							<string>uiMaskSubview</string>
 							<string>uiMaskView</string>
+							<string>uiMaskViewLabel</string>
 							<string>uiMaskViewSpinner</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -637,6 +641,8 @@
 							<string>UITextView</string>
 							<string>UIBarButtonItem</string>
 							<string>UIView</string>
+							<string>UIView</string>
+							<string>UILabel</string>
 							<string>UIActivityIndicatorView</string>
 						</object>
 					</object>
@@ -649,7 +655,9 @@
 							<string>promptLabel</string>
 							<string>textView</string>
 							<string>titleLabel</string>
+							<string>uiMaskSubview</string>
 							<string>uiMaskView</string>
+							<string>uiMaskViewLabel</string>
 							<string>uiMaskViewSpinner</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -675,8 +683,16 @@
 								<string key="candidateClassName">UIBarButtonItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">uiMaskSubview</string>
+								<string key="candidateClassName">UIView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">uiMaskView</string>
 								<string key="candidateClassName">UIView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">uiMaskViewLabel</string>
+								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">uiMaskViewSpinner</string>
@@ -737,13 +753,17 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>delegate</string>
 							<string>facebookLabel</string>
+							<string>facebookLogoutButton</string>
 							<string>twitterLabel</string>
+							<string>twitterLogoutButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSObject</string>
 							<string>UILabel</string>
+							<string>UIButton</string>
 							<string>UILabel</string>
+							<string>UIButton</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -752,7 +772,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>delegate</string>
 							<string>facebookLabel</string>
+							<string>facebookLogoutButton</string>
 							<string>twitterLabel</string>
+							<string>twitterLogoutButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -765,8 +787,16 @@
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">facebookLogoutButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">twitterLabel</string>
 								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">twitterLogoutButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 						</object>
 					</object>
@@ -1058,19 +1088,8 @@
 		<string key="IBDocument.LastKnownRelativeProjectPath">../../RealTimeFx.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<bool key="EncodedWithXMLCoder">YES</bool>
-			<object class="NSArray" key="dict.sortedKeys">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>emailButton.png</string>
-				<string>facebookButton.png</string>
-				<string>twitterButton.png</string>
-			</object>
-			<object class="NSMutableArray" key="dict.values">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{271, 51}</string>
-				<string>{271, 51}</string>
-				<string>{271, 51}</string>
-			</object>
+			<string key="NS.key.0">buttonBackground271x51.png</string>
+			<string key="NS.object.0">{271, 51}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">117</string>
 	</data>

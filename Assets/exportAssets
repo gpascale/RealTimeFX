@@ -3,6 +3,7 @@
 svgFile=graphics.svg
 inkscapeCommand=inkscape
 outputDir=output
+exportFlags="--export-background=#000000 --export-background-opacity=0.0"
 
 queryCommand="$inkscapeCommand -S --file=$svgFile"
 grepCommand="grep -o -e asset_[A-z0-9]*"
@@ -12,6 +13,6 @@ mkdir $outputDir
 for var in $allButtons
 do
     assetName=${var:6}
-	$inkscapeCommand --file=$svgFile --export-id=$var --export-png="${outputDir}/${assetName}.png"
-    $inkscapeCommand --file=$svgFile --export-id=$var --export-png="${outputDir}/${assetName}@2x.png" --export-dpi=180
+	$inkscapeCommand --file=$svgFile $exportFlags --export-id=$var --export-png="${outputDir}/${assetName}.png"
+    $inkscapeCommand --file=$svgFile $exportFlags --export-id=$var --export-png="${outputDir}/${assetName}@2x.png" --export-dpi=180
 done
