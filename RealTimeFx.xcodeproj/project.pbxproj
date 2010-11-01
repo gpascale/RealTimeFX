@@ -82,6 +82,7 @@
 		3776259C11EC3EB000536A63 /* comic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 3776257F11EC3E1000536A63 /* comic.fsh */; };
 		377D454411E0709300C0AFBE /* PosterizeLUTEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D454311E0709300C0AFBE /* PosterizeLUTEffect.m */; };
 		377D464911E0874600C0AFBE /* FilmEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D464811E0874600C0AFBE /* FilmEffect.m */; };
+		377D5031127E808B00F79586 /* RealTimeFx-Debug-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 377D5030127E808B00F79586 /* RealTimeFx-Debug-Info.plist */; };
 		379752021221DB390051B787 /* MirrorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 379752011221DB390051B787 /* MirrorEffect.m */; };
 		3797564B122386710051B787 /* FBCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3797564A122386710051B787 /* FBCategories.m */; };
 		379D6D0A11ED8879005200F1 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D6D0911ED8879005200F1 /* Logger.m */; };
@@ -329,6 +330,7 @@
 		377D464411E0872000C0AFBE /* film.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = film.fsh; sourceTree = "<group>"; };
 		377D464811E0874600C0AFBE /* FilmEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmEffect.m; sourceTree = "<group>"; };
 		377D46FE11E1336E00C0AFBE /* film.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = film.vsh; sourceTree = "<group>"; };
+		377D5030127E808B00F79586 /* RealTimeFx-Debug-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RealTimeFx-Debug-Info.plist"; sourceTree = "<group>"; };
 		379752011221DB390051B787 /* MirrorEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MirrorEffect.m; sourceTree = "<group>"; };
 		379752C41221F0D40051B787 /* PointillismEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointillismEffect.mm; sourceTree = "<group>"; };
 		379752E81221F5570051B787 /* pointillism.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = pointillism.fsh; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				37C01CA311E2DD09004C6B1A /* UI */,
 				376D148B11DBA1E900ABE14E /* Shaders */,
 				8D1107310486CEB800E47090 /* RealTimeFx-Info.plist */,
+				377D5030127E808B00F79586 /* RealTimeFx-Debug-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				37E396F7127E74F200C6F94E /* buttonBackground271x51.png in Resources */,
 				37E396F8127E74F200C6F94E /* buttonBackground271x51@2x.png in Resources */,
 				37E396FA127E7A0700C6F94E /* clearButton@2x.png in Resources */,
+				377D5031127E808B00F79586 /* RealTimeFx-Debug-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,7 +1069,7 @@
 					"ext/PlainOAuth/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
 					ext/Facebook/iossdk2/src/,
 				);
-				INFOPLIST_FILE = "RealTimeFx-Info.plist";
+				INFOPLIST_FILE = "RealTimeFx-Debug-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ext/FlurryLib\"",
