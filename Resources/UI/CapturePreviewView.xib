@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="48"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -99,7 +99,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<object class="NSFont" key="IBUIFont" id="617112510">
+								<object class="NSFont" key="IBUIFont" id="735876914">
 									<string key="NSName">ArialMT</string>
 									<double key="NSSize">24</double>
 									<int key="NSfFlags">16</int>
@@ -109,7 +109,7 @@
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
-								<object class="NSColor" key="IBUINormalTitleColor" id="869442338">
+								<object class="NSColor" key="IBUINormalTitleColor" id="157927251">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MSAxIDEAA</bytes>
 								</object>
@@ -117,7 +117,7 @@
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
 								</object>
-								<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="240283045">
+								<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="410529238">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">buttonBackground271x51.png</string>
 								</object>
@@ -131,12 +131,12 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<reference key="IBUIFont" ref="617112510"/>
+								<reference key="IBUIFont" ref="735876914"/>
 								<string key="IBUINormalTitle">Send Email</string>
 								<reference key="IBUIHighlightedTitleColor" ref="324695528"/>
-								<reference key="IBUINormalTitleColor" ref="869442338"/>
+								<reference key="IBUINormalTitleColor" ref="157927251"/>
 								<reference key="IBUINormalTitleShadowColor" ref="956044333"/>
-								<reference key="IBUINormalBackgroundImage" ref="240283045"/>
+								<reference key="IBUINormalBackgroundImage" ref="410529238"/>
 							</object>
 							<object class="IBUIButton" id="13560696">
 								<reference key="NSNextResponder" ref="968379526"/>
@@ -147,12 +147,12 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<reference key="IBUIFont" ref="617112510"/>
+								<reference key="IBUIFont" ref="735876914"/>
 								<string key="IBUINormalTitle">Upload to Twitter</string>
 								<reference key="IBUIHighlightedTitleColor" ref="324695528"/>
-								<reference key="IBUINormalTitleColor" ref="869442338"/>
+								<reference key="IBUINormalTitleColor" ref="157927251"/>
 								<reference key="IBUINormalTitleShadowColor" ref="956044333"/>
-								<reference key="IBUINormalBackgroundImage" ref="240283045"/>
+								<reference key="IBUINormalBackgroundImage" ref="410529238"/>
 							</object>
 							<object class="IBUILabel" id="1066752718">
 								<reference key="NSNextResponder" ref="968379526"/>
@@ -200,7 +200,7 @@
 								<reference key="IBUINormalTitleShadowColor" ref="956044333"/>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 267}, {320, 213}}</string>
+						<string key="NSFrame">{{0, 447}, {320, 213}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>

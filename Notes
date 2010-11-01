@@ -7,6 +7,10 @@
 - Make splash screen for full version include a rater and perhaps some other info (follow on twitter etc...)
 - Switch to entertainment category?
 
+1.2 Bugs
+
+- Share buttons view is visible immediately.
+
 1.1 TODO:
 
 - (PUNT) Cap the maximum tweet length at 140 - (length of a twitpic url)

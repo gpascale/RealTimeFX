@@ -17,6 +17,7 @@
 #import "Version.h"
 #import "FlurryAPI.h"
 #import "FacebookHelper.h"
+#import "Appirater.h"
 
 void uncaughtExceptionHandler(NSException *exception)
 {
@@ -91,6 +92,8 @@ static BOOL showedUpgradeTeaserViewOnLaunch = NO;
     // Hacky
     [FacebookHelper initialize];
     
+    [Appirater appLaunched:YES];
+    
     return YES;
 }
 
@@ -128,6 +131,8 @@ static BOOL showedUpgradeTeaserViewOnLaunch = NO;
     {
         [fxViewController startRendering];
     }
+    
+    [Appirater appEnteredForeground:YES];
 }
 
 

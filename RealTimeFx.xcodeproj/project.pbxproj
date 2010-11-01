@@ -83,6 +83,8 @@
 		377D454411E0709300C0AFBE /* PosterizeLUTEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D454311E0709300C0AFBE /* PosterizeLUTEffect.m */; };
 		377D464911E0874600C0AFBE /* FilmEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D464811E0874600C0AFBE /* FilmEffect.m */; };
 		377D5031127E808B00F79586 /* RealTimeFx-Debug-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 377D5030127E808B00F79586 /* RealTimeFx-Debug-Info.plist */; };
+		377D5060127E84E900F79586 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 377D505E127E84E900F79586 /* Appirater.m */; };
+		377D5061127E84E900F79586 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 377D505F127E84E900F79586 /* README.md */; };
 		379752021221DB390051B787 /* MirrorEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 379752011221DB390051B787 /* MirrorEffect.m */; };
 		3797564B122386710051B787 /* FBCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3797564A122386710051B787 /* FBCategories.m */; };
 		379D6D0A11ED8879005200F1 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D6D0911ED8879005200F1 /* Logger.m */; };
@@ -331,6 +333,9 @@
 		377D464811E0874600C0AFBE /* FilmEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmEffect.m; sourceTree = "<group>"; };
 		377D46FE11E1336E00C0AFBE /* film.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = film.vsh; sourceTree = "<group>"; };
 		377D5030127E808B00F79586 /* RealTimeFx-Debug-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RealTimeFx-Debug-Info.plist"; sourceTree = "<group>"; };
+		377D505D127E84E900F79586 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		377D505E127E84E900F79586 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		377D505F127E84E900F79586 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		379752011221DB390051B787 /* MirrorEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MirrorEffect.m; sourceTree = "<group>"; };
 		379752C41221F0D40051B787 /* PointillismEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointillismEffect.mm; sourceTree = "<group>"; };
 		379752E81221F5570051B787 /* pointillism.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = pointillism.fsh; sourceTree = "<group>"; };
@@ -621,6 +626,7 @@
 		3759F92D11EEC55200C8696F /* ext */ = {
 			isa = PBXGroup;
 			children = (
+				377D505C127E84E900F79586 /* Appirater */,
 				3740CF4C121AF806000553D0 /* FBDialog.bundle */,
 				370335A51217F0B9004B132B /* SBJson.xcodeproj */,
 				3703336C1217E652004B132B /* PlainOAuth.xcodeproj */,
@@ -700,6 +706,16 @@
 				379752C41221F0D40051B787 /* PointillismEffect.mm */,
 			);
 			path = Effects;
+			sourceTree = "<group>";
+		};
+		377D505C127E84E900F79586 /* Appirater */ = {
+			isa = PBXGroup;
+			children = (
+				377D505D127E84E900F79586 /* Appirater.h */,
+				377D505E127E84E900F79586 /* Appirater.m */,
+				377D505F127E84E900F79586 /* README.md */,
+			);
+			path = Appirater;
 			sourceTree = "<group>";
 		};
 		37C01C9411E2DCF5004C6B1A /* UI */ = {
@@ -973,6 +989,7 @@
 				37E396F8127E74F200C6F94E /* buttonBackground271x51@2x.png in Resources */,
 				37E396FA127E7A0700C6F94E /* clearButton@2x.png in Resources */,
 				377D5031127E808B00F79586 /* RealTimeFx-Debug-Info.plist in Resources */,
+				377D5061127E84E900F79586 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,6 +1042,7 @@
 				3740CE18121A816F000553D0 /* SocialInfoViewController.m in Sources */,
 				379752021221DB390051B787 /* MirrorEffect.m in Sources */,
 				3797564B122386710051B787 /* FBCategories.m in Sources */,
+				377D5060127E84E900F79586 /* Appirater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
